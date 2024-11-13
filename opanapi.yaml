@@ -3,6 +3,22 @@ info:
   title: Anonymised Candidate Data API
   description: Talent Catalog API specification for accessing anonymised candidate data.
   version: 1.0.0
+  termsOfService: https://tctalent.org/terms
+  contact:
+    name: Talent Catalog API Support
+    url: https://github.com/Talent-Catalog/tc-anonymization-service-spec/issues
+    email: support@talentcatalog.net
+  license:
+    name: Gnu Affero General Public License
+    url: https://www.gnu.org/licenses/agpl-3.0.html
+  x-logo:
+    url: './assets/tc-logo.png'
+    altText: Talent Catalog logo
+
+tags:
+  - name: Candidates
+    description: Operations related to anonymised candidates
+
 servers:
   - url: https://tctalent.org/ads/v1
     description: Production server
@@ -14,6 +30,8 @@ paths:
     get:
       summary: Retrieve a list of anonymised candidates
       description: Fetches a list of anonymised candidates. Can be paginated if needed.
+      tags:
+        - Candidates
       operationId: getAllCandidates
       parameters:
         - name: page
@@ -57,6 +75,8 @@ paths:
     get:
       summary: Retrieve an anonymised candidate by candidate ID
       description: Fetches details of an anonymised candidate by their unique candidate ID.
+      tags:
+        - Candidates
       operationId: getCandidateById
       parameters:
         - name: candidateId
@@ -90,6 +110,8 @@ paths:
     get:
       summary: Retrieve candidates by list ID
       description: Fetches a selection of candidates associated with a specific list ID.
+      tags:
+        - Candidates
       operationId: getCandidatesByListId
       parameters:
         - name: listId
@@ -140,6 +162,8 @@ paths:
     get:
       summary: Retrieve candidates by search ID
       description: Fetches a selection of candidates associated with a specific search ID.
+      tags:
+        - Candidates
       operationId: getCandidatesBySearchId
       parameters:
         - name: searchId
