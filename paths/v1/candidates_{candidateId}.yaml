@@ -1,0 +1,32 @@
+get:
+  summary: Retrieve an anonymised candidate by candidate ID
+  description: Fetches details of an anonymised candidate by their unique candidate ID.
+  tags:
+    - Candidates
+  operationId: getCandidateById
+  parameters:
+    - name: candidateId
+      in: path
+      required: true
+      description: Unique ID of the candidate to retrieve
+      schema:
+        type: string
+        format: uuid
+  responses:
+    '200':
+      description: An anonymised candidate's details
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/Candidate.yaml
+          example:
+            id: "123e4567-e89b-12d3-a456-426614174000"
+            skills: ["Java", "Python", "AWS"]
+            experience: 5.5
+            lastUpdated: "2023-08-01T14:30:00Z"
+    '404':
+      description: Not found - Candidate not found
+    '400':
+      description: Bad request - Invalid candidate ID
+    '500':
+      description: Internal server error

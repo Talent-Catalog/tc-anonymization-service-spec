@@ -1,0 +1,43 @@
+get:
+  summary: Retrieve a list of anonymised candidates
+  description: Fetches a list of anonymised candidates. Can be paginated if needed.
+  tags:
+    - Candidates
+  operationId: getAllCandidates
+  parameters:
+    - name: page
+      in: query
+      description: The page number for pagination
+      required: false
+      schema:
+        type: integer
+        default: 1
+    - name: limit
+      in: query
+      description: The number of results per page
+      required: false
+      schema:
+        type: integer
+        default: 10
+  responses:
+    '200':
+      description: An array of anonymised candidates
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/CandidateArray.yaml
+          example:
+            - id: "123e4567-e89b-12d3-a456-426614174000"
+              skills: [ "Java", "Python", "AWS" ]
+              experience: 5.5
+              lastUpdated: "2023-08-01T14:30:00Z"
+            - id: "123e4567-e89b-12d3-a456-426614174001"
+              skills: [ "React", "Node.js", "TypeScript" ]
+              experience: 3.0
+              lastUpdated: "2023-07-25T10:15:00Z"
+    '400':
+      description: Bad request - Invalid pagination parameters
+    '401':
+      description: Unauthorised - Access token is missing or invalid
+    '500':
+      description: Internal server error
