@@ -1,0 +1,27 @@
+Candidate:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: Unique identifier for the candidate
+    skills:
+      type: array
+      description: Array of skills the candidate possesses
+      items:
+        type: string
+      example: ["Java", "Python", "AWS"]
+    experience:
+      type: number
+      format: float
+      description: Total years of experience
+      example: 5.5
+    lastUpdated:
+      type: string
+      format: date-time
+      description: Date and time when candidate information was last updated
+      example: "2023-08-01T14:30:00Z"
+  required:
+    - id
+    - skills
+    - experience
