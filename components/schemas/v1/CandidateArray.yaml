@@ -1,5 +1,4 @@
-CandidateArray:
-  type: array
-  description: Array of anonymised candidate data
-  items:
-    $ref: './Candidate.yaml'
+type: array
+description: Array of anonymised candidate data
+items:
+  $ref: './Candidate.yaml'
