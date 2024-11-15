@@ -15,11 +15,10 @@ properties:
     format: float
     description: Total years of experience
     example: 5.5
-  lastUpdated:
-    type: string
-    format: date-time
-    description: Date and time when candidate information was last updated
-    example: "2023-08-01T14:30:00Z"
+  dateCreated:
+    $ref: ../common/iso_timestamp.yaml
+  dateModified:
+    $ref: ../common/iso_timestamp.yaml
 required:
   - id
   - skills

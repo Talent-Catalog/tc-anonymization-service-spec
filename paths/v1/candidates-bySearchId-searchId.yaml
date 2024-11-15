@@ -1,14 +1,14 @@
 get:
-  summary: Retrieve candidates by list ID
-  description: Fetches a selection of candidates associated with a specific list ID.
+  summary: Retrieve candidates by search ID
+  description: Fetches a selection of candidates associated with a specific search ID.
   tags:
     - Candidates
-  operationId: getCandidatesByListId
+  operationId: getCandidatesBySearchId
   parameters:
-    - name: listId
+    - name: searchId
       in: path
       required: true
-      description: A unique list identifier for retrieving candidates associated with a specific list.
+      description: A unique search identifier for retrieving candidates associated with a specific search.
       schema:
         type: string
         format: uuid
@@ -28,7 +28,7 @@ get:
         default: 10
   responses:
     '200':
-      description: An array of anonymised candidates associated with the specified list ID
+      description: An array of anonymised candidates associated with the specified search ID
       content:
         application/json:
           schema:
@@ -37,14 +37,14 @@ get:
             - id: "123e4567-e89b-12d3-a456-426614174000"
               skills: [ "Java", "Python", "AWS" ]
               experience: 5.5
-              lastUpdated: "2023-08-01T14:30:00Z"
+              dateCreated: "2023-08-01T14:30:00Z"
             - id: "123e4567-e89b-12d3-a456-426614174001"
               skills: [ "React", "Node.js", "TypeScript" ]
               experience: 3.0
-              lastUpdated: "2023-07-25T10:15:00Z"
+              dateCreated: "2023-07-25T10:15:00Z"
     '404':
-      description: Not found - No candidates found for the given list ID
+      description: Not found - No candidates found for the given search ID
     '400':
-      description: Bad request - Invalid list ID or pagination parameters
+      description: Bad request - Invalid search ID or pagination parameters
     '500':
       description: Internal server error

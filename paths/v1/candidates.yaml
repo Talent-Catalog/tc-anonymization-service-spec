@@ -30,11 +30,11 @@ get:
             - id: "123e4567-e89b-12d3-a456-426614174000"
               skills: [ "Java", "Python", "AWS" ]
               experience: 5.5
-              lastUpdated: "2023-08-01T14:30:00Z"
+              dateCreated: "2023-08-01T14:30:00Z"
             - id: "123e4567-e89b-12d3-a456-426614174001"
               skills: [ "React", "Node.js", "TypeScript" ]
               experience: 3.0
-              lastUpdated: "2023-07-25T10:15:00Z"
+              dateCreated: "2023-07-25T10:15:00Z"
     '400':
       description: Bad request - Invalid pagination parameters
     '401':

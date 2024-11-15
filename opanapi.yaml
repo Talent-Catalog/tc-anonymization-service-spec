@@ -29,8 +29,8 @@ paths:
   /v1/candidates:
     $ref: paths/v1/candidates.yaml
   /v1/candidates/{candidateId}:
-    $ref: paths/v1/candidates_{candidateId}.yaml
+    $ref: ./paths/v1/candidates-candidateId.yaml
   /v1/candidates/byListId/{listId}:
-    $ref: paths/v1/candidates_byListId_{listId}.yaml
+    $ref: ./paths/v1/candidates-byListId-listId.yaml
   /v1/candidates/bySearchId/{searchId}:
-    $ref: paths/v1/candidates_bySearchId_{searchId}.yaml
+    $ref: ./paths/v1/candidates-bySearchId-searchId.yaml
