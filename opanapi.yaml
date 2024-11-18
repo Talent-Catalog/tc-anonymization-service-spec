@@ -34,3 +34,9 @@ paths:
     $ref: ./paths/v1/candidates-byListId-listId.yaml
   /v1/candidates/bySearchId/{searchId}:
     $ref: ./paths/v1/candidates-bySearchId-searchId.yaml
+
+components:
+    schemas:
+      IdentifiableCandidate:
+        $ref: ./components/schemas/v1/IdentifiableCandidate.yaml
+

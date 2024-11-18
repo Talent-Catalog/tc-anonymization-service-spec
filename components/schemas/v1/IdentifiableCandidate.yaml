@@ -1,0 +1,36 @@
+allOf:
+  - $ref: './Candidate.yaml'
+  - type: object
+    properties:
+      name:
+        type: string
+        description: Full name of the candidate
+        example: "John Doe"
+      contact:
+        type: string
+        description: Primary contact number of the candidate
+        example: "+1-234-567-890"
+      email:
+        type: string
+        format: email
+        description: Email address of the candidate
+        example: "johndoe@example.com"
+      address:
+        type: string
+        description: Residential address of the candidate
+        example: "123 Main St, Springfield, IL"
+      dateOfBirth:
+        type: string
+        format: date
+        description: Date of birth of the candidate
+        example: "1985-06-15"
+      dateCreated:
+        $ref: ../common/iso_timestamp.yaml
+      dateModified:
+        $ref: ../common/iso_timestamp.yaml
+    required:
+      - name
+      - contact
+      - email
+      - address
+      - dateOfBirth
