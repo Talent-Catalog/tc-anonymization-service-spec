@@ -1,6 +1,6 @@
 get:
-  summary: Retrieve a list of anonymised candidates
-  description: Fetches a list of anonymised candidates. Can be paginated if needed.
+  summary: Retrieve a page of anonymised candidates
+  description: Fetches a paginated list of anonymised candidates.
   tags:
     - Candidates
   operationId: getAllCandidates
@@ -21,20 +21,25 @@ get:
         default: 10
   responses:
     '200':
-      description: An array of anonymised candidates
+      description: A page of anonymised candidates
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/v1/CandidateArray.yaml
+            $ref: ../../components/schemas/v1/CandidatePage.yaml
           example:
-            - id: "123e4567-e89b-12d3-a456-426614174000"
-              skills: [ "Java", "Python", "AWS" ]
-              experience: 5.5
-              dateCreated: "2023-08-01T14:30:00Z"
-            - id: "123e4567-e89b-12d3-a456-426614174001"
-              skills: [ "React", "Node.js", "TypeScript" ]
-              experience: 3.0
-              dateCreated: "2023-07-25T10:15:00Z"
+            content:
+              - id: "123e4567-e89b-12d3-a456-426614174000"
+                skills: [ "Java", "Python", "AWS" ]
+                experience: 5.5
+                dateCreated: "2023-08-01T14:30:00Z"
+              - id: "123e4567-e89b-12d3-a456-426614174001"
+                skills: [ "React", "Node.js", "TypeScript" ]
+                experience: 3.0
+                dateCreated: "2023-07-25T10:15:00Z"
+            totalElements: 100
+            totalPages: 50
+            size: 2
+            number: 1
     '400':
       description: Bad request - Invalid pagination parameters
     '401':
