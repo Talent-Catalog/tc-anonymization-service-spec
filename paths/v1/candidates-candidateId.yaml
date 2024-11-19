@@ -21,9 +21,69 @@ get:
             $ref: ../../components/schemas/v1/Candidate.yaml
           example:
             id: "123e4567-e89b-12d3-a456-426614174000"
-            skills: ["Java", "Python", "AWS"]
-            experience: 5.5
-            dateCreated: "2023-08-01T14:30:00Z"
+            gender: "Female"
+            yearOfBirth: 1985
+            status: "active"
+            countryId: 101
+            city: "Springfield"
+            yearOfArrival: 2010
+            nationalityOldId: 202
+            unhcrStatus: "Refugee"
+            unhcrNotRegisteredStatus: "NeverRegistered"
+            migrationNationality: "Syrian"
+            migrationStatus: "Asylum seeker"
+            maxEducationLevel: 4
+            migrationEducationMajorId: 303
+            preferredLanguage: "English"
+            asylumYear: 2015
+            destinationLimit: "No"
+            crimeConviction: "No"
+            conflict: "No"
+            residenceStatus: "LegalRes"
+            workAbroad: "Yes"
+            hostEntryLegally: "Yes"
+            returnHomeFuture: "No"
+            resettleThird: "Yes"
+            maritalStatus: "Single"
+            partnerRegistered: "Yes"
+            partnerCandidateId: "123e4567-e89b-12d3-a456-426614174000"
+            partnerEduLevelId: 3
+            partnerOccupationId: 12
+            partnerEnglish: "Yes"
+            partnerEnglishLevelId: 349
+            partnerIelts: "Yes"
+            partnerIeltsScore: "7.5"
+            partnerCitizenship: "6180"
+            militaryService: "Yes"
+            visaReject: "No"
+            canDrive: "Yes"
+            drivingLicense: "Valid"
+            drivingLicenseExp: "2025-12-31"
+            drivingLicenseCountryId: 6180
+            hostEntryYear: 2010
+            englishAssessmentScoreIelts: "6.5"
+            partnerIeltsYr: 2020
+            militaryWanted: "No"
+            militaryStart: "2010-01-01"
+            militaryEnd: "2015-01-01"
+            availImmediateJobOps: "Yes"
+            unhcrRegistered: "Yes"
+            unrwaRegistered: "No"
+            birthCountryId: 6295
+            ieltsScore: 7.5
+            nationalityId: 202
+            healthIssues: "No"
+            unhcrConsent: "Yes"
+            covidVaccinated: "Yes"
+            covidVaccinatedStatus: "Full"
+            covidVaccinatedDate: "2022-12-15"
+            covidVaccineName: "Pfizer-BioNTech"
+            mediaWillingness: "Yes"
+            frenchAssessmentScoreNclc: 10
+            arrestImprison: "No"
+            availDate: "2023-12-01"
+            createdDate: "2023-01-01T12:34:56Z"
+            updatedDate: "2023-06-15T08:45:00Z"
     '404':
       description: Not found - Candidate not found
     '400':
