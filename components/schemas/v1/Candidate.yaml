@@ -4,22 +4,273 @@ properties:
     type: string
     format: uuid
     description: Unique identifier for the candidate
-  skills:
-    type: array
-    description: Array of skills the candidate possesses
-    items:
-      type: string
-    example: ["Java", "Python", "AWS"]
-  experience:
+    example: 123e4567-e89b-12d3-a456-426614174000
+  gender:
+    type: string
+    description: Gender of the candidate
+    example: "Female"
+  yearOfBirth:
+    type: integer
+    format: int32
+    description: Year of birth of the candidate
+    example: 1985
+  status:
+    type: string
+    description: Status of the candidate (e.g., active, pending, deleted)
+    example: "active"
+  countryId:
+    type: integer
+    format: int64
+    description: ID of the candidate's country
+    example: 101
+  city:
+    type: string
+    description: City of residence
+    example: "Springfield"
+  yearOfArrival:
+    type: integer
+    format: int32
+    description: Year of arrival in the country
+    example: 2010
+  nationalityOldId:
+    type: integer
+    format: int64
+    description: ID of the candidate's previous nationality
+    example: 202
+  unhcrStatus:
+    type: string
+    description: UNHCR status of the candidate
+    example: "Refugee"
+  unhcrNotRegisteredStatus:
+    type: string
+    description: UNHCR not registered status of the candidate
+    example: "NeverRegistered"
+  migrationNationality:
+    type: string
+    description: Migration nationality of the candidate
+    example: "Syrian"
+  migrationStatus:
+    type: string
+    description: Migration status of the candidate
+    example: "Asylum seeker"
+  maxEducationLevel:
+    type: integer
+    format: int64
+    description: Maximum education level of the candidate
+    example: 4
+  migrationEducationMajorId:
+    type: integer
+    format: int64
+    description: ID of the candidate's major
+    example: 303
+  preferredLanguage:
+    type: string
+    description: Preferred language of the candidate
+    example: "English"
+  asylumYear:
+    type: integer
+    format: int32
+    description: Year of asylum
+    example: 2015
+  destinationLimit:
+    type: string
+    description: Destination limit for the candidate (e.g., "Yes", "No")
+    example: "No"
+  crimeConviction:
+    type: string
+    description: Crime conviction status of the candidate (e.g., "Yes", "No")
+    example: "No"
+  conflict:
+    type: string
+    description: Conflict participation status of the candidate (e.g., "Yes", "No")
+    example: "No"
+  residenceStatus:
+    type: string
+    description: Residence status of the candidate
+    example: "LegalRes"
+  workAbroad:
+    type: string
+    description: Indicates whether the candidate has worked abroad
+    example: "Yes"
+  hostEntryLegally:
+    type: string
+    description: Indicates if the candidate entered the host country legally
+    example: "Yes"
+  returnHomeFuture:
+    type: string
+    description: Indicates whether the candidate plans to return home in the future
+    example: "No"
+  resettleThird:
+    type: string
+    description: Indicates if the candidate plans to resettle in a third country
+    example: "Yes"
+  maritalStatus:
+    type: string
+    description: Marital status of the candidate
+    example: "Single"
+  partnerRegistered:
+    type: string
+    description: Indicates if the candidate's partner is registered
+    example: "Yes"
+  partnerCandidateId:
+    type: string
+    format: uuid
+    description: ID of the candidate's partner (if also a candidate in the system)
+    example: 123e4567-e89b-12d3-a456-426614174000
+  partnerEduLevelId:
+    type: integer
+    format: int64
+    description: Education level ID of the candidate's partner
+    example: 3
+  partnerOccupationId:
+    type: integer
+    format: int64
+    description: Occupation ID of the candidate's partner
+    example: 12
+  partnerEnglish:
+    type: string
+    description: Indicates if the candidate's partner speaks English (e.g., "Yes", "No")
+    example: "Yes"
+  partnerEnglishLevelId:
+    type: integer
+    format: int64
+    description: English proficiency level ID of the candidate's partner
+    example: 349
+  partnerIelts:
+    type: string
+    description: Indicates if the candidate's partner has taken an IELTS exam
+    example: "Yes"
+  partnerIeltsScore:
+    type: string
+    description: IELTS score of the candidate's partner
+    example: "7.5"
+  partnerCitizenship:
+    type: string
+    description: Citizenship ID of the candidate's partner
+    example: "6180"
+  militaryService:
+    type: string
+    description: Indicates whether the candidate has served in the military
+    example: "Yes"
+  visaReject:
+    type: string
+    description: Indicates whether the candidate has had a visa application rejected
+    example: "No"
+  canDrive:
+    type: string
+    description: Indicates whether the candidate can drive
+    example: "Yes"
+  drivingLicense:
+    type: string
+    description: Type of driving license the candidate holds
+    example: "Valid"
+  drivingLicenseExp:
+    type: string
+    format: date
+    description: Expiration date of the candidate's driving license
+    example: "2025-12-31"
+  drivingLicenseCountryId:
+    type: integer
+    format: int64
+    description: ID of the country that issued the driving license
+    example: 6180
+  hostEntryYear:
+    type: integer
+    description: Year the candidate entered the host country
+    example: 2010
+  englishAssessmentScoreIelts:
+    type: string
+    description: IELTS score for the English assessment
+    example: "6.5"
+  partnerIeltsYr:
+    type: integer
+    description: Year the candidate's partner took the IELTS exam
+    example: 2020
+  militaryWanted:
+    type: string
+    description: Indicates if the candidate is wanted for military service
+    example: "No"
+  militaryStart:
+    type: string
+    format: date
+    description: Start date of the candidate's military service
+    example: "2010-01-01"
+  militaryEnd:
+    type: string
+    format: date
+    description: End date of the candidate's military service
+    example: "2015-01-01"
+  availImmediateJobOps:
+    type: string
+    description: Indicates if the candidate is immediately available for job opportunities
+    example: "Yes"
+  unhcrRegistered:
+    type: string
+    description: Indicates if the candidate is registered with UNHCR
+    example: "Yes"
+  unrwaRegistered:
+    type: string
+    description: Indicates if the candidate is registered with UNRWA
+    example: "No"
+  birthCountryId:
+    type: integer
+    format: int64
+    description: ID of the candidate's birth country
+    example: 6295
+  ieltsScore:
     type: number
     format: float
-    description: Total years of experience
-    example: 5.5
-  dateCreated:
+    description: IELTS score achieved by the candidate
+    example: 7.5
+  nationalityId:
+    type: integer
+    format: int64
+    description: ID of the candidate's nationality
+    example: 202
+  healthIssues:
+    type: string
+    description: Health issues reported by the candidate (e.g., "Yes", "No")
+    example: "No"
+  unhcrConsent:
+    type: string
+    description: Indicates if the candidate has given consent for UNHCR processes
+    example: "Yes"
+  covidVaccinated:
+    type: string
+    description: Indicates whether the candidate is vaccinated against COVID-19
+    example: "Yes"
+  covidVaccinatedStatus:
+    type: string
+    description: Status of the candidate's COVID-19 vaccination
+    example: "Full"
+  covidVaccinatedDate:
+    type: string
+    format: date
+    description: Date of the last COVID-19 vaccination
+    example: "2022-12-15"
+  covidVaccineName:
+    type: string
+    description: Name of the COVID-19 vaccine received by the candidate
+    example: "Pfizer-BioNTech"
+  mediaWillingness:
+    type: string
+    description: Indicates the candidate's willingness to participate in media activities
+    example: "Yes"
+  frenchAssessmentScoreNclc:
+    type: integer
+    format: int32
+    description: Candidate's NCLC (Canadian Language Benchmark) score for French assessment
+    example: 10
+  arrestImprison:
+    type: string
+    description: Indicates if the candidate has been arrested or imprisoned
+    example: "No"
+  availDate:
+    type: string
+    format: date
+    description: Date when the candidate becomes available for opportunities
+    example: "2023-12-01"
+  createdDate:
     $ref: ../common/iso_timestamp.yaml
-  dateModified:
+  updatedDate:
     $ref: ../common/iso_timestamp.yaml
-required:
-  - id
-  - skills
-  - experience
