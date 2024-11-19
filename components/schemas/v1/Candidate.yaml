@@ -274,3 +274,6 @@ properties:
     $ref: ../common/iso_timestamp.yaml
   updatedDate:
     $ref: ../common/iso_timestamp.yaml
+
+required:
+  - id
