@@ -1,6 +1,6 @@
 get:
   summary: Retrieve candidates by list ID
-  description: Fetches a page of candidates associated with a specific list ID.
+  description: Fetches a paginated array of candidates associated with a specific list ID.
   tags:
     - Candidates
   operationId: getCandidatesByListId

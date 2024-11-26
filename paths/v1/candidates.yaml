@@ -1,6 +1,6 @@
 get:
   summary: Retrieve a page of anonymised candidates
-  description: Fetches a paginated list of anonymised candidates.
+  description: Fetches a paginated array of anonymised candidates.
   tags:
     - Candidates
   operationId: getAllCandidates

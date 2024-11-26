@@ -1,6 +1,6 @@
 get:
   summary: Retrieve candidates by search ID
-  description: Fetches a page of candidates associated with a specific search ID.
+  description: Fetches a paginated array of candidates associated with a specific search ID.
   tags:
     - Candidates
   operationId: getCandidatesBySearchId
