@@ -18,6 +18,36 @@ post:
         application/json:
           schema:
             $ref: ../../components/schemas/v1/SearchResponse.yaml
+    '400':
+      description: Invalid request payload.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/BadRequestError.yaml
+    '401':
+      description: Authentication is required to access this resource.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/UnauthorisedError.yaml
+    '403':
+      description: The client does not have permission to create a search.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/ForbiddenError.yaml
+    '409':
+      description: A search with the specified criteria already exists.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/ConflictError.yaml
+    '500':
+      description: An error occurred while creating the search.
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/InternalServerError.yaml
 
 get:
     summary: Retrieve a page of searches

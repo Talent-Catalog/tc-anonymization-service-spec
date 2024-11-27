@@ -1,0 +1,15 @@
+type: object
+properties:
+  error:
+    type: string
+    description: Error message.
+    example: "Unauthorised. Please provide a valid API key." # todo update this to match the actual api security method
+  statusCode:
+    type: integer
+    description: The HTTP status code associated with the error.
+    example: 401
+  timestamp:
+    type: string
+    format: date-time
+    description: The timestamp when the error occurred.
+    example: "2024-11-27T17:15:00Z"
