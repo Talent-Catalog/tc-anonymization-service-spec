@@ -1,0 +1,12 @@
+allOf:
+  - $ref: '#/components/schemas/SearchBase'
+  - type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+        description: Unique identifier for the search.
+        required: true
+        example: 123e4567-e89b-12d3-a456-426614174000
+    required:
+      - id

@@ -1,10 +1,5 @@
 type: object
 properties:
-  id:
-    type: string
-    format: uuid
-    description: Unique identifier for the search.
-    example: 123e4567-e89b-12d3-a456-426614174000
   simpleQueryString:  # todo use ?q= query parameter instead?
     type: string
     description: A simple query string for free-text search.
