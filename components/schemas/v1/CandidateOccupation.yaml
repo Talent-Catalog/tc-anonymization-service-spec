@@ -1,0 +1,24 @@
+type: object
+description: The candidate's occupation
+properties:
+  isoCode:
+    type: string
+    description: The ISO code for the candidate's occupation.
+    example: "15-1132"
+  name:
+    type: string
+    description: The name of the candidate's occupation.
+    example: "Software Developers, Applications"
+  yearsExperience:
+    type: integer
+    description: The number of years of experience the candidate has in this job.
+    example: 5
+  topCandidate: # todo confirm the semantics and relevance of this field
+    type: boolean
+    description: Whether the candidate is a top candidate for this job.
+    example: true
+  migrationOccupation: # todo confirm the semantics and relevance of this field
+    type: string
+    description: The migration occupation for this job.
+    example: "Software Developer - Front End"
+
