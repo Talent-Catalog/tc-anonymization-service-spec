@@ -1,0 +1,218 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Unique identifier for the search.
+    example: 123e4567-e89b-12d3-a456-426614174000
+  simpleQueryString:  # todo use ?q= query parameter instead?
+    type: string
+    description: A simple query string for free-text search.
+    example: "Graphic Designer"
+  statuses:
+    type: array
+    description: List of candidate statuses to filter on.
+    items:
+      type: string
+      description: Status values.
+      enum:
+        - ACTIVE
+        - AUTONOMOUS
+        - PENDING
+        - WITHDRAWN
+    example: ["ACTIVE", "AUTONOMOUS"]
+  gender:
+    type: string
+    description: Gender filter.
+    enum:
+      - MALE
+      - FEMALE
+      - OTHER
+    example: "FEMALE"
+  occupationIds: # todo use isco codes instead
+    type: array
+    description: List of occupation IDs to filter on.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2, 3]
+  minYrs:
+    type: integer
+    description: Minimum years of experience.
+    example: 2
+  maxYrs:
+    type: integer
+    description: Maximum years of experience.
+    example: 10
+  partnerIds: # todo confirm that we want to search on this field?
+    type: array
+    description: List of partner IDs to filter on.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2, 3]
+  nationalityIds: # todo use ISO codes instead
+    type: array
+    description: List of nationality IDs to filter on.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2, 3]
+  nationalitySearchType:
+    type: string
+    description: Search type for nationalities.
+    enum:
+      - AND
+      - OR
+      - NOT
+    example: "OR"
+  countryIds: # todo use ISO codes instead
+    type: array
+    description: List of country IDs to filter on.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2, 3]
+  countrySearchType:
+    type: string
+    description: Search type for countries.
+    enum:
+      - AND
+      - OR
+      - NOT
+    example: "OR"
+  surveyTypeIds: # todo remove this field?
+    type: array
+    description: List of survey type IDs to filter on.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2, 3]
+  exclusionListId: # todo remove this field?
+    type: integer
+    format: int64
+    description: Exclusion list ID.
+    example: 1
+  listAllIds: # todo remove this field?
+    type: array
+    description: List of IDs for "list all" criteria.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2, 3]
+  listAllSearchType: # todo remove this field?
+    type: string
+    description: Search type for "list all".
+    enum:
+      - NOT
+    example: "NOT"
+  listAnyIds: # todo remove this field?
+    type: array
+    description: List of IDs for "list any" criteria.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2, 3]
+  listAnySearchType:
+    type: string
+    description: Search type for "list any".
+    enum:
+      - NOT
+    example: "NOT"
+  englishMinWrittenLevel:
+    type: integer
+    format: int32
+    description: Minimum written English proficiency level.
+    example: 3
+  englishMinSpokenLevel:
+    type: integer
+    format: int32
+    description: Minimum spoken English proficiency level.
+    example: 4
+  otherLanguageId: # todo use ISO codes instead
+    type: integer
+    format: int64
+    description: ID of another language for filtering.
+    example: 1
+  otherMinWrittenLevel:
+    type: integer
+    format: int32
+    description: Minimum written proficiency level for the other language.
+    example: 3
+  otherMinSpokenLevel:
+    type: integer
+    format: int32
+    description: Minimum spoken proficiency level for the other language.
+    example: 4
+  unhcrStatuses:
+    type: array
+    description: List of UNHCR statuses to filter on.
+    items:
+      type: string
+      enum:
+        - NO_RESPONSE
+        - MANDATE_REFUGEE
+        - REGISTERED_ASYLUM
+        - REGISTERED_STATELESS
+        - REGISTERED_STATUS_UNKNOWN
+        - NOT_REGISTERED
+        - UNSURE
+        - NA
+    example: ["REGISTERED_ASYLUM", "REGISTERED_STATELESS"]
+  lastModifiedFrom:
+    type: string
+    format: date
+    description: Start date for filtering candidates by last modification date.
+    example: 2024-01-01
+  lastModifiedTo:
+    type: string
+    format: date
+    description: End date for filtering candidates by last modification date.
+    example: 2024-12-31
+  timezone: # todo use IANA timezone names instead
+    type: string
+    description: Timezone for the search.
+    example: "UTC"
+  minAge:
+    type: integer
+    format: int32
+    description: Minimum age of candidates.
+    example: 18
+  maxAge:
+    type: integer
+    format: int32
+    description: Maximum age of candidates.
+    example: 60
+  minEducationLevel: # todo use ISCED codes instead
+    type: integer
+    format: int32
+    description: Minimum education level.
+    example: 3
+  educationMajorIds: # todo use ISCED codes instead
+    type: array
+    description: List of education major IDs.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2, 3]
+  miniIntakeCompleted: # todo remove this field?
+    type: boolean
+    description: Filter for candidates who have completed the mini intake process.
+    example: true
+  fullIntakeCompleted: # todo remove this field?
+    type: boolean
+    description: Filter for candidates who have completed the full intake process.
+    example: true
+  regoReferrerParam: # todo remove this field?
+    type: string
+    description: Referrer parameter for registration filtering.
+  reviewStatusFilter: # todo remove this field?
+    type: array
+    description: Filter by candidate review statuses.
+    items:
+      type: string
+  fromDate:
+    type: string
+    format: date
+    description: Filter candidates by start date.
+    example: 2024-11-01
