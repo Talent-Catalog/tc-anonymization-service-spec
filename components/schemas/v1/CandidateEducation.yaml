@@ -13,3 +13,28 @@ properties:
     example: "Masters"
   country:
     $ref: ./Country.yaml
+  educationMajor:
+    type: string
+    description: The major of the education.
+    example: "Computer Science"
+  lengthOfCourseYears:
+    type: integer
+    description: The length of the course in years.
+    example: 4
+  institution:
+    type: string
+    description: The institution where the education was completed.
+    example: "University of Cambridge"
+  courseName:
+    type: string
+    description: The name of the course.
+    example: "Computer Science Tripos"
+  yearCompleted:
+    type: integer
+    description: The year the education was completed.
+    example: 2024
+  incomplete:
+    type: boolean
+    description: Whether the education was completed.
+    example: false
+
