@@ -1,0 +1,15 @@
+type: object
+description: An education achievement of a candidate
+properties:
+  educationType:
+    type: string
+    description: The type of education.
+    enum:
+      - "Associate"
+      - "Vocational"
+      - "Bachelor"
+      - "Masters"
+      - "Doctoral"
+    example: "Masters"
+  country:
+    $ref: ./Country.yaml

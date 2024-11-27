@@ -1,0 +1,22 @@
+type: object
+description: A country
+properties:
+  isoCode:
+    type: string
+    description: The ISO 3166-1 alpha-2 code for the country.
+    example: "GB"
+  name:
+    type: string
+    description: The name of the country.
+    example: "United Kingdom"
+  status: # todo do we need this? Make status a reusable schema?
+    type: string
+    description: The status of the country.
+    enum:
+      - "Active"
+      - "Inactive"
+      - "Deleted"
+    example: "Active"
+required:
+  - isoCode
+  - name
