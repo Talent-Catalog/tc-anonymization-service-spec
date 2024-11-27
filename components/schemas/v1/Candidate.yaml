@@ -53,10 +53,10 @@ properties:
     type: string
     description: Migration status of the candidate
     example: "Asylum seeker"
-  maxEducationLevel:
+  maxEducationLevelId:
     type: integer
     format: int64
-    description: Maximum education level of the candidate
+    description: ID of the maximum education level of the candidate
     example: 4
   migrationEducationMajorId:
     type: integer
