@@ -4,13 +4,20 @@ post:
   tags:
     - Searches
   operationId: createSearch
+  requestBody:
+    description: Search object to be created
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/v1/SearchRequest.yaml
   responses:
     '201':
       description: The search was successfully created
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/v1/Search.yaml
+            $ref: ../../components/schemas/v1/SearchResponse.yaml
 
 get:
     summary: Retrieve a page of searches
