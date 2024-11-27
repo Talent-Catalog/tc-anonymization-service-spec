@@ -4,6 +4,13 @@ post:
   tags:
     - Searches
   operationId: createSearch
+  responses:
+    '201':
+      description: The search was successfully created
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/Search.yaml
 
 get:
     summary: Retrieve a page of searches
