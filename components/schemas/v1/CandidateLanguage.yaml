@@ -1,0 +1,35 @@
+type: object
+description: The candidate's language proficiency.
+properties:
+  isoCode:
+    type: string
+    description: The ISO code for the candidate's language.
+    example: "en"
+  name:
+    type: string
+    description: The name of the candidate's language.
+    example: "English"
+  writtenLevel:
+    type: string
+    description: The candidate's written proficiency in this language.
+    enum: # todo confirm the names in this enum - and is there a standard for this?
+      - "Native"
+      - "Professional"
+      - "Intermediate"
+      - "Elementary"
+      - "None"
+    example: "Native"
+  spokenLevel:
+    type: string
+    description: The candidate's spoken proficiency in this language.
+    enum: # todo as above
+      - "Native"
+      - "Professional"
+      - "Intermediate"
+      - "Elementary"
+      - "None"
+    example: "Native"
+  migrationLanguage: # todo confirm the semantics and relevance of this field
+    type: string
+    description: The migration language for this language.
+    example: "Urdu"
