@@ -1,0 +1,13 @@
+post:
+  summary: Create a new search
+  description: Creates a new search with the specified criteria.
+  tags:
+    - Searches
+  operationId: createSearch
+
+get:
+    summary: Retrieve a page of searches
+    description: Fetches a paginated array of searches.
+    tags:
+      - Searches
+    operationId: getAllSearches
