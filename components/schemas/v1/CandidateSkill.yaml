@@ -1,0 +1,12 @@
+type: object
+description: A skill associated with a candidate.
+properties:
+  # todo - decide on a standard skills taxonomy e.g. https://www.bls.gov/soc/2018/major_groups.htm
+  skill:
+    type: string
+    description: The name of the skill.
+    example: "Java"
+  timePeriod:
+    type: string
+    description: The duration the candidate has been using this skill.
+    example: "5 years"
