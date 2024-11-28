@@ -1,0 +1,93 @@
+type: object # todo - review these fields - do we need all of them?
+description: A user of the TC system.
+properties:
+  username:
+    type: string
+    description: The username of the user.
+    example: "jdoe"
+  firstName:
+    type: string
+    description: The first name of the user.
+    example: "John"
+  lastName:
+    type: string
+    description: The last name of the user.
+    example: "Doe"
+  email:
+    type: string
+    format: email
+    description: The email address of the user.
+    example: "john@doe.com"
+  role: # todo - do we want to include this field?
+    type: string
+    description: The role of the user.
+    enum:
+      $ref: ../common/enums/role.yaml
+    example: "user"
+  readOnly:
+    type: boolean
+    description: Whether the user is read-only.
+    example: false
+  passwordEnc: # todo - do we want to include this field?
+    type: string
+    description: The encrypted password of the user.
+    example: "password"
+  status:
+    type: string
+    description: The status of the user.
+    enum:
+      $ref: ../common/enums/status.yaml
+    example: "active"
+  lastLogin:
+    description: The date and time the user last logged in.
+    $ref: ../common/iso_timestamp.yaml
+  resetToken: # todo - do we want to include this field?
+    type: string
+    description: The reset token for the user.
+    example: "token"
+  resetTokenIssuedDate: # todo - do we want to include this field?
+    description: The date and time the reset token was issued.
+    $ref: ../common/iso_timestamp.yaml
+  passwordUpdatedDate: # todo - do we want to include this field?
+    description: The date and time the password was last updated.
+    $ref: ../common/iso_timestamp.yaml
+  usingMfa:
+    type: boolean
+    description: Whether the user is using multi-factor authentication.
+    example: false
+  mfaSecret:
+    type: string
+    description: The multi-factor authentication secret.
+    example: "123456"
+#  todo - create a partner schema if needed
+#  partner:
+#    type: string
+#    description: The partner associated with the user.
+#    $ref: ./Partner.yaml
+  approver:
+    description: The user who approved this user.
+    $ref: ./User.yaml
+  purpose:
+    type: string
+    description: The purpose of the user.
+    example: "admin"
+  sharedSearches: # todo - do we want to include this field?
+    type: array
+    description: The shared searches of the user.
+    items:
+      $ref: ./Search.yaml
+  sharedLists: # todo - do we want to include this field?
+    type: array
+    description: The shared lists of the user.
+    items:
+      $ref: ./List.yaml
+  sourceCountries:
+    type: array
+    description: The source countries of the user.
+    items:
+      $ref: ./Country.yaml
+  jobCreator:
+    type: boolean
+    description: Whether the user is a job creator.
+    example: false
+
