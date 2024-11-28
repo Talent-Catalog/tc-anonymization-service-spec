@@ -70,7 +70,7 @@ get:
       schema:
         type: integer
         default: 10
-    - name: type
+    - name: type # todo - confirm if we want to keep this?
       in: query
       description: The type of search
       required: false
@@ -78,7 +78,7 @@ get:
         type: string
         enum:
           - "profession"
-    - name: subtype
+    - name: subtype # todo - confirm if we want to keep this?
       in: query
       description: The subtype of search
       required: false
