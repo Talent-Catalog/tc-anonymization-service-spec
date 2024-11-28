@@ -1,0 +1,13 @@
+type: object
+description: The type of survey.
+properties:
+  name:
+    type: string
+    description: The name of the survey type.
+    example: "Employee Engagement"
+  status:
+    type: string
+    description: The status of the survey type.
+    enum:
+      $ref: ../common/enums/status.yaml
+    example: "active"

@@ -1,0 +1,44 @@
+type: object
+description: A task that needs to be completed.
+properties:
+  admin:
+    type: boolean
+    description: Whether the task is an admin task.
+    example: true
+  daysToComplete:
+    type: integer
+    format: int32
+    description: The number of days the task has to be completed.
+    example: 7
+  description:
+    type: string
+    description: The description of the task.
+    example: "Complete the intake process."
+  helpLink:
+    type: string
+    description: A link to help with the task.
+    example: "https://example.com/help"
+  displayName:
+    type: string
+    description: The display name of the task.
+    example: "Complete the intake process"
+  name:
+    type: string
+    description: The name of the task.
+    example: "intake"
+  optional:
+    type: boolean
+    description: Whether the task is optional.
+    example: false
+  createdDate:
+    description: The date and time the task was created.
+    $ref: ../common/iso_timestamp.yaml
+#  createdBy: # todo - do we want to include this field?
+#    description: The user who created the task.
+#    $ref: ../common/User.yaml
+  updatedDate:
+    description: The date and time the task was last updated.
+    $ref: ../common/iso_timestamp.yaml
+#  updatedBy: # todo - do we want to include this field?
+#    description: The user who updated the task.
+#    $ref: ../common/User.yaml
