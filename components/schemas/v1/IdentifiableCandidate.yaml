@@ -2,35 +2,46 @@ allOf:
   - $ref: './Candidate.yaml'
   - type: object
     properties:
-      name:
+      candidateNumber:
         type: string
-        description: Full name of the candidate
-        example: "John Doe"
-      contact:
+        description: Unique candidate number.
+        example: "12345678"
+      dob:
         type: string
-        description: Primary contact number of the candidate
-        example: "+1-234-567-890"
-      email:
-        type: string
-        format: email
-        description: Email address of the candidate
-        example: "johndoe@example.com"
-      address:
-        type: string
-        description: Residential address of the candidate
-        example: "123 Main St, Springfield, IL"
-      dateOfBirth:
-        type: string
+        description: Candidate's date of birth. A date without a time-zone in the ISO-8601 calendar system.
         format: date
-        description: Date of birth of the candidate
         example: "1985-06-15"
-      dateCreated:
-        $ref: ../common/iso_timestamp.yaml
-      dateModified:
-        $ref: ../common/iso_timestamp.yaml
+      linkedInLink:
+        type: string
+        description: Candidate's LinkedIn profile URL.
+        example: "https://www.linkedin.com/in/johndoe"
+      phone:
+        type: string
+        description: Candidate's phone number.
+        example: "+1-234-567-890"
+      regoIp:
+        type: string
+        description: IP address of the candidate during registration.
+        example: "12.34.56.78"
+      # todo - confirm where to put the below 2 rego fields:
+      regoPartnerParam:
+        description: Query parameter (p=) for partner during registration.
+        type: string
+      regoReferrerParam:
+        description: Referrer parameter (r=) during registration.
+        type: string
+      user:
+        description: User details associated with the candidate.
+        $ref: ./User.yaml
+      whatsapp:
+        type: string
+        description: Candidate's WhatsApp number.
+        example: "+1-234-567-890"
+      yearOfArrival:
+        description: Year candidate arrived in the country.
+        type: integer
+        format: int32
+        example: 2010
+
     required:
-      - name
-      - contact
-      - email
-      - address
-      - dateOfBirth
+      - candidateNumber
