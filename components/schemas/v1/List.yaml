@@ -1,1 +1,2 @@
-# todo
+type: object
+description: A list of candidates.
