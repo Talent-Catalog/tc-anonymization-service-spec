@@ -10,6 +10,21 @@ properties:
     type: string
     description: Additional information about the candidate.
     example: "Additional information about the candidate."
+  asylumYear:
+    type: string
+    format: date
+    description: Date of asylum
+    example: 2015-07-12
+  arrestImprison:
+    type: string
+    description: Indicates whether the candidate has been arrested or imprisoned.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "No"
+  arrestImprisonNotes:
+    type: string
+    description: Notes related to the candidate's arrest or imprisonment.
+    example: "Arrest or imprisonment notes"
   availDate:
     type: string
     format: date
@@ -131,6 +146,16 @@ properties:
     type: string
     description: City of residence
     example: "Amman"
+  conflict:
+    type: string
+    description: Indicates whether the candidate has participated in a conflict.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "No"
+  conflictNotes:
+    type: string
+    description: Notes related to the candidate's conflict participation.
+    example: "Conflict participation notes"
   country:
     description: Country of residence # todo picks up description override from Country.yaml
     $ref: ./Country.yaml
@@ -140,6 +165,26 @@ properties:
     enum:
       $ref: ../common/enums/yes_no.yaml
     example: "Yes"
+  crimeConvict:
+    type: string
+    description: Indicates whether the candidate has a criminal conviction.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "No"
+  crimeConvictNotes:
+    type: string
+    description: Notes related to the candidate's criminal conviction.
+    example: "Criminal conviction notes"
+  destLimit:
+    type: string
+    description: Destination limits for the candidate.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "No"
+  destLimitNotes:
+    type: string
+    description: Notes related to the candidate's destination limits.
+    example: "Destination limit notes"
   englishAssessment:
     type: string
     description: English assessment score.
@@ -160,6 +205,24 @@ properties:
     enum:
       $ref: ../common/enums/gender.yaml
     example: "female"
+  homeLocation:
+    type: string
+    description: Home location of the candidate.
+    example: "Amman"
+  hostChallenges:
+    type: string
+    description: Challenges faced by the candidate in the host country.
+    example: "Host country challenges"
+  hostEntryLegally:
+    type: string
+    description: Indicates if the candidate entered the host country legally.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  hostEntryLegallyNotes:
+    type: string
+    description: Notes related to the candidate's legal entry in the host country.
+    example: "Legal entry notes"
   hostEntryYear:
     type: integer
     description: Year the candidate entered the host country.
@@ -188,6 +251,28 @@ properties:
     type: string
     description: Notes related to the candidate's rural area work preference.
     example: "Rural work preference notes"
+  leftHomeNotes:
+    type: string
+    description: Notes related to the candidate leaving home.
+    example: "Leaving home notes"
+  leftHomeReasons:
+    type: array
+    description: Reasons for the candidate leaving home.
+    items:
+      type: string
+      enum:
+        $ref: ../common/enums/left_home_reason.yaml
+    example: "Safety"
+  maritalStatus:
+    type: string
+    description: Marital status of the candidate.
+    enum:
+      $ref: ../common/enums/marital_status.yaml
+    example: "Single"
+  maritalStatusNotes:
+    type: string
+    description: Notes related to the candidate's marital status.
+    example: "Marital status notes"
   maxEducationLevel:
     description: The maximum education level of the candidate
     $ref: ./EducationLevel.yaml
@@ -198,6 +283,12 @@ properties:
     type: string
     description: Migration nationality of the candidate
     example: "Syrian"
+  monitoringEvaluationConsent:
+    type: string
+    description: Indicates whether the candidate has given consent for monitoring and evaluation.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
   nationality:
     description: Nationality of the candidate.
     $ref: ./Country.yaml
@@ -205,6 +296,50 @@ properties:
 #  partnerRef:
 #    description: Internal reference ID with the partner handling the candidate.
 #    type: string
+  partnerRegistered:
+    type: string
+    description: Indicates whether the candidate's partner is registered.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "Yes"
+#  partnerCandidateId: todo - we receive the partner Candidate in full - but OK just to track the ID - some complexity if it will need to be the obfuscated id and is not yet mapped
+#    type: string
+#    format: uuid
+#    description: ID of the candidate's partner (if also a candidate in the system)
+#    example: 123e4567-e89b-12d3-a456-426614174000
+  partnerEduLevel:
+    description: Education level of the candidate's partner.
+    $ref: ./EducationLevel.yaml
+  partnerEduLevelNotes:
+    type: string
+    description: Notes related to the education level of the candidate's partner.
+    example: "Partner education level notes"
+  partnerEnglish:
+    type: string
+    description: Indicates whether the candidate's partner speaks English.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  partnerEnglishLevel:
+    description: English proficiency level of the candidate's partner.
+    $ref: ./LanguageLevel.yaml
+  partnerOccupation:
+    description: Occupation of the candidate's partner.
+    $ref: ./Occupation.yaml
+  partnerOccupationNotes:
+    type: string
+    description: Notes related to the occupation of the candidate's partner.
+    example: "Partner occupation notes"
+  residenceStatus:
+    type: string
+    description: Residence status of the candidate.
+    enum:
+      $ref: ../common/enums/residence_status.yaml
+    example: "LegalRes"
+  residenceStatusNotes:
+    type: string
+    description: Notes related to the candidate's residence status.
+    example: "Residence status notes"
   returnedHome:
     type: string
     description: Indicates whether the candidate has returned home.
@@ -225,6 +360,27 @@ properties:
     enum:
       $ref: ../common/enums/yes_no_unsure.yaml
     example: "Yes"
+  returnHomeFuture:
+    type: string
+    description: Indicates whether the candidate plans to return home in the future.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "No"
+  returnHomeWhen:
+    type: string
+    format: date
+    description: Date when the candidate plans to return home.
+    example: "2025-12-31"
+  resettleThird:
+    type: string
+    description: Indicates whether the candidate plans to resettle in a third country. # todo - confirm meaning
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  resettleThirdStatus:
+    type: string
+    description: Status of the candidate's plan to resettle in a third country.
+    example: "Resettlement status"
   shareableNotes: # todo - confirm if this will be included in the anonymous database
     type: string
     description: Notes that can be shared with partners.
@@ -297,11 +453,6 @@ properties:
     enum:
       $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
-
-
-
-
-
   visaIssues:
     type: string
     description: Indicates whether the candidate has had visa issues.
@@ -312,6 +463,16 @@ properties:
     type: string
     description: Notes related to the candidate's visa issues.
     example: "Visa issues notes"
+  workAbroad:
+    type: string
+    description: Indicates whether the candidate has worked abroad.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  workAbroadNotes:
+    type: string
+    description: Notes related to the candidate's work abroad.
+    example: "Work abroad notes"
   workDesired:
     type: string
     description: Indicates whether the candidate desires work. # todo - confirm meaning
@@ -348,6 +509,9 @@ properties:
 
 
 
+
+
+
   yearOfBirth:
     type: integer
     format: int32
@@ -375,11 +539,6 @@ properties:
     type: string
     description: Preferred language of the candidate
     example: "English"
-  asylumYear:
-    type: integer
-    format: int32
-    description: Year of asylum
-    example: 2015
   destinationLimit:
     type: string
     description: Destination limit for the candidate (e.g., "Yes", "No")
@@ -388,62 +547,6 @@ properties:
     type: string
     description: Crime conviction status of the candidate (e.g., "Yes", "No")
     example: "No"
-  conflict:
-    type: string
-    description: Conflict participation status of the candidate (e.g., "Yes", "No")
-    example: "No"
-  residenceStatus:
-    type: string
-    description: Residence status of the candidate
-    example: "LegalRes"
-  workAbroad:
-    type: string
-    description: Indicates whether the candidate has worked abroad
-    example: "Yes"
-  hostEntryLegally:
-    type: string
-    description: Indicates if the candidate entered the host country legally
-    example: "Yes"
-  returnHomeFuture:
-    type: string
-    description: Indicates whether the candidate plans to return home in the future
-    example: "No"
-  resettleThird:
-    type: string
-    description: Indicates if the candidate plans to resettle in a third country
-    example: "Yes"
-  maritalStatus:
-    type: string
-    description: Marital status of the candidate
-    example: "Single"
-  partnerRegistered:
-    type: string
-    description: Indicates if the candidate's partner is registered
-    example: "Yes"
-  partnerCandidateId:
-    type: string
-    format: uuid
-    description: ID of the candidate's partner (if also a candidate in the system)
-    example: 123e4567-e89b-12d3-a456-426614174000
-  partnerEduLevelId:
-    type: integer
-    format: int64
-    description: Education level ID of the candidate's partner
-    example: 3
-  partnerOccupationId:
-    type: integer
-    format: int64
-    description: Occupation ID of the candidate's partner
-    example: 12
-  partnerEnglish:
-    type: string
-    description: Indicates if the candidate's partner speaks English (e.g., "Yes", "No")
-    example: "Yes"
-  partnerEnglishLevelId:
-    type: integer
-    format: int64
-    description: English proficiency level ID of the candidate's partner
-    example: 349
   partnerIelts:
     type: string
     description: Indicates if the candidate's partner has taken an IELTS exam
@@ -545,10 +648,6 @@ properties:
     format: int32
     description: Candidate's NCLC (Canadian Language Benchmark) score for French assessment
     example: 10
-  arrestImprison:
-    type: string
-    description: Indicates if the candidate has been arrested or imprisoned
-    example: "No"
   createdDate:
     $ref: ../common/iso_timestamp.yaml
   updatedDate:
