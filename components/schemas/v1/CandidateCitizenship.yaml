@@ -1,0 +1,20 @@
+type: object
+description: A candidate's citizenship information.
+properties:
+  hasPassport:
+    type: string
+    description: Whether the candidate has a passport.
+    enum:
+      $ref: ../common/enums/has_passport.yaml
+  passportExp:
+    type: string
+    format: date
+    description: The expiration date of the candidate's passport.
+    example: "2024-11-27"
+  nationality:
+    description: The country of citizenship of the candidate.
+    $ref: ./Country.yaml
+  notes:
+    type: string
+    description: Additional notes about the candidate's citizenship.
+    example: "Candidate has dual citizenship."
