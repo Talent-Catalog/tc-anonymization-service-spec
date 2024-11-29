@@ -1,5 +1,5 @@
 type: object
-description: A certification that a candidate has achieved
+description: A certification that a candidate has achieved.
 properties:
   name:
     type: string
