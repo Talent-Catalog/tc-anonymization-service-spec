@@ -19,6 +19,10 @@ allOf:
         type: string
         description: Candidate's phone number.
         example: "+1-234-567-890"
+      address1:
+        type: string
+        description: Candidate's address line 1.
+        example: "123 Main St"
       regoIp:
         type: string
         description: IP address of the candidate during registration.
@@ -27,9 +31,31 @@ allOf:
       regoPartnerParam:
         description: Query parameter (p=) for partner during registration.
         type: string
+        example: "partner1"
       regoReferrerParam:
         description: Referrer parameter (r=) during registration.
         type: string
+        example: "referrer1"
+      regoUtmCampaign:
+        description: UTM campaign parameter during registration.
+        type: string
+        example: "campaign1"
+      regoUtmContent:
+        description: UTM content parameter during registration.
+        type: string
+        example: "content1"
+      regoUtmMedium:
+        description: UTM medium parameter during registration.
+        type: string
+        example: "medium1"
+      regoUtmSource:
+        description: UTM source parameter during registration.
+        type: string
+        example: "source1"
+      regoUtmTerm:
+        description: UTM term parameter during registration.
+        type: string
+        example: "term1"
       user:
         description: User details associated with the candidate.
         $ref: ./User.yaml
@@ -37,11 +63,71 @@ allOf:
         type: string
         description: Candidate's WhatsApp number.
         example: "+1-234-567-890"
-      yearOfArrival:
-        description: Year candidate arrived in the country.
-        type: integer
-        format: int32
-        example: 2010
+      textSearchId:
+        type: string
+        description: The ID of the corresponding elastic search record.
+        example: "12345678"
+      # todo - confirm whether to include links in the IdentifiableCandidate schema:
+      folderlink:
+        type: string
+        description: Link to the corresponding folder containing the candidate's documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkAddress:
+        type: string
+        description: Link to the corresponding folder containing the candidate's address documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkCharacter:
+        type: string
+        description: Link to the corresponding folder containing the candidate's character documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkEmployer:
+        type: string
+        description: Link to the corresponding folder containing the candidate's employer documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkEngagement:
+        type: string
+        description: Link to the corresponding folder containing the candidate's engagement documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkExperience:
+        type: string
+        description: Link to the corresponding folder containing the candidate's experience documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkFamily:
+        type: string
+        description: Link to the corresponding folder containing the candidate's family documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkIdentity:
+        type: string
+        description: Link to the corresponding folder containing the candidate's identity documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkImmigration:
+        type: string
+        description: Link to the corresponding folder containing the candidate's immigration documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkLanguage:
+        type: string
+        description: Link to the corresponding folder containing the candidate's language documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkMedical:
+        type: string
+        description: Link to the corresponding folder containing the candidate's medical documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkQualification:
+        type: string
+        description: Link to the corresponding folder containing the candidate's qualification documents.
+        example: "https://drive.google.com/folder/12345678"
+      folderlinkRegistration:
+        type: string
+        description: Link to the corresponding folder containing the candidate's registration documents.
+        example: "https://drive.google.com/folder/12345678"
+      sflink:
+        type: string
+        description: Link to the corresponding Salesforce record.
+        example: "https://salesforce.com/record/12345678"
+      videolink:
+        type: string
+        description: Link to the corresponding candidate's video profile.
+        example: "https://drive.google.com/video/12345678"
 
     required:
       - candidateNumber
