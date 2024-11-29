@@ -11,6 +11,14 @@ allOf:
         description: Candidate's date of birth. A date without a time-zone in the ISO-8601 calendar system.
         format: date
         example: "1985-06-15"
+      externalId:
+        type: string
+        description: External ID of the candidate.
+        example: "12345678"
+      externalIdSource:
+        type: string
+        description: Source of the external ID.
+        example: "source1"
       linkedInLink:
         type: string
         description: Candidate's LinkedIn profile URL.

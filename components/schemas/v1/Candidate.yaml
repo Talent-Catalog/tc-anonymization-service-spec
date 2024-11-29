@@ -50,7 +50,10 @@ properties:
     type: string
     description: Notes related to the candidate's immediate availability.
     example: "Immediate availability notes"
-  #  todo - candidateAttachments - left out - OK?
+  birthCountry:
+    description: Country of birth
+    $ref: ./Country.yaml
+#  todo - candidateAttachments - left out - OK?
 #  candidateAttachments:
 #    type: array
 #    description: List of attachments related to the candidate.
@@ -142,6 +145,12 @@ properties:
     description: List of visa checks related to the candidate.
     items:
       $ref: ./CandidateVisaCheck.yaml
+  canDrive:
+    type: string
+    description: Indicates whether the candidate can drive.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
   city:
     type: string
     description: City of residence
@@ -156,6 +165,14 @@ properties:
     type: string
     description: Notes related to the candidate's conflict participation.
     example: "Conflict participation notes"
+  contactConsentPartners:
+    type: boolean
+    description: Indicates whether the candidate has given consent to be contacted by partners.
+    example: true
+  contactConsentRegistration:
+    type: boolean
+    description: Indicates whether the candidate has given consent to be contacted for registration.
+    example: true
   country:
     description: Country of residence # todo picks up description override from Country.yaml
     $ref: ./Country.yaml
@@ -165,6 +182,25 @@ properties:
     enum:
       $ref: ../common/enums/yes_no.yaml
     example: "Yes"
+  covidVaccinatedDate:
+    type: string
+    format: date
+    description: Date of the candidate's last COVID-19 vaccination.
+    example: "2022-12-15"
+  covidVaccineName:
+    type: string
+    description: Name of the COVID-19 vaccine received by the candidate.
+    example: "Pfizer-BioNTech"
+  covidVaccineNotes:
+    type: string
+    description: Notes related to the candidate's COVID-19 vaccination.
+    example: "COVID-19 vaccination notes"
+  covidVaccinatedStatus:
+    type: string
+    description: COVID-19 vaccination status of the candidate.
+    enum:
+      $ref: ../common/enums/vaccination_status.yaml
+    example: "Full"
   crimeConvict:
     type: string
     description: Indicates whether the candidate has a criminal conviction.
@@ -185,9 +221,27 @@ properties:
     type: string
     description: Notes related to the candidate's destination limits.
     example: "Destination limit notes"
-  englishAssessment:
+  drivingLicense:
     type: string
-    description: English assessment score.
+    description: Indicates the status of the candidate's driving license.
+    enum:
+      $ref: ../common/enums/document_status.yaml
+    example: "Valid"
+  drivingLicenseCountry:
+    description: Country where the candidate's driving license was issued.
+    $ref: ./Country.yaml
+  drivingLicenseExp:
+    type: string
+    format: date
+    description: Expiry date of the candidate's driving license.
+    example: "2025-12-31"
+  englishAssessment: # todo - confirm if this will be included in the anonymous database
+    type: string
+    description: Brief English assessment of the candidate.
+    example: "English assessment"
+  englishAssessmentScoreIelts:
+    type: string
+    description: IELTS score of the candidate's English assessment.
     example: "6.5"
   familyMove:
     type: string
@@ -199,12 +253,39 @@ properties:
     type: string
     description: Notes related to the candidate's move with their family.
     example: "Family move notes"
+  frenchAssessment:
+    type: string
+    description: Brief French assessment of the candidate.
+    example: "French assessment"
+  frenchAssessmentScoreNclc:
+    type: integer
+    format: int64
+    description: NCLC (Canadian Language Benchmark) score of the candidate's French assessment.
+    example: 10
+  fullIntakeCompletedBy: # todo - confirm if this will be included in the anonymous database
+    description: User who completed the full intake.
+    $ref: ./User.yaml
+  fullIntakeCompletedDate:
+    type: string
+    format: date
+    description: Date when the full intake was completed.
+    example: "2022-12-31"
   gender:
     type: string
     description: Candidate's gender.
     enum:
       $ref: ../common/enums/gender.yaml
     example: "female"
+  healthIssues:
+    type: string
+    description: Indicates whether the candidate has health issues.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "No"
+  healthIssuesNotes:
+    type: string
+    description: Notes related to the candidate's health issues.
+    example: "Health issues notes"
   homeLocation:
     type: string
     description: Home location of the candidate.
@@ -231,6 +312,11 @@ properties:
     type: string
     description: Notes related to the candidate's entry year in the host country.
     example: "Entry year notes"
+  ieltsScore:
+    type: number
+    format: float
+    description: IELTS score of the candidate.
+    example: 7.5
   intRecruitReasons:
     type: string
     description: Reasons for the candidate's international recruitment.
@@ -276,6 +362,10 @@ properties:
   maxEducationLevel:
     description: The maximum education level of the candidate
     $ref: ./EducationLevel.yaml
+  mediaWillingness:
+    type: string
+    description: Indicates the candidate's willingness to participate in media activities
+    example: "Yes"
   migrationEducationMajor:
     description: Major of the candidate's education in the migration country.
     $ref: ./EducationMajor.yaml
@@ -283,6 +373,40 @@ properties:
     type: string
     description: Migration nationality of the candidate
     example: "Syrian"
+  militaryService:
+    type: string
+    description: Indicates whether the candidate has served in the military.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  militaryWanted:
+    type: string
+    description: Indicates whether the candidate is wanted for military service.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "No"
+  militaryStart:
+    type: string
+    format: date
+    description: Start date of the candidate's military service.
+    example: "2010-01-01"
+  militaryEnd:
+    type: string
+    format: date
+    description: End date of the candidate's military service.
+    example: "2015-01-01"
+  militaryNotes:
+    type: string
+    description: Notes related to the candidate's military service.
+    example: "Military service notes"
+  miniIntakeCompletedBy: # todo - confirm if this will be included in the anonymous database
+    description: User who completed the mini intake.
+    $ref: ./User.yaml
+  miniIntakeCompletedDate:
+    type: string
+    format: date
+    description: Date when the mini intake was completed.
+    example: "2022-12-31"
   monitoringEvaluationConsent:
     type: string
     description: Indicates whether the candidate has given consent for monitoring and evaluation.
@@ -292,6 +416,11 @@ properties:
   nationality:
     description: Nationality of the candidate.
     $ref: ./Country.yaml
+  numberDependants:
+    type: integer
+    format: int64
+    description: Number of dependants related to the candidate.
+    example: 2
 #  todo - do we want to include this in the anonymous data - if not, add to identifiable props
 #  partnerRef:
 #    description: Internal reference ID with the partner handling the candidate.
@@ -307,6 +436,10 @@ properties:
 #    format: uuid
 #    description: ID of the candidate's partner (if also a candidate in the system)
 #    example: 123e4567-e89b-12d3-a456-426614174000
+  partnerCitizenship:
+    type: string
+    description: Citizenship of the candidate's partner.
+    example: "Jordanian" # todo - sent as a string but currently a number value - can we map this?
   partnerEduLevel:
     description: Education level of the candidate's partner.
     $ref: ./EducationLevel.yaml
@@ -323,6 +456,21 @@ properties:
   partnerEnglishLevel:
     description: English proficiency level of the candidate's partner.
     $ref: ./LanguageLevel.yaml
+  partnerIelts:
+    type: string
+    description: Indicates whether the candidate's partner has taken the IELTS exam.
+    enum:
+      $ref: ../common/enums/ielts.yaml
+    example: "YesGeneral"
+  partnerIeltsScore:
+    type: string
+    description: IELTS score of the candidate's partner.
+    example: "7.5"
+  partnerIeltsYr:
+    type: integer
+    format: int64
+    description: Year the candidate's partner took the IELTS exam.
+    example: 2020
   partnerOccupation:
     description: Occupation of the candidate's partner.
     $ref: ./Occupation.yaml
@@ -463,6 +611,16 @@ properties:
     type: string
     description: Notes related to the candidate's visa issues.
     example: "Visa issues notes"
+  visaReject:
+    type: string
+    description: Indicates whether the candidate has had a visa application rejected.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "No"
+  visaRejectNotes:
+    type: string
+    description: Notes related to the candidate's visa application rejection.
+    example: "Visa rejection notes"
   workAbroad:
     type: string
     description: Indicates whether the candidate has worked abroad.
@@ -504,153 +662,22 @@ properties:
     format: int32
     description: Year of arrival in the country
     example: 2010
-
-
-
-
-
-
-
-
-  yearOfBirth:
+  yearOfBirth: # todo - this field is not sent but can be derived from DOB which is an identifiable field
     type: integer
     format: int32
     description: Year of birth of the candidate
     example: 1985
-  countryId:
-    type: integer
-    format: int64
-    description: ID of the candidate's country
-    example: 101
-  nationalityOldId:
-    type: integer
-    format: int64
-    description: ID of the candidate's previous nationality
-    example: 202
-  unhcrNotRegisteredStatus:
-    type: string
-    description: UNHCR not registered status of the candidate
-    example: "NeverRegistered"
-  migrationStatus:
-    type: string
-    description: Migration status of the candidate
-    example: "Asylum seeker"
-  preferredLanguage:
-    type: string
-    description: Preferred language of the candidate
-    example: "English"
-  destinationLimit:
-    type: string
-    description: Destination limit for the candidate (e.g., "Yes", "No")
-    example: "No"
-  crimeConviction:
-    type: string
-    description: Crime conviction status of the candidate (e.g., "Yes", "No")
-    example: "No"
-  partnerIelts:
-    type: string
-    description: Indicates if the candidate's partner has taken an IELTS exam
-    example: "Yes"
-  partnerIeltsScore:
-    type: string
-    description: IELTS score of the candidate's partner
-    example: "7.5"
-  partnerCitizenship:
-    type: string
-    description: Citizenship ID of the candidate's partner
-    example: "6180"
-  militaryService:
-    type: string
-    description: Indicates whether the candidate has served in the military
-    example: "Yes"
-  visaReject:
-    type: string
-    description: Indicates whether the candidate has had a visa application rejected
-    example: "No"
-  canDrive:
-    type: string
-    description: Indicates whether the candidate can drive
-    example: "Yes"
-  drivingLicense:
-    type: string
-    description: Type of driving license the candidate holds
-    example: "Valid"
-  drivingLicenseExp:
-    type: string
-    format: date
-    description: Expiration date of the candidate's driving license
-    example: "2025-12-31"
-  drivingLicenseCountryId:
-    type: integer
-    format: int64
-    description: ID of the country that issued the driving license
-    example: 6180
-  englishAssessmentScoreIelts:
-    type: string
-    description: IELTS score for the English assessment
-    example: "6.5"
-  partnerIeltsYr:
-    type: integer
-    description: Year the candidate's partner took the IELTS exam
-    example: 2020
-  militaryWanted:
-    type: string
-    description: Indicates if the candidate is wanted for military service
-    example: "No"
-  militaryStart:
-    type: string
-    format: date
-    description: Start date of the candidate's military service
-    example: "2010-01-01"
-  militaryEnd:
-    type: string
-    format: date
-    description: End date of the candidate's military service
-    example: "2015-01-01"
-  birthCountryId:
-    type: integer
-    format: int64
-    description: ID of the candidate's birth country
-    example: 6295
-  ieltsScore:
-    type: number
-    format: float
-    description: IELTS score achieved by the candidate
-    example: 7.5
-  nationalityId:
-    type: integer
-    format: int64
-    description: ID of the candidate's nationality
-    example: 202
-  healthIssues:
-    type: string
-    description: Health issues reported by the candidate (e.g., "Yes", "No")
-    example: "No"
-  covidVaccinatedStatus:
-    type: string
-    description: Status of the candidate's COVID-19 vaccination
-    example: "Full"
-  covidVaccinatedDate:
-    type: string
-    format: date
-    description: Date of the last COVID-19 vaccination
-    example: "2022-12-15"
-  covidVaccineName:
-    type: string
-    description: Name of the COVID-19 vaccine received by the candidate
-    example: "Pfizer-BioNTech"
-  mediaWillingness:
-    type: string
-    description: Indicates the candidate's willingness to participate in media activities
-    example: "Yes"
-  frenchAssessmentScoreNclc:
-    type: integer
-    format: int32
-    description: Candidate's NCLC (Canadian Language Benchmark) score for French assessment
-    example: 10
+  createdBy: # todo - confirm if this will be included in the anonymous database
+    description: User who created the candidate.
+    $ref: ./User.yaml
   createdDate:
+    description: Date when the candidate was created.
     $ref: ../common/iso_timestamp.yaml
+  updatedBy: # todo - confirm if this will be included in the anonymous database
+    description: User who last updated the candidate.
+    $ref: ./User.yaml
   updatedDate:
+    description: Date when the candidate was last updated.
     $ref: ../common/iso_timestamp.yaml
 
 required:
