@@ -1,0 +1,142 @@
+type: object
+description: A job check related to a candidate's visa status. # todo - confirm this description for accuracy.
+properties:
+  jobOpp:
+    description: The job opportunity associated with the visa check.
+    $ref: ./JobOpportunity.yaml
+  interest:
+    type: string
+    description: The candidate's interest in the job opportunity.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  interestNotes:
+    type: string
+    description: Notes on the candidate's interest in the job opportunity.
+    example: "The candidate is excited about the opportunity to work with the team."
+  qualification:
+    type: string
+    description: The candidate's qualification for the job opportunity.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  qualificationNotes:
+    type: string
+    description: Notes on the candidate's qualification for the job opportunity.
+    example: "The candidate has the required skills and experience."
+  occupation:
+    description: The occupation for the job opportunity. # todo - confirm this description for accuracy.
+    $ref: ./Occupation.yaml
+  occupationNotes:
+    type: string
+    description: Notes on the candidate's occupation for the job opportunity.
+    example: "The candidate has experience in a similar role."
+  salaryTsmit:
+    type: string
+    description: The salary for the job opportunity meets the TSMIT threshold. # todo - confirm this description for accuracy - https://www.homeaffairs.gov.au/reports-and-pubs/files/tsmit_review_report.pdf ?
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  regional:
+    type: string
+    description: The job opportunity is in a regional area. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  eligible_494:
+    type: string
+    description: The candidate is eligible for the 494 visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  eligible_494_Notes:
+    type: string
+    description: Notes on the candidate's eligibility for the 494 visa.
+    example: "The candidate has the required skills and experience."
+  eligible_186:
+    type: string
+    description: The candidate is eligible for the 186 visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  eligible_186_Notes:
+    type: string
+    description: Notes on the candidate's eligibility for the 186 visa.
+    example: "The candidate has the required skills and experience."
+  eligibleOther:
+    type: string
+    description: The candidate is eligible for another visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/other_visa.yaml
+    example: "TempSkilled"
+  eligibleOtherNotes:
+    type: string
+    description: Notes on the candidate's eligibility for another visa.
+    example: "The candidate has the required skills and experience."
+  putForward:
+    type: string
+    description: The candidate has been put forward for the job opportunity. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/visa_eligibility.yaml
+    example: "Yes"
+  tbbEligibility: # todo - rename this field?
+    type: string
+    description: The candidate is eligible for the TBB visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/tbb_eligibility_assessment.yaml
+    example: "Proceed"
+  notes:
+    type: string
+    description: Notes on the candidate's visa check for the job opportunity.
+    example: "The candidate has the required skills and experience."
+  relevantWorkExp:
+    type: string
+    description: The candidate's relevant work experience for the job opportunity.
+    example: "The candidate has experience in a similar role."
+  ageRequirement:
+    type: string
+    description: The candidate meets the age requirement for the job opportunity. # todo - confirm this description for accuracy.
+    example: "Yes"
+  preferredPathways:
+    type: string
+    description: The candidate's preferred pathways for the job opportunity.
+    example: "The candidate is interested in the 186 visa."
+  ineligiblePathways:
+    type: string
+    description: The candidate's ineligible pathways for the job opportunity.
+    example: "The candidate is not eligible for the 494 visa."
+  eligiblePathways:
+    type: string
+    description: The candidate's eligible pathways for the job opportunity.
+    example: "The candidate is eligible for the 186 visa."
+  occupationCategory:
+    type: string
+    description: The category of the occupation for the job opportunity.
+    example: "Software Developer"
+  occupationSubCategory:
+    type: string
+    description: The sub-category of the occupation for the job opportunity.
+    example: "Front End"
+  englishThreshold:
+    type: string
+    description: The candidate meets the English language threshold for the job opportunity. # todo - remove english threshold field, replaced with languagesThresholdMet field - see TC entity javadoc comment.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  languagesRequired: # todo - map to languages
+    type: array
+    description: The languages required for the job opportunity.
+    items:
+      type: integer
+      format: int64
+    example: [1, 2]
+  languagesThresholdMet:
+    type: string
+    description: The candidate meets the language threshold for the job opportunity.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  languagesThresholdNotes:
+    type: string
+    description: Notes on the language threshold for the job opportunity.
+    example: "The candidate has the required language skills."
