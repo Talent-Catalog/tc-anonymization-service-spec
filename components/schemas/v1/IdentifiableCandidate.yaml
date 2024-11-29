@@ -59,6 +59,22 @@ allOf:
       user:
         description: User details associated with the candidate.
         $ref: ./User.yaml
+      unhcrFile:
+        type: string
+        description: Candidate's UNHCR file number. # todo - just checking if this is different from the unhcr number?
+        example: "12345678"
+      unhcrNumber:
+        type: string
+        description: Candidate's UNHCR number.
+        example: "12345678"
+      unrwaFile:
+        type: string
+        description: Candidate's UNRWA file number. # todo - just checking if this is different from the unrwa number?
+        example: "12345678"
+      unrwaNumber:
+        type: string
+        description: Candidate's UNRWA number.
+        example: "12345678"
       whatsapp:
         type: string
         description: Candidate's WhatsApp number.

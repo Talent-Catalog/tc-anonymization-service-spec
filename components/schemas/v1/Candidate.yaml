@@ -10,7 +10,32 @@ properties:
     type: string
     description: Additional information about the candidate.
     example: "Additional information about the candidate."
-#  todo - candidateAttachments - left out - OK?
+  availDate:
+    type: string
+    format: date
+    description: Date when the candidate becomes available for opportunities. A date without a time-zone in the ISO-8601 calendar system
+    example: "2023-12-01"
+  availImmediate:
+    type: string
+    description: Indicates whether the candidate is immediately available for opportunities.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  availImmediateJobOps: # todo - check description compared with the above availImmediate
+    type: string
+    description: Indicates whether the candidate is immediately available for job opportunities.
+    example: "Yes"
+  availImmediateReason:
+    type: string
+    description: Reason for the candidate's immediate availability.
+    enum:
+      $ref: ../common/enums/avail_immediate_reason.yaml
+    example: "Family"
+  availImmediateNotes:
+    type: string
+    description: Notes related to the candidate's immediate availability.
+    example: "Immediate availability notes"
+  #  todo - candidateAttachments - left out - OK?
 #  candidateAttachments:
 #    type: array
 #    description: List of attachments related to the candidate.
@@ -119,12 +144,50 @@ properties:
     type: string
     description: English assessment score.
     example: "6.5"
+  familyMove:
+    type: string
+    description: Indicates whether the candidate is moving with their family.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  familyMoveNotes:
+    type: string
+    description: Notes related to the candidate's move with their family.
+    example: "Family move notes"
   gender:
     type: string
     description: Candidate's gender.
     enum:
       $ref: ../common/enums/gender.yaml
     example: "female"
+  hostEntryYear:
+    type: integer
+    description: Year the candidate entered the host country.
+    example: 2010
+  hostEntryYearNotes:
+    type: string
+    description: Notes related to the candidate's entry year in the host country.
+    example: "Entry year notes"
+  intRecruitReasons:
+    type: string
+    description: Reasons for the candidate's international recruitment.
+    enum:
+      $ref: ../common/enums/int_recruit_reasons.yaml
+    example: "CantReturnHome"
+  intRecruitOther:
+    type: string
+    description: Other reasons for the candidate's international recruitment.
+    example: "Other reasons for international recruitment"
+  intRecruitRural:
+    type: string
+    description: Indicates whether the candidate will work in a rural area.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  intRecruitRuralNotes:
+    type: string
+    description: Notes related to the candidate's rural area work preference.
+    example: "Rural work preference notes"
   maxEducationLevel:
     description: The maximum education level of the candidate
     $ref: ./EducationLevel.yaml
@@ -142,7 +205,26 @@ properties:
 #  partnerRef:
 #    description: Internal reference ID with the partner handling the candidate.
 #    type: string
-
+  returnedHome:
+    type: string
+    description: Indicates whether the candidate has returned home.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "No"
+  returnedHomeReason:
+    type: string
+    description: Reason for the candidate's return home.
+    example: "Family reasons"
+  returnedHomeReasonNo: # todo - confirm semantics + description
+    type: string
+    description: Reason for the candidate not returning home.
+    example: "No reason"
+  returnHomeSafe:
+    type: string
+    description: Indicates whether the candidate returned home safely.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "Yes"
   shareableNotes: # todo - confirm if this will be included in the anonymous database
     type: string
     description: Notes that can be shared with partners.
@@ -171,6 +253,91 @@ properties:
     description: List of task assignments related to the candidate.
     items:
       $ref: ./TaskAssignment.yaml
+  unhcrConsent:
+    type: string
+    description: Indicates whether the candidate has given consent for UNHCR processes.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  unhcrNotes:
+    type: string
+    description: Notes related to the candidate's UNHCR registration.
+    example: "UNHCR registration notes"
+  unhcrNotRegStatus:
+    type: string
+    description: UNHCR not registered status of the candidate.
+    enum:
+      $ref: ../common/enums/not_registered_status.yaml
+    example: "NeverRegistered"
+  unhcrRegistered:
+    type: string
+    description: Indicates whether the candidate is registered with UNHCR.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "Yes"
+  unhcrStatus:
+    type: string
+    description: UNHCR status of the candidate.
+    enum:
+      $ref: ../common/enums/unhcr_status.yaml
+    example: "MandateRefugee"
+  unrwaNotes:
+    type: string
+    description: Notes related to the candidate's UNRWA registration.
+    example: "UNRWA registration notes"
+  unrwaNotRegStatus:
+    type: string
+    description: UNRWA not registered status of the candidate.
+    enum:
+      $ref: ../common/enums/not_registered_status.yaml
+    example: "NeverRegistered"
+  unrwaRegistered:
+    type: string
+    description: Indicates whether the candidate is registered with UNRWA.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "No"
+
+
+
+
+
+  visaIssues:
+    type: string
+    description: Indicates whether the candidate has had visa issues.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "No"
+  visaIssuesNotes:
+    type: string
+    description: Notes related to the candidate's visa issues.
+    example: "Visa issues notes"
+  workDesired:
+    type: string
+    description: Indicates whether the candidate desires work. # todo - confirm meaning
+    enum:
+      $ref: ../common/enums/yes_no_unemployed_other.yaml
+    example: "Yes"
+  workDesiredNotes:
+    type: string
+    description: Notes related to the candidate's desire for work. # todo - confirm meaning
+    example: "Work desire notes"
+  workPermit:
+    type: string
+    description: Indicates whether the candidate has a work permit and if it is in the desired field.
+    enum:
+      $ref: ../common/enums/work_permit.yaml
+    example: "YesDesired"
+  workPermitDesired:
+    type: string
+    description: Indicates whether the candidate desires a work permit.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "Yes"
+  workPermitDesiredNotes:
+    type: string
+    description: Notes related to the candidate's desire for a work permit.
+    example: "Work permit desire notes"
   yearOfArrival: # todo - this field is duplicated in User?
     type: integer
     format: int32
@@ -196,10 +363,6 @@ properties:
     format: int64
     description: ID of the candidate's previous nationality
     example: 202
-  unhcrStatus:
-    type: string
-    description: UNHCR status of the candidate
-    example: "Refugee"
   unhcrNotRegisteredStatus:
     type: string
     description: UNHCR not registered status of the candidate
@@ -319,10 +482,6 @@ properties:
     format: int64
     description: ID of the country that issued the driving license
     example: 6180
-  hostEntryYear:
-    type: integer
-    description: Year the candidate entered the host country
-    example: 2010
   englishAssessmentScoreIelts:
     type: string
     description: IELTS score for the English assessment
@@ -345,18 +504,6 @@ properties:
     format: date
     description: End date of the candidate's military service
     example: "2015-01-01"
-  availImmediateJobOps:
-    type: string
-    description: Indicates if the candidate is immediately available for job opportunities
-    example: "Yes"
-  unhcrRegistered:
-    type: string
-    description: Indicates if the candidate is registered with UNHCR
-    example: "Yes"
-  unrwaRegistered:
-    type: string
-    description: Indicates if the candidate is registered with UNRWA
-    example: "No"
   birthCountryId:
     type: integer
     format: int64
@@ -376,10 +523,6 @@ properties:
     type: string
     description: Health issues reported by the candidate (e.g., "Yes", "No")
     example: "No"
-  unhcrConsent:
-    type: string
-    description: Indicates if the candidate has given consent for UNHCR processes
-    example: "Yes"
   covidVaccinatedStatus:
     type: string
     description: Status of the candidate's COVID-19 vaccination
@@ -406,11 +549,6 @@ properties:
     type: string
     description: Indicates if the candidate has been arrested or imprisoned
     example: "No"
-  availDate:
-    type: string
-    format: date
-    description: Date when the candidate becomes available for opportunities
-    example: "2023-12-01"
   createdDate:
     $ref: ../common/iso_timestamp.yaml
   updatedDate:
