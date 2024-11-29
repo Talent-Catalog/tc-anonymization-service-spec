@@ -75,7 +75,7 @@ properties:
     type: array
     description: The shared searches of the user.
     items:
-      $ref: ./Search.yaml
+      $ref: ./SearchResponse.yaml # todo - rename to Search.yaml?
   sharedLists: # todo - do we want to include this field?
     type: array
     description: The shared lists of the user.
