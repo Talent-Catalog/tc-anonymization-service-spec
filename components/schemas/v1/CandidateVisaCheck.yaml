@@ -1,0 +1,101 @@
+type: object
+description: A check of a candidate's visa status.
+properties:
+  country:
+    description: The country of the visa.
+    $ref: ./Country.yaml
+  protection:
+    type: string
+    description: The protection status  of the visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  protectionGrounds:
+    type: string
+    description: The grounds for the protection status of the visa.
+    example: "Asylum"
+  englishThreshold:
+    type: string
+    description: Meets the English language threshold for the visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  englishThresholdNotes:
+    type: string
+    description: Notes on the English language threshold for the visa.
+    example: "IELTS 6.5"
+  healthAssessment:
+    type: string
+    description: The health assessment status for the visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  healthAssessmentNotes:
+    type: string
+    description: Notes on the health assessment status for the visa.
+    example: "Passed"
+  characterAssessment:
+    type: string
+    description: The character assessment status for the visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "Yes"
+  characterAssessmentNotes:
+    type: string
+    description: Notes on the character assessment status for the visa.
+    example: "Volunteer work in the community"
+  securityRisk:
+    type: string
+    description: The security risk status for the visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no.yaml
+    example: "No"
+  securityRiskNotes:
+    type: string
+    description: Notes on the security risk status for the visa.
+    example: "Has lived in the country for 10 years without incident"
+  overallRisk:
+    type: string
+    description: The overall risk assessment status for the visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/risk_level.yaml
+    example: "Low"
+  overallRiskNotes:
+    type: string
+    description: Notes on the overall risk status for the visa.
+    example: "Upstanding citizen"
+  validTravelDocs:
+    type: string
+    description: The validity status of the candidate's travel documents.
+    enum:
+      $ref: ../common/enums/document_status.yaml
+    example: "Valid"
+  validTravelDocsNotes:
+    type: string
+    description: Notes on the validity status of the candidate's travel documents.
+    example: "Passport expires in 2025"
+  pathwayAssessment:
+    type: string
+    description: The pathway assessment status for the visa. # todo - confirm this description for accuracy.
+    enum:
+      $ref: ../common/enums/yes_no_unsure.yaml
+    example: "Yes"
+  pathwayAssessmentNotes:
+    type: string
+    description: Notes on the pathway assessment status for the visa.
+    example: "Has a job offer"
+  destinationFamily:
+    type: string
+    description: The status of the candidate's family in the destination country.
+    enum:
+      $ref: ../common/enums/family_relations.yaml
+    example: "Sibling"
+  destinationFamilyLocation:
+    type: string
+    description: The location of the candidate's family in the destination country.
+    example: "Sydney"
+  candidateVisaJobChecks:
+    type: array
+    description: The job checks for the candidate's visa.
+    items:
+      $ref: ./CandidateVisaJobCheck.yaml
