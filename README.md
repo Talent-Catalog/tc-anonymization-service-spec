@@ -2,7 +2,6 @@
 
 This repository contains the **OpenAPI specification** for the **Talent Catalog Anonymization Service API**.
 
----
 
 ## Steps to View the API Specification with ReDoc
 
@@ -23,7 +22,8 @@ npm -v
 
 Both commands should display version numbers if the installation was successful.
 
----
+
+
 
 ### Step 2: Install the OpenAPI CLI Tool
 
@@ -38,7 +38,7 @@ npm install -g @redocly/cli
 
 This installs the OpenAPI CLI tool globally on your system, allowing you to use it from any directory.
 
----
+
 
 ### Step 3: Preview the API Specification Using ReDoc
 
@@ -51,5 +51,5 @@ openapi preview-docs ./openapi.yaml
 This command will start a local web server where you can view a rendered version of the API 
 documentation.
 
----
+
 
