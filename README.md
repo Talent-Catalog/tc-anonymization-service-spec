@@ -1,36 +1,55 @@
-# tc-anonymization-service-spec
+## Talent Catalog Anonymization Service API Specification
 
-This repository contains the OpenAPI specification for the Talent Catalog Anonymization Service API.
+This repository contains the **OpenAPI specification** for the **Talent Catalog Anonymization Service API**.
 
-To browse the spcification using ReDoc, follow these steps:
+---
 
-### Step 1. Install `openapi-cli`
+### Steps to View the API Specification with ReDoc
 
-First, you need to install `openapi-cli` if you haven’t already. This tool requires **Node.js** and 
-**npm**.
+#### Step 1: Install Node.js and npm
 
-1. **Install Node.js** (if you don't have it installed):
-    - Download from [Node.js](https://nodejs.org/).
-    - Installing Node.js also installs `npm`.
+If you don't already have Node.js installed, you need to install it first. Installing Node.js also 
+installs npm (Node Package Manager), which is required to install tools like `@redocly/cli`.
 
+1. Download the latest version of Node.js from the [Node.js website](https://nodejs.org/).
+2. Follow the installation instructions for your platform (Windows, macOS, Linux).
 
-2. **Install `openapi-cli`** globally via npm:
+To verify installation, run the following commands:
 
-   ```bash
-   npm install -g @redocly/cli
-   ```
+```bash
+node -v
+npm -v
+```
 
-   This command installs `openapi-cli` globally on your system, so you can use it from any directory.
+Both commands should display version numbers if the installation was successful.
 
-### Step 2. Preview API specification 
+---
 
-- To preview the Open API specification in a browser with ReDoc, use this command from the project 
-  root folder:
+#### Step 2: Install the OpenAPI CLI Tool
 
-  ```bash
-  openapi preview-docs ./openapi.yaml
-  ```
+To view the OpenAPI specification, install the `@redocly/cli` tool, which is a command-line utility 
+provided by ReDocly.
 
-  This will starts a local server that renders the API documentation using ReDoc, allowing you to 
-  view it as users would.
+Install it globally using npm:
+
+```bash
+npm install -g @redocly/cli
+```
+
+This installs the OpenAPI CLI tool globally on your system, allowing you to use it from any directory.
+
+---
+
+#### Step 3: Preview the API Specification Using ReDoc
+
+To preview the API documentation rendered with ReDoc, start a local server:
+
+```bash
+openapi preview-docs ./openapi.yaml
+```
+
+This command will start a local web server where you can view a rendered version of the API 
+documentation.
+
+---
 
