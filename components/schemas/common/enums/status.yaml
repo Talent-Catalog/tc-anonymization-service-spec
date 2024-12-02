@@ -1,3 +1,6 @@
-- active
-- inactive
-- deleted
+type: string
+enum:
+  - active
+  - inactive
+  - deleted
+example: "active"

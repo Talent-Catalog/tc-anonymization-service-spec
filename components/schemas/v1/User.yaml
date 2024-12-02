@@ -19,11 +19,9 @@ properties:
     description: The email address of the user.
     example: "john@doe.com"
   role: # todo - do we want to include this field?
-    type: string
     description: The role of the user.
-    enum:
-      $ref: ../common/enums/role.yaml
-    example: "user"
+    allOf:
+      - $ref: ../common/enums/role.yaml
   readOnly:
     type: boolean
     description: Whether the user is read-only.
@@ -33,24 +31,26 @@ properties:
     description: The encrypted password of the user.
     example: "password"
   status:
-    type: string
     description: The status of the user.
-    enum:
-      $ref: ../common/enums/status.yaml
+    allOf:
+      - $ref: ../common/enums/status.yaml
     example: "active"
   lastLogin:
     description: The date and time the user last logged in.
-    $ref: ../common/iso_timestamp.yaml
+    allOf:
+      - $ref: ../common/iso_timestamp.yaml
   resetToken: # todo - do we want to include this field?
     type: string
     description: The reset token for the user.
     example: "token"
   resetTokenIssuedDate: # todo - do we want to include this field?
     description: The date and time the reset token was issued.
-    $ref: ../common/iso_timestamp.yaml
+    allOf:
+      - $ref: ../common/iso_timestamp.yaml
   passwordUpdatedDate: # todo - do we want to include this field?
     description: The date and time the password was last updated.
-    $ref: ../common/iso_timestamp.yaml
+    allOf:
+      - $ref: ../common/iso_timestamp.yaml
   usingMfa:
     type: boolean
     description: Whether the user is using multi-factor authentication.
@@ -63,10 +63,12 @@ properties:
 #  partner:
 #    type: string
 #    description: The partner associated with the user.
-#    $ref: ./Partner.yaml
+#    allOf:
+#    - $ref: ./Partner.yaml
   approver:
     description: The user who approved this user.
-    $ref: ./User.yaml
+    allOf:
+      - $ref: ./User.yaml
   purpose:
     type: string
     description: The purpose of the user.
