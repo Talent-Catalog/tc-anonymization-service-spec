@@ -1,8 +1,11 @@
-- NoResponse
-- Married
-- Engaged
-- Defacto
-- Single
-- Divorced
-- Separated
-- Widower
+type: string
+enum:
+  - NoResponse
+  - Married
+  - Engaged
+  - Defacto
+  - Single
+  - Divorced
+  - Separated
+  - Widower
+example: "Married"

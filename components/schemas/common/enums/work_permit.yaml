@@ -1,4 +1,7 @@
-- NoResponse
-- YesNotDesired
-- YesDesired
-- No
+type: string
+enum:
+  - NoResponse
+  - YesNotDesired
+  - YesDesired
+  - No
+example: "YesDesired"

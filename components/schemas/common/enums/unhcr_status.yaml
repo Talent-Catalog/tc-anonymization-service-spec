@@ -1,8 +1,11 @@
-- NoResponse
-- MandateRefugee
-- RegisteredAsylum
-- RegisteredStateless
-- RegisteredStatusUnknown
-- NotRegistered
-- Unsure
-- NA
+type: string
+enum:
+  - NoResponse
+  - MandateRefugee
+  - RegisteredAsylum
+  - RegisteredStateless
+  - RegisteredStatusUnknown
+  - NotRegistered
+  - Unsure
+  - NA
+example: "MandateRefugee"

@@ -1,4 +1,7 @@
-- NoResponse
-- LegalRes
-- IllegalRes
-- Other
+type: string
+enum:
+  - NoResponse
+  - LegalRes
+  - IllegalRes
+  - Other
+example: "LegalRes"
