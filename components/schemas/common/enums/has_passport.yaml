@@ -1,5 +1,7 @@
-- NoResponse
-- ValidPassport
-- InvalidPassport
-- NoPassport
-
+type: string
+enum:
+  - NoResponse
+  - ValidPassport
+  - InvalidPassport
+  - NoPassport
+example: "ValidPassport"
