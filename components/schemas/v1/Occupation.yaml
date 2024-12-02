@@ -12,7 +12,6 @@ properties:
   status:
     type: string
     description: The status of the occupation.
-    enum:
-      $ref: ../common/enums/status.yaml
-    example: "active"
+    allOf:
+      - $ref: ../common/enums/status.yaml
 
