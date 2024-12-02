@@ -7,14 +7,11 @@ properties:
     description: The level of education.
     example: 40
   status:
-    type: string
     description: The status of the education level.
-    enum:
-        $ref: ../common/enums/status.yaml
-    example: "active"
+    allOf:
+      - $ref: ../common/enums/status.yaml
   educationType:
-    type: string
     description: The type of education.
-    enum:
-      $ref: ../common/enums/education_type.yaml
-    example: "college"
+    allOf:
+      - $ref: ../common/enums/education_type.yaml
+

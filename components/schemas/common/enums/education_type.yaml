@@ -1,5 +1,8 @@
-- Associate # standardise on enum values format
-- Vocational
-- Bachelor
-- Masters
-- Doctoral
+type: string
+enum:
+  - Associate # standardise on enum values format
+  - Vocational
+  - Bachelor
+  - Masters
+  - Doctoral
+example: "Masters"
