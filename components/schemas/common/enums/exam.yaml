@@ -1,9 +1,12 @@
-- NoResponse
-- OET
-- OETRead
-- OETList
-- OETLang
-- IELTSGen
-- IELTSAca
-- TOEFL
-- Other
+type: string
+enum:
+  - NoResponse
+  - OET
+  - OETRead
+  - OETList
+  - OETLang
+  - IELTSGen
+  - IELTSAca
+  - TOEFL
+  - Other
+example: "IELTSGen"

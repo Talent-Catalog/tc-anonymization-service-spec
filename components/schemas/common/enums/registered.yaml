@@ -1,5 +1,8 @@
-- NoResponse
-- UNHCR
-- UNRWA
-- Neither
-- NA
+type: string
+enum:
+  - NoResponse
+  - UNHCR
+  - UNRWA
+  - Neither
+  - NA
+example: "UNHCR"
