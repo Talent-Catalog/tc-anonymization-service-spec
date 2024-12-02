@@ -2,11 +2,9 @@ type: object
 description: A dependant of a candidate.
 properties:
   relation:
-    type: string
     description: The relation of the dependant to the candidate.
-    enum:
-      $ref: ../common/enums/dependant_relation.yaml
-    example: "Child"
+    allOf:
+      - $ref: ../common/enums/dependant_relation.yaml
   relationOther:
     type: string
     description: The relation of the dependant to the candidate if the relation is "Other".
@@ -17,19 +15,17 @@ properties:
     description: Dependant's date of birth. A date without a time-zone in the ISO-8601 calendar system.
     example: "2010-01-01"
   gender:
-    type: string
     description: The gender of the dependant.
-    enum:
-      $ref: ../common/enums/gender.yaml
+    allOf:
+      - $ref: ../common/enums/gender.yaml
 #  name: # todo - remove - identifiable detail - do we need an IdentifiableDependant schema?
 #    type: string
 #    description: The name of the dependant.
 #    example: "Jane Doe"
   registered:
-    type: string
     description: Whether and where the dependant is registered.
-    enum:
-      $ref: ../common/enums/registered.yaml
+    allOf:
+      - $ref: ../common/enums/registered.yaml
 #  registeredNumber: # todo - remove - identifiable detail - do we need an IdentifiableDependant schema?
 #    type: string
 #    description: The registration number of the dependant.
@@ -39,10 +35,10 @@ properties:
     description: Notes about the dependant's registration.
     example: "Registration in process with local UNHCR office"
   healthConcern:
-    type: string
     description: Any health concerns for the dependant.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
+    example: "No"
   healthNotes:
     type: string
     description: Notes about the dependant's health.
