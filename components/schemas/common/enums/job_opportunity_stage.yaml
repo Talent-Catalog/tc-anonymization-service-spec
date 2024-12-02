@@ -1,29 +1,32 @@
 # todo confirm if we will include all these in the anonymous database?
-- prospect
-- briefing
-- pitching
-- mou
-- identifyingRoles
-- candidateSearch
-- visaEligibility
-- cvPreparation
-- cvReview
-- recruitmentProcess
-- jobOffer
-- training
-- visaPreparation
-- postHireEngagement
-- hiringCompleted
-- ineligibleEmployer
-- ineligibleOccupation
-- ineligibleRegion
-- noInterest
-- noJobOffer
-- noPrPathway
-- noSuitableCandidates
-- noVisa
-- tooExpensive
-- tooHighWage
-- tooLong
-- mouIssue
-- trainingNotCompleted
+type: string
+enum:
+  - prospect
+  - briefing
+  - pitching
+  - mou
+  - identifyingRoles
+  - candidateSearch
+  - visaEligibility
+  - cvPreparation
+  - cvReview
+  - recruitmentProcess
+  - jobOffer
+  - training
+  - visaPreparation
+  - postHireEngagement
+  - hiringCompleted
+  - ineligibleEmployer
+  - ineligibleOccupation
+  - ineligibleRegion
+  - noInterest
+  - noJobOffer
+  - noPrPathway
+  - noSuitableCandidates
+  - noVisa
+  - tooExpensive
+  - tooHighWage
+  - tooLong
+  - mouIssue
+  - trainingNotCompleted
+example: "candidateSearch"

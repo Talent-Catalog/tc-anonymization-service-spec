@@ -51,10 +51,9 @@ properties:
 #    description: The partner who created the job opportunity.
 #    $ref: ./Partner.yaml
   stage:
-    type: string
     description: The stage of the job opportunity.
-    enum:
-      $ref: ../common/enums/job_opportunity_stage.yaml
+    allOf:
+      - $ref: ../common/enums/job_opportunity_stage.yaml
     example: "visaPreparation"
 #  starringUsers: - todo - confirm if we will include this in the anonymous database?
 #    type: array
