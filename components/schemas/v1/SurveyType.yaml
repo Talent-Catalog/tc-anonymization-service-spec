@@ -6,8 +6,6 @@ properties:
     description: The name of the survey type.
     example: "Employee Engagement"
   status:
-    type: string
     description: The status of the survey type.
-    enum:
-      $ref: ../common/enums/status.yaml
-    example: "active"
+    allOf:
+      - $ref: ../common/enums/status.yaml
