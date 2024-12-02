@@ -5,21 +5,17 @@ properties:
     description: The country of the visa.
     $ref: ./Country.yaml
   protection:
-    type: string
     description: The protection status  of the visa. # todo - confirm this description for accuracy.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   protectionGrounds:
     type: string
     description: The grounds for the protection status of the visa.
     example: "Asylum"
   englishThreshold:
-    type: string
     description: Meets the English language threshold for the visa. # todo - confirm this description for accuracy.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   englishThresholdNotes:
     type: string
     description: Notes on the English language threshold for the visa.
@@ -27,9 +23,8 @@ properties:
   healthAssessment:
     type: string
     description: The health assessment status for the visa. # todo - confirm this description for accuracy.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   healthAssessmentNotes:
     type: string
     description: Notes on the health assessment status for the visa.
@@ -37,9 +32,8 @@ properties:
   characterAssessment:
     type: string
     description: The character assessment status for the visa. # todo - confirm this description for accuracy.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   characterAssessmentNotes:
     type: string
     description: Notes on the character assessment status for the visa.
@@ -47,8 +41,8 @@ properties:
   securityRisk:
     type: string
     description: The security risk status for the visa. # todo - confirm this description for accuracy.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
     example: "No"
   securityRiskNotes:
     type: string
@@ -57,9 +51,8 @@ properties:
   overallRisk:
     type: string
     description: The overall risk assessment status for the visa. # todo - confirm this description for accuracy.
-    enum:
-      $ref: ../common/enums/risk_level.yaml
-    example: "Low"
+    allOf:
+      - $ref: ../common/enums/risk_level.yaml
   overallRiskNotes:
     type: string
     description: Notes on the overall risk status for the visa.
@@ -67,9 +60,8 @@ properties:
   validTravelDocs:
     type: string
     description: The validity status of the candidate's travel documents.
-    enum:
-      $ref: ../common/enums/document_status.yaml
-    example: "Valid"
+    allOf:
+      - $ref: ../common/enums/document_status.yaml
   validTravelDocsNotes:
     type: string
     description: Notes on the validity status of the candidate's travel documents.
@@ -77,9 +69,8 @@ properties:
   pathwayAssessment:
     type: string
     description: The pathway assessment status for the visa. # todo - confirm this description for accuracy.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
   pathwayAssessmentNotes:
     type: string
     description: Notes on the pathway assessment status for the visa.
@@ -87,8 +78,8 @@ properties:
   destinationFamily:
     type: string
     description: The status of the candidate's family in the destination country.
-    enum:
-      $ref: ../common/enums/family_relations.yaml
+    allOf:
+      - $ref: ../common/enums/family_relations.yaml
     example: "Sibling"
   destinationFamilyLocation:
     type: string
