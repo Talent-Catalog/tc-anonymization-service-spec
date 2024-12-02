@@ -1,4 +1,4 @@
-type: strin
+type: string
 enum:
   - NoResponse
   - Low
