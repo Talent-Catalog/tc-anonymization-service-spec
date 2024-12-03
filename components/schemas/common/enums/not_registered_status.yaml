@@ -1,6 +1,9 @@
-- NoResponse
-- WasRegistered
-- NeverRegistered
-- Registering
-- Unsure
-- NA
+type: string
+enum:
+  - NoResponse
+  - WasRegistered
+  - NeverRegistered
+  - Registering
+  - Unsure
+  - NA
+example: "NeverRegistered"

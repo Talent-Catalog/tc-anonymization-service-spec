@@ -4,8 +4,8 @@ properties:
   hasPassport:
     type: string
     description: Whether the candidate has a passport.
-    enum:
-      $ref: ../common/enums/has_passport.yaml
+    allOf:
+      - $ref: ../common/enums/has_passport.yaml
   passportExp:
     type: string
     format: date

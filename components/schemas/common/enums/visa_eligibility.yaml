@@ -1,6 +1,9 @@
-- NoResponse
-- Yes
-- YesBut
-- DiscussFurther
-- SeekAdvice
-- No
+type: string
+enum:
+  - NoResponse
+  - Yes
+  - YesBut
+  - DiscussFurther
+  - SeekAdvice
+  - No
+example: "Yes"

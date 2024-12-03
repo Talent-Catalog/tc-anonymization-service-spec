@@ -1,4 +1,7 @@
-- NoResponse
-- Low
-- Medium
-- High
+type: string
+enum:
+  - NoResponse
+  - Low
+  - Medium
+  - High
+example: "Low"

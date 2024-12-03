@@ -1,5 +1,8 @@
-- NoResponse
-- Yes
-- No
-- Unemployed
-- Other
+type: string
+enum:
+  - NoResponse
+  - Yes
+  - No
+  - Unemployed
+  - Other
+example: "Yes"

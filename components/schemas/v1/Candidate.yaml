@@ -18,9 +18,8 @@ properties:
   arrestImprison:
     type: string
     description: Indicates whether the candidate has been arrested or imprisoned.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
-    example: "No"
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
   arrestImprisonNotes:
     type: string
     description: Notes related to the candidate's arrest or imprisonment.
@@ -33,9 +32,8 @@ properties:
   availImmediate:
     type: string
     description: Indicates whether the candidate is immediately available for opportunities.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   availImmediateJobOps: # todo - check description compared with the above availImmediate
     type: string
     description: Indicates whether the candidate is immediately available for job opportunities.
@@ -43,9 +41,8 @@ properties:
   availImmediateReason:
     type: string
     description: Reason for the candidate's immediate availability.
-    enum:
-      $ref: ../common/enums/avail_immediate_reason.yaml
-    example: "Family"
+    allOf:
+      - $ref: ../common/enums/avail_immediate_reason.yaml
   availImmediateNotes:
     type: string
     description: Notes related to the candidate's immediate availability.
@@ -146,20 +143,17 @@ properties:
     items:
       $ref: ./CandidateVisaCheck.yaml
   canDrive:
-    type: string
     description: Indicates whether the candidate can drive.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   city:
     type: string
     description: City of residence
     example: "Amman"
   conflict:
-    type: string
     description: Indicates whether the candidate has participated in a conflict.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
     example: "No"
   conflictNotes:
     type: string
@@ -177,11 +171,9 @@ properties:
     description: Country of residence # todo picks up description override from Country.yaml
     $ref: ./Country.yaml
   covidVaccinated:
-    type: string
     description: Vaccination status of the candidate.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   covidVaccinatedDate:
     type: string
     format: date
@@ -196,37 +188,31 @@ properties:
     description: Notes related to the candidate's COVID-19 vaccination.
     example: "COVID-19 vaccination notes"
   covidVaccinatedStatus:
-    type: string
     description: COVID-19 vaccination status of the candidate.
-    enum:
-      $ref: ../common/enums/vaccination_status.yaml
-    example: "Full"
+    allOf:
+      - $ref: ../common/enums/vaccination_status.yaml
   crimeConvict:
-    type: string
     description: Indicates whether the candidate has a criminal conviction.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
   crimeConvictNotes:
     type: string
     description: Notes related to the candidate's criminal conviction.
     example: "Criminal conviction notes"
   destLimit:
-    type: string
     description: Destination limits for the candidate.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
     example: "No"
   destLimitNotes:
     type: string
     description: Notes related to the candidate's destination limits.
     example: "Destination limit notes"
   drivingLicense:
-    type: string
     description: Indicates the status of the candidate's driving license.
-    enum:
-      $ref: ../common/enums/document_status.yaml
-    example: "Valid"
+    allOf:
+      - $ref: ../common/enums/document_status.yaml
   drivingLicenseCountry:
     description: Country where the candidate's driving license was issued.
     $ref: ./Country.yaml
@@ -244,11 +230,9 @@ properties:
     description: IELTS score of the candidate's English assessment.
     example: "6.5"
   familyMove:
-    type: string
     description: Indicates whether the candidate is moving with their family.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   familyMoveNotes:
     type: string
     description: Notes related to the candidate's move with their family.
@@ -271,16 +255,13 @@ properties:
     description: Date when the full intake was completed.
     example: "2022-12-31"
   gender:
-    type: string
     description: Candidate's gender.
-    enum:
-      $ref: ../common/enums/gender.yaml
-    example: "female"
+    allOf:
+      - $ref: ../common/enums/gender.yaml
   healthIssues:
-    type: string
     description: Indicates whether the candidate has health issues.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
     example: "No"
   healthIssuesNotes:
     type: string
@@ -295,11 +276,9 @@ properties:
     description: Challenges faced by the candidate in the host country.
     example: "Host country challenges"
   hostEntryLegally:
-    type: string
     description: Indicates if the candidate entered the host country legally.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   hostEntryLegallyNotes:
     type: string
     description: Notes related to the candidate's legal entry in the host country.
@@ -318,21 +297,17 @@ properties:
     description: IELTS score of the candidate.
     example: 7.5
   intRecruitReasons:
-    type: string
     description: Reasons for the candidate's international recruitment.
-    enum:
-      $ref: ../common/enums/int_recruit_reasons.yaml
-    example: "CantReturnHome"
+    allOf:
+      - $ref: ../common/enums/int_recruit_reasons.yaml
   intRecruitOther:
     type: string
     description: Other reasons for the candidate's international recruitment.
     example: "Other reasons for international recruitment"
   intRecruitRural:
-    type: string
     description: Indicates whether the candidate will work in a rural area.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   intRecruitRuralNotes:
     type: string
     description: Notes related to the candidate's rural area work preference.
@@ -345,16 +320,12 @@ properties:
     type: array
     description: Reasons for the candidate leaving home.
     items:
-      type: string
-      enum:
-        $ref: ../common/enums/left_home_reason.yaml
-    example: "Safety"
+      allOf:
+        - $ref: ../common/enums/left_home_reason.yaml
   maritalStatus:
-    type: string
     description: Marital status of the candidate.
-    enum:
-      $ref: ../common/enums/marital_status.yaml
-    example: "Single"
+    allOf:
+      - $ref: ../common/enums/marital_status.yaml
   maritalStatusNotes:
     type: string
     description: Notes related to the candidate's marital status.
@@ -374,16 +345,13 @@ properties:
     description: Migration nationality of the candidate
     example: "Syrian"
   militaryService:
-    type: string
     description: Indicates whether the candidate has served in the military.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   militaryWanted:
-    type: string
     description: Indicates whether the candidate is wanted for military service.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
   militaryStart:
     type: string
@@ -408,11 +376,9 @@ properties:
     description: Date when the mini intake was completed.
     example: "2022-12-31"
   monitoringEvaluationConsent:
-    type: string
     description: Indicates whether the candidate has given consent for monitoring and evaluation.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   nationality:
     description: Nationality of the candidate.
     $ref: ./Country.yaml
@@ -426,11 +392,9 @@ properties:
 #    description: Internal reference ID with the partner handling the candidate.
 #    type: string
   partnerRegistered:
-    type: string
     description: Indicates whether the candidate's partner is registered.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
 #  partnerCandidateId: todo - we receive the partner Candidate in full - but OK just to track the ID - some complexity if it will need to be the obfuscated id and is not yet mapped
 #    type: string
 #    format: uuid
@@ -448,20 +412,16 @@ properties:
     description: Notes related to the education level of the candidate's partner.
     example: "Partner education level notes"
   partnerEnglish:
-    type: string
     description: Indicates whether the candidate's partner speaks English.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   partnerEnglishLevel:
     description: English proficiency level of the candidate's partner.
     $ref: ./LanguageLevel.yaml
   partnerIelts:
-    type: string
     description: Indicates whether the candidate's partner has taken the IELTS exam.
-    enum:
-      $ref: ../common/enums/ielts.yaml
-    example: "YesGeneral"
+    allOf:
+      - $ref: ../common/enums/ielts.yaml
   partnerIeltsScore:
     type: string
     description: IELTS score of the candidate's partner.
@@ -479,20 +439,17 @@ properties:
     description: Notes related to the occupation of the candidate's partner.
     example: "Partner occupation notes"
   residenceStatus:
-    type: string
     description: Residence status of the candidate.
-    enum:
-      $ref: ../common/enums/residence_status.yaml
-    example: "LegalRes"
+    allOf:
+      - $ref: ../common/enums/residence_status.yaml
   residenceStatusNotes:
     type: string
     description: Notes related to the candidate's residence status.
     example: "Residence status notes"
   returnedHome:
-    type: string
     description: Indicates whether the candidate has returned home.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
   returnedHomeReason:
     type: string
@@ -503,16 +460,13 @@ properties:
     description: Reason for the candidate not returning home.
     example: "No reason"
   returnHomeSafe:
-    type: string
     description: Indicates whether the candidate returned home safely.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
   returnHomeFuture:
-    type: string
     description: Indicates whether the candidate plans to return home in the future.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
     example: "No"
   returnHomeWhen:
     type: string
@@ -520,11 +474,9 @@ properties:
     description: Date when the candidate plans to return home.
     example: "2025-12-31"
   resettleThird:
-    type: string
     description: Indicates whether the candidate plans to resettle in a third country. # todo - confirm meaning
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   resettleThirdStatus:
     type: string
     description: Status of the candidate's plan to resettle in a third country.
@@ -540,11 +492,9 @@ properties:
     description: State of residence.
     example: "Amman Governorate"
   status: # todo - confirm if all statuses will be included in anonymous database
-    type: string
     description: Status of the candidate.
-    enum:
-      $ref: ../common/candidate_status.yaml
-    example: "active"
+    allOf:
+      - $ref: ../common/enums/candidate_status.yaml
   surveyType:
     description: Survey type associated with the candidate.
     $ref: ./SurveyType.yaml
@@ -558,101 +508,80 @@ properties:
     items:
       $ref: ./TaskAssignment.yaml
   unhcrConsent:
-    type: string
     description: Indicates whether the candidate has given consent for UNHCR processes.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   unhcrNotes:
     type: string
     description: Notes related to the candidate's UNHCR registration.
     example: "UNHCR registration notes"
   unhcrNotRegStatus:
-    type: string
     description: UNHCR not registered status of the candidate.
-    enum:
-      $ref: ../common/enums/not_registered_status.yaml
-    example: "NeverRegistered"
+    allOf:
+      - $ref: ../common/enums/not_registered_status.yaml
   unhcrRegistered:
-    type: string
     description: Indicates whether the candidate is registered with UNHCR.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
   unhcrStatus:
-    type: string
     description: UNHCR status of the candidate.
-    enum:
-      $ref: ../common/enums/unhcr_status.yaml
-    example: "MandateRefugee"
+    allOf:
+      - $ref: ../common/enums/unhcr_status.yaml
   unrwaNotes:
     type: string
     description: Notes related to the candidate's UNRWA registration.
     example: "UNRWA registration notes"
   unrwaNotRegStatus:
-    type: string
     description: UNRWA not registered status of the candidate.
-    enum:
-      $ref: ../common/enums/not_registered_status.yaml
-    example: "NeverRegistered"
+    allOf:
+      - $ref: ../common/enums/not_registered_status.yaml
   unrwaRegistered:
-    type: string
     description: Indicates whether the candidate is registered with UNRWA.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
   visaIssues:
-    type: string
     description: Indicates whether the candidate has had visa issues.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
   visaIssuesNotes:
     type: string
     description: Notes related to the candidate's visa issues.
     example: "Visa issues notes"
   visaReject:
-    type: string
     description: Indicates whether the candidate has had a visa application rejected.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
   visaRejectNotes:
     type: string
     description: Notes related to the candidate's visa application rejection.
     example: "Visa rejection notes"
   workAbroad:
-    type: string
     description: Indicates whether the candidate has worked abroad.
-    enum:
-      $ref: ../common/enums/yes_no.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no.yaml
   workAbroadNotes:
     type: string
     description: Notes related to the candidate's work abroad.
     example: "Work abroad notes"
   workDesired:
-    type: string
     description: Indicates whether the candidate desires work. # todo - confirm meaning
-    enum:
-      $ref: ../common/enums/yes_no_unemployed_other.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no_unemployed_other.yaml
   workDesiredNotes:
     type: string
     description: Notes related to the candidate's desire for work. # todo - confirm meaning
     example: "Work desire notes"
   workPermit:
-    type: string
     description: Indicates whether the candidate has a work permit and if it is in the desired field.
-    enum:
-      $ref: ../common/enums/work_permit.yaml
-    example: "YesDesired"
+    allOf:
+      - $ref: ../common/enums/work_permit.yaml
   workPermitDesired:
-    type: string
     description: Indicates whether the candidate desires a work permit.
-    enum:
-      $ref: ../common/enums/yes_no_unsure.yaml
-    example: "Yes"
+    allOf:
+      - $ref: ../common/enums/yes_no_unsure.yaml
   workPermitDesiredNotes:
     type: string
     description: Notes related to the candidate's desire for a work permit.

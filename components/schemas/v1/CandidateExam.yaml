@@ -4,9 +4,9 @@ properties:
   exam:
     type: string
     description: The type of the exam.
-    enum:
-      $ref: ../common/enums/exam.yaml
-    example: "IELTSGen"
+    allOf:
+      - $ref: ../common/enums/exam.yaml
+    example: "Other"
   otherExam:
     type: string
     description: The name of the exam if the exam type is "Other".

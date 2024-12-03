@@ -1,6 +1,9 @@
-- NoResponse
-- TempSkilled
-- SpecialHum
-- OtherHum
-- DirectEnt
-- PointsIndep
+type: string
+enum:
+  - NoResponse
+  - TempSkilled
+  - SpecialHum
+  - OtherHum
+  - DirectEnt
+  - PointsIndep
+example: "TempSkilled"
