@@ -1,9 +1,16 @@
 type: string
 enum:
-  - NoResponse
-  - CantReturnHome
-  - Citizenship
-  - Experience
-  - Children
-  - Other
+  - "NoResponse"
+  - "CantReturnHome"
+  - "Citizenship"
+  - "Experience"
+  - "Children"
+  - "Other"
+x-enum-varnames:
+  - "NoResponse"
+  - "CantReturnHome"
+  - "Citizenship"
+  - "Experience"
+  - "Children"
+  - "Other"
 example: "CantReturnHome"

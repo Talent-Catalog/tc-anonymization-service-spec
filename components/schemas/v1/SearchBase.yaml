@@ -5,32 +5,17 @@ properties:
     description: A simple query string for free-text search.
     example: "Graphic Designer"
   statuses:
-    type: array
-    description: List of candidate statuses to filter on.
-    items:
-      type: string
-      description: Status values.
-      enum:
-        - ACTIVE
-        - AUTONOMOUS
-        - PENDING
-        - WITHDRAWN
-    example: ["ACTIVE", "AUTONOMOUS"]
-  gender:
     type: string
+    description: Comma separated string of candidate statuses to filter on.
+    example: "active,pending"
+  gender:
     description: Gender filter.
-    enum:
-      - MALE
-      - FEMALE
-      - OTHER
-    example: "FEMALE"
+    allOf:
+      - $ref: ../common/enums/gender.yaml
   occupationIds: # todo use isco codes instead
-    type: array
-    description: List of occupation IDs to filter on.
-    items:
-      type: integer
-      format: int64
-    example: [1, 2, 3]
+    type: string
+    description: Comma separated string of occupation IDs to filter on. # todo check
+    example: "1,2,3"
   minYrs:
     type: integer
     description: Minimum years of experience.
@@ -40,80 +25,53 @@ properties:
     description: Maximum years of experience.
     example: 10
   partnerIds: # todo confirm that we want to search on this field?
-    type: array
-    description: List of partner IDs to filter on.
-    items:
-      type: integer
-      format: int64
-    example: [1, 2, 3]
+    type: string
+    description: Comma separated string of partner IDs to filter on.
+    example: "1,2,3"
   nationalityIds: # todo use ISO codes instead
-    type: array
-    description: List of nationality IDs to filter on.
-    items:
-      type: integer
-      format: int64
-    example: [1, 2, 3]
+    type: string
+    description: Comma separated string of nationality IDs to filter on.
+    example: "1,2,3"
   nationalitySearchType:
-    type: string
     description: Search type for nationalities.
-    enum:
-      - AND
-      - OR
-      - NOT
-    example: "OR"
-  countryIds: # todo use ISO codes instead
-    type: array
-    description: List of country IDs to filter on.
-    items:
-      type: integer
-      format: int64
-    example: [1, 2, 3]
-  countrySearchType:
+    allOf:
+      - $ref: ../common/enums/search_type.yaml
+  countryIds: # todo use Country schemas instead
     type: string
+    description: Comma separated string of country IDs to filter on.
+    example: "1,2,3"
+  countrySearchType:
     description: Search type for countries.
-    enum:
-      - AND
-      - OR
-      - NOT
-    example: "OR"
+    allOf:
+      - $ref: ../common/enums/search_type.yaml
   surveyTypeIds: # todo remove this field?
-    type: array
-    description: List of survey type IDs to filter on.
-    items:
-      type: integer
-      format: int64
-    example: [1, 2, 3]
-  exclusionListId: # todo remove this field?
+    type: string
+    description: Comma separated string of survey type IDs to filter on.
+    example: "1,2,3"
+  exclusionListId: # todo remove this field - or map exclusionList?
     type: integer
     format: int64
     description: Exclusion list ID.
     example: 1
   listAllIds: # todo remove this field?
-    type: array
-    description: List of IDs for "list all" criteria.
-    items:
-      type: integer
-      format: int64
-    example: [1, 2, 3]
-  listAllSearchType: # todo remove this field?
     type: string
+    description: Comma separated string of IDs for "list all" criteria.
+    example: "1,2,3"
+  listAllSearchType: # todo remove this field?
     description: Search type for "list all".
-    enum:
-      - NOT
-    example: "NOT"
+    allOf:
+      - $ref: ../common/enums/search_type.yaml
+    example: "not"
   listAnyIds: # todo remove this field?
-    type: array
-    description: List of IDs for "list any" criteria.
-    items:
-      type: integer
-      format: int64
-    example: [1, 2, 3]
+    type: string
+    description: Comma separated string of IDs for "list any" criteria.
+    example: "1,2,3"
   listAnySearchType:
     type: string
     description: Search type for "list any".
-    enum:
-      - NOT
-    example: "NOT"
+    allOf:
+      - $ref: ../common/enums/search_type.yaml
+    example: "not"
   englishMinWrittenLevel:
     type: integer
     format: int32
@@ -124,7 +82,7 @@ properties:
     format: int32
     description: Minimum spoken English proficiency level.
     example: 4
-  otherLanguageId: # todo use ISO codes instead
+  otherLanguageId: # todo use ISO codes instead - better to create a Language schema - overlaps with CandidateLanguage?
     type: integer
     format: int64
     description: ID of another language for filtering.
@@ -140,20 +98,9 @@ properties:
     description: Minimum spoken proficiency level for the other language.
     example: 4
   unhcrStatuses:
-    type: array
-    description: List of UNHCR statuses to filter on.
-    items:
-      type: string
-      enum:
-        - NO_RESPONSE
-        - MANDATE_REFUGEE
-        - REGISTERED_ASYLUM
-        - REGISTERED_STATELESS
-        - REGISTERED_STATUS_UNKNOWN
-        - NOT_REGISTERED
-        - UNSURE
-        - NA
-    example: ["REGISTERED_ASYLUM", "REGISTERED_STATELESS"]
+    type: string
+    description: Comma separated string of UNHCR statuses to filter on.
+    example: "MandateRefugee,RegisteredAsylum"
   lastModifiedFrom:
     type: string
     format: date
@@ -164,10 +111,6 @@ properties:
     format: date
     description: End date for filtering candidates by last modification date.
     example: 2024-12-31
-  timezone: # todo use IANA timezone names instead
-    type: string
-    description: Timezone for the search.
-    example: "UTC"
   minAge:
     type: integer
     format: int32
@@ -184,12 +127,9 @@ properties:
     description: Minimum education level.
     example: 3
   educationMajorIds: # todo use ISCED codes instead
-    type: array
-    description: List of education major IDs.
-    items:
-      type: integer
-      format: int64
-    example: [1, 2, 3]
+    type: string
+    description: Comma separated string of education major IDs.
+    example: "1,2,3"
   miniIntakeCompleted: # todo remove this field?
     type: boolean
     description: Filter for candidates who have completed the mini intake process.
@@ -201,11 +141,10 @@ properties:
   regoReferrerParam: # todo remove this field?
     type: string
     description: Referrer parameter for registration filtering.
-  reviewStatusFilter: # todo remove this field?
-    type: array
-    description: Filter by candidate review statuses.
-    items:
-      type: string
+  reviewable: # todo remove this field?
+    type: boolean
+    description: If the search is reviewable.
+    example: false
   fromDate:
     type: string
     format: date

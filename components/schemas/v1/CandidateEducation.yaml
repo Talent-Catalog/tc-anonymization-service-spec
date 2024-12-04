@@ -4,19 +4,13 @@ properties:
   educationType:
     type: string
     description: The type of education.
-    enum:
-      - "Associate"
-      - "Vocational"
-      - "Bachelor"
-      - "Masters"
-      - "Doctoral"
-    example: "Masters"
+    allOf:
+      - $ref:  ../common/enums/education_type.yaml
   country:
     $ref: ./Country.yaml
   educationMajor:
-    type: string
     description: The major of the education.
-    example: "Computer Science"
+    $ref: ./EducationMajor.yaml
   lengthOfCourseYears:
     type: integer
     description: The length of the course in years.

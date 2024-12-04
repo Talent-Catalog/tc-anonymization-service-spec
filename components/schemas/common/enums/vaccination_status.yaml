@@ -1,6 +1,10 @@
 type: string
 enum:
-  - NoResponse
-  - Full
-  - Partial
+  - "NoResponse"
+  - "Full"
+  - "Partial"
+x-enum-varnames:
+  - "NoResponse"
+  - "Full"
+  - "Partial"
 example: "Full"

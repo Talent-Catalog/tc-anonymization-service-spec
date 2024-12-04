@@ -1,9 +1,16 @@
 type: string
 enum:
-  - NoResponse
-  - WasRegistered
-  - NeverRegistered
-  - Registering
-  - Unsure
-  - NA
+  - "NoResponse"
+  - "WasRegistered"
+  - "NeverRegistered"
+  - "Registering"
+  - "Unsure"
+  - "NA"
+x-enum-varnames:
+  - "NoResponse"
+  - "WasRegistered"
+  - "NeverRegistered"
+  - "Registering"
+  - "Unsure"
+  - "NA"
 example: "NeverRegistered"

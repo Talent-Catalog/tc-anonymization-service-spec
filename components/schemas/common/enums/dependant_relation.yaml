@@ -1,12 +1,22 @@
 type: string
 enum:
-  - NoResponse
-  - Partner
-  - Child
-  - Parent
-  - Sibling
-  - AuntUncle
-  - Grandparent
-  - Cousin
-  - Other
+  - "NoResponse"
+  - "Partner"
+  - "Child"
+  - "Parent"
+  - "Sibling"
+  - "AuntUncle"
+  - "Grandparent"
+  - "Cousin"
+  - "Other"
+x-enum-varnames:
+  - "NoResponse"
+  - "Partner"
+  - "Child"
+  - "Parent"
+  - "Sibling"
+  - "AuntUncle"
+  - "Grandparent"
+  - "Cousin"
+  - "Other"
 example: "Child"

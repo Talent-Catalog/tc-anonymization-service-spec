@@ -1,7 +1,12 @@
 type: string
 enum:
-  - NoResponse
-  - Valid
-  - Expired
-  - None
+  - "NoResponse"
+  - "Valid"
+  - "Expired"
+  - "None"
+x-enum-varnames:
+  - "NoResponse"
+  - "Valid"
+  - "Expired"
+  - "None"
 example: "Valid"

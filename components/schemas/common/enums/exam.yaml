@@ -1,12 +1,22 @@
 type: string
 enum:
-  - NoResponse
-  - OET
-  - OETRead
-  - OETList
-  - OETLang
-  - IELTSGen
-  - IELTSAca
-  - TOEFL
-  - Other
+  - "NoResponse"
+  - "OET"
+  - "OETRead"
+  - "OETList"
+  - "OETLang"
+  - "IELTSGen"
+  - "IELTSAca"
+  - "TOEFL"
+  - "Other"
+x-enum-varnames:
+  - "NoResponse"
+  - "OET"
+  - "OETRead"
+  - "OETList"
+  - "OETLang"
+  - "IELTSGen"
+  - "IELTSAca"
+  - "TOEFL"
+  - "Other"
 example: "IELTSGen"

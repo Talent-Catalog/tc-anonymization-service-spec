@@ -1,7 +1,12 @@
 type: string
 enum:
-  - NoResponse
-  - ValidPassport
-  - InvalidPassport
-  - NoPassport
+  - "NoResponse"
+  - "ValidPassport"
+  - "InvalidPassport"
+  - "NoPassport"
+x-enum-varnames:
+  - "NoResponse"
+  - "ValidPassport"
+  - "InvalidPassport"
+  - "NoPassport"
 example: "ValidPassport"

@@ -1,7 +1,12 @@
 type: string
 enum:
-  - NoResponse
-  - Proceed
-  - Discuss
-  - DontProceed
+  - "NoResponse"
+  - "Proceed"
+  - "Discuss"
+  - "DontProceed"
+x-enum-varnames:
+  - "NoResponse"
+  - "Proceed"
+  - "Discuss"
+  - "DontProceed"
 example: "Proceed"

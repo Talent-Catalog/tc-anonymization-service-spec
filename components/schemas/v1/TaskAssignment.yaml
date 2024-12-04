@@ -24,9 +24,10 @@ properties:
     $ref: ../common/iso_timestamp.yaml
     example: "2024-11-27T17:15:00Z"
   dueDate:
+    type: string
+    format: date
     description: The date and time when the task assignment is due.
-    $ref: ../common/iso_timestamp.yaml
-    example: "2024-11-27T17:15:00Z"
+    example: "2024-11-27"
 #  relatedList: # todo - do we want to include this? If so use List schema
 #    description: The list to which this task relates.
   status:

@@ -1,8 +1,14 @@
 type: string
 enum:
-  - Associate # standardise on enum values format
-  - Vocational
-  - Bachelor
-  - Masters
-  - Doctoral
+  - "Associate" # standardise on enum values format
+  - "Vocational"
+  - "Bachelor"
+  - "Masters"
+  - "Doctoral"
+x-enum-varnames:
+  - "Associate"
+  - "Vocational"
+  - "Bachelor"
+  - "Masters"
+  - "Doctoral"
 example: "Masters"

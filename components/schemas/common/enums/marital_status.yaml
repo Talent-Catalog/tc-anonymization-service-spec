@@ -1,11 +1,20 @@
 type: string
 enum:
-  - NoResponse
-  - Married
-  - Engaged
-  - Defacto
-  - Single
-  - Divorced
-  - Separated
-  - Widower
+  - "NoResponse"
+  - "Married"
+  - "Engaged"
+  - "Defacto"
+  - "Single"
+  - "Divorced"
+  - "Separated"
+  - "Widower"
+x-enum-varnames:
+  - "NoResponse"
+  - "Married"
+  - "Engaged"
+  - "Defacto"
+  - "Single"
+  - "Divorced"
+  - "Separated"
+  - "Widower"
 example: "Married"

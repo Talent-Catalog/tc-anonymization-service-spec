@@ -1,11 +1,20 @@
 type: string
 enum:
-  - NoResponse
-  - MandateRefugee
-  - RegisteredAsylum
-  - RegisteredStateless
-  - RegisteredStatusUnknown
-  - NotRegistered
-  - Unsure
-  - NA
+  - "NoResponse"
+  - "MandateRefugee"
+  - "RegisteredAsylum"
+  - "RegisteredStateless"
+  - "RegisteredStatusUnknown"
+  - "NotRegistered"
+  - "Unsure"
+  - "NA"
+x-enum-varnames:
+  - "NoResponse"
+  - "MandateRefugee"
+  - "RegisteredAsylum"
+  - "RegisteredStateless"
+  - "RegisteredStatusUnknown"
+  - "NotRegistered"
+  - "Unsure"
+  - "NA"
 example: "MandateRefugee"
