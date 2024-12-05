@@ -1,6 +1,8 @@
 type: object
 properties:
   simpleQueryString:  # todo use ?q= query parameter instead?
+#    todo jc I am not sure that the full Elasticsearch syntax is url friendly.
+#  todo jc I think it is better sent in the body of the request
     type: string
     description: A simple query string for free-text search.
     example: "Graphic Designer"
@@ -13,6 +15,7 @@ properties:
     allOf:
       - $ref: ../common/enums/gender.yaml
   occupationIds: # todo use isco codes instead
+#    todo jc Yes
     type: string
     description: Comma separated string of occupation IDs to filter on. # todo check
     example: "1,2,3"
@@ -25,10 +28,12 @@ properties:
     description: Maximum years of experience.
     example: 10
   partnerIds: # todo confirm that we want to search on this field?
+#    todo jc No I don't think so for anon db
     type: string
     description: Comma separated string of partner IDs to filter on.
     example: "1,2,3"
   nationalityIds: # todo use ISO codes instead
+#    todo jc Yes
     type: string
     description: Comma separated string of nationality IDs to filter on.
     example: "1,2,3"
@@ -36,7 +41,9 @@ properties:
     description: Search type for nationalities.
     allOf:
       - $ref: ../common/enums/search_type.yaml
-  countryIds: # todo use Country schemas instead
+  countryIds: # todo use ISO codes instead
+  #    todo jc Yes
+  # todo sm use Country schemas instead
     type: string
     description: Comma separated string of country IDs to filter on.
     example: "1,2,3"
@@ -45,28 +52,34 @@ properties:
     allOf:
       - $ref: ../common/enums/search_type.yaml
   surveyTypeIds: # todo remove this field?
+#    todo jc Yes - internal only - also an ill defined field
     type: string
     description: Comma separated string of survey type IDs to filter on.
     example: "1,2,3"
-  exclusionListId: # todo remove this field - or map exclusionList?
+  exclusionListId: # todo remove this field
+#    todo jc Yes - internal only - also an ill defined field
     type: integer
     format: int64
     description: Exclusion list ID.
     example: 1
   listAllIds: # todo remove this field?
+#    todo jc Yes.
     type: string
     description: Comma separated string of IDs for "list all" criteria.
     example: "1,2,3"
   listAllSearchType: # todo remove this field?
+    #    todo jc Yes.
     description: Search type for "list all".
     allOf:
       - $ref: ../common/enums/search_type.yaml
     example: "not"
   listAnyIds: # todo remove this field?
+    #    todo jc Yes.
     type: string
     description: Comma separated string of IDs for "list any" criteria.
     example: "1,2,3"
   listAnySearchType:
+    #    todo jc Remove.
     type: string
     description: Search type for "list any".
     allOf:
@@ -82,7 +95,9 @@ properties:
     format: int32
     description: Minimum spoken English proficiency level.
     example: 4
-  otherLanguageId: # todo use ISO codes instead - better to create a Language schema - overlaps with CandidateLanguage?
+  otherLanguageId: # todo use ISO codes instead
+#    todo jc Yes
+#    todo sm create a Language schema for here and in CandidateLanguage?
     type: integer
     format: int64
     description: ID of another language for filtering.
@@ -122,26 +137,32 @@ properties:
     description: Maximum age of candidates.
     example: 60
   minEducationLevel: # todo use ISCED codes instead
+#    todo jc Yes
     type: integer
     format: int32
     description: Minimum education level.
     example: 3
   educationMajorIds: # todo use ISCED codes instead
+    #    todo jc Yes
     type: string
     description: Comma separated string of education major IDs.
     example: "1,2,3"
   miniIntakeCompleted: # todo remove this field?
+    #    todo jc Yes
     type: boolean
     description: Filter for candidates who have completed the mini intake process.
     example: true
   fullIntakeCompleted: # todo remove this field?
+    #    todo jc Yes
     type: boolean
     description: Filter for candidates who have completed the full intake process.
     example: true
   regoReferrerParam: # todo remove this field?
+    #    todo jc Yes
     type: string
     description: Referrer parameter for registration filtering.
   reviewable: # todo remove this field?
+    #    todo jc Yes
     type: boolean
     description: If the search is reviewable.
     example: false

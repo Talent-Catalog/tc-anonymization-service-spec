@@ -36,6 +36,7 @@ allOf:
         description: IP address of the candidate during registration.
         example: "12.34.56.78"
       # todo - confirm where to put the below 2 rego fields:
+#      todo jc Not for anon db I don't think. Internal only.
       regoPartnerParam:
         description: Query parameter (p=) for partner during registration.
         type: string
@@ -70,6 +71,7 @@ allOf:
       unhcrFile:
         type: string
         description: Candidate's UNHCR file number. # todo - just checking if this is different from the unhcr number?
+# todo jc Yes it is. I can't remember the detail but I remember having to put it in
         example: "12345678"
       unhcrNumber:
         type: string
@@ -78,6 +80,7 @@ allOf:
       unrwaFile:
         type: string
         description: Candidate's UNRWA file number. # todo - just checking if this is different from the unrwa number?
+        # todo jc Yes it is. I can't remember the detail but I remember having to put it in
         example: "12345678"
       unrwaNumber:
         type: string
@@ -92,6 +95,8 @@ allOf:
         description: The ID of the corresponding elastic search record.
         example: "12345678"
       # todo - confirm whether to include links in the IdentifiableCandidate schema:
+#todo jc It depends on exactly how we are using IdentifiableCandidate. In the context of 3rd party
+#todo jc registration through the public API these fields will not be present
       folderlink:
         type: string
         description: Link to the corresponding folder containing the candidate's documents.

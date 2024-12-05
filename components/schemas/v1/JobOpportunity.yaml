@@ -2,6 +2,7 @@ type: object
 description: A job opportunity.
 properties:
   contactUser: # todo - OK to include in anonymous database?
+#    todo jc I don't think we will be exposing job opportunities - at least in the first version of the anon db
     description: The user who is the contact for the job opportunity.
     $ref: ./User.yaml
   country:

@@ -1,5 +1,7 @@
 type: object
 description: A job check related to a candidate's visa status. # todo - confirm this description for accuracy.
+# todo jc This is internal and job related and not for anon db I think
+# todo jc But Caroline is best to review it anyway
 properties:
   jobOpp:
     description: The job opportunity associated with the visa check.

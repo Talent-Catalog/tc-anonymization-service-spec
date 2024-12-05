@@ -9,10 +9,13 @@ properties:
     description: The number of years of experience the candidate has in this job.
     example: 5
   topCandidate: # todo confirm the semantics and relevance of this field
+#    todo jc Internal - not for anon db
     type: boolean
     description: Whether the candidate is a top candidate for this job.
     example: true
   migrationOccupation: # todo confirm the semantics and relevance of this field
+    #    todo jc Not sure but I think that "migration" here refers to migration of data from the old (2019) database.
+    #    todo jc If so, I would be inclined to leave it out
     type: string
     description: The migration occupation.
     example: "Software Developer - Front End"
