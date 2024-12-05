@@ -1,3 +1,6 @@
-- NoResponse
-- Full
-- Partial
+type: string
+enum:
+  - NoResponse
+  - Full
+  - Partial
+example: "Full"

@@ -1,5 +1,8 @@
-- Family
-- Health
-- CurrentWork
-- Studies
-- Other
+type: string
+enum:
+  - Family
+  - Health
+  - CurrentWork
+  - Studies
+  - Other
+example: "Family"

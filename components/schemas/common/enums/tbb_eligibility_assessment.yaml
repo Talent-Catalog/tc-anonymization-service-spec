@@ -1,4 +1,7 @@
-- NoResponse
-- Proceed
-- Discuss
-- DontProceed
+type: string
+enum:
+  - NoResponse
+  - Proceed
+  - Discuss
+  - DontProceed
+example: "Proceed"

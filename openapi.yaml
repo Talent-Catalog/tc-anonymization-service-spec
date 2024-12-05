@@ -39,11 +39,11 @@ paths:
 
   /v1/searches:
     $ref: ./paths/v1/searches.yaml
-  /v1/searches/{searchId}:
-    $ref: ./paths/v1/searches-searchId.yaml
+#  /v1/searches/{searchId}:
+#    $ref: ./paths/v1/searches-searchId.yaml
 
-  /v1/searches/{searchId}/candidates:
-    $ref: ./paths/v1/searches-searchId-candidates.yaml
+#  /v1/searches/{searchId}/candidates:
+#    $ref: ./paths/v1/searches-searchId-candidates.yaml
 
 components:
     schemas:

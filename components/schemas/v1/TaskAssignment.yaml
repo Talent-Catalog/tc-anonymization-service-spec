@@ -30,11 +30,9 @@ properties:
 #  relatedList: # todo - do we want to include this? If so use List schema
 #    description: The list to which this task relates.
   status:
-    type: string
     description: The status of the task assignment.
-    enum:
-      $ref: ../common/enums/status.yaml
-    example: "active"
+    allOf:
+      - $ref: ../common/enums/status.yaml
   task:
     description: The task that is assigned.
     $ref: ./Task.yaml

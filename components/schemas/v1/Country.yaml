@@ -9,14 +9,12 @@ properties:
     type: string
     description: The name of the country.
     example: "United Kingdom"
-  status: # todo do we need this? Make status a reusable schema?
+  status:
     type: string
     description: The status of the country.
-    enum:
-      - "Active"
-      - "Inactive"
-      - "Deleted"
-    example: "Active"
-required:
+    allOf:
+      - $ref: ../common/enums/status.yaml
+
+required: # todo check all required values
   - isoCode
   - name

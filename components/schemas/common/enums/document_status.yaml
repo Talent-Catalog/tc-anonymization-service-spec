@@ -1,4 +1,7 @@
-- NoResponse
-- Valid
-- Expired
-- None
+type: string
+enum:
+  - NoResponse
+  - Valid
+  - Expired
+  - None
+example: "Valid"

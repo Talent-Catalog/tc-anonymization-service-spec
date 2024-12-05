@@ -1,5 +1,8 @@
-- NoResponse
-- YesGeneral
-- YesAcademic
-- No
-- Unsure
+type: string
+enum:
+  - NoResponse
+  - YesGeneral
+  - YesAcademic
+  - No
+  - Unsure
+example: "YesGeneral"

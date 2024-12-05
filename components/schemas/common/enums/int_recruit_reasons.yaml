@@ -1,6 +1,9 @@
-- NoResponse
-- CantReturnHome
-- Citizenship
-- Experience
-- Children
-- Other
+type: string
+enum:
+  - NoResponse
+  - CantReturnHome
+  - Citizenship
+  - Experience
+  - Children
+  - Other
+example: "CantReturnHome"

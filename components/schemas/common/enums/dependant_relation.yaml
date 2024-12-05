@@ -1,9 +1,12 @@
-- NoResponse
-- Partner
-- Child
-- Parent
-- Sibling
-- AuntUncle
-- Grandparent
-- Cousin
-- Other
+type: string
+enum:
+  - NoResponse
+  - Partner
+  - Child
+  - Parent
+  - Sibling
+  - AuntUncle
+  - Grandparent
+  - Cousin
+  - Other
+example: "Child"

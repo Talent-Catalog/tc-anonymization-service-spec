@@ -1,6 +1,9 @@
-- systemadmin
-- admin
-- partneradmin
-- semilimited
-- limited
-- user
+type: string
+enum:
+  - systemadmin
+  - admin
+  - partneradmin
+  - semilimited
+  - limited
+  - user
+example: "partneradmin"

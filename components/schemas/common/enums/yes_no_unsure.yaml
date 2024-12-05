@@ -1,4 +1,7 @@
-- NoResponse
-- Yes
-- No
-- Unsure
+type: string
+enum:
+  - NoResponse
+  - Yes
+  - No
+  - Unsure
+example: "Yes"

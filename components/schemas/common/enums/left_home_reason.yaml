@@ -1,4 +1,7 @@
-- NoResponse
-- Safety
-- Job
-- Other
+type: string
+enum:
+  - NoResponse
+  - Safety
+  - Job
+  - Other
+example: "Safety"
