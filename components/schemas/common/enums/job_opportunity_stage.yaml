@@ -1,4 +1,5 @@
 # todo confirm if we will include all these in the anonymous database?
+# todo jc These stages relate to jobs - and jobs should not be exposed in the anon db
 type: string
 enum:
   - prospect
