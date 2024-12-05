@@ -7,6 +7,7 @@ properties:
     description: Unique identifier for the candidate
     example: 123e4567-e89b-12d3-a456-426614174000
   additionalInfo: # todo do we include this - could it have any sensitive information?
+#    todo jc - Too random - can be sensitive. Do not include
     type: string
     description: Additional information about the candidate.
     example: "Additional information about the candidate."
@@ -54,6 +55,7 @@ properties:
     description: Country of birth
     $ref: ./Country.yaml
 #  todo - candidateAttachments - left out - OK?
+#  todo jc Yes leave out
 #  candidateAttachments:
 #    type: array
 #    description: List of attachments related to the candidate.
@@ -108,23 +110,28 @@ properties:
     items:
       $ref: ./CandidateNote.yaml
   candidateOccupations: # todo confirm if this is duplicated - occupations are also in the job experiences
+#    todo jc - not a duplicate. Each job experience is associated with an occupation.
+#  todo jc There may be multiple experiences per occupation
     type: array
     description: List of occupations related to the candidate.
     items:
       $ref: ./CandidateOccupation.yaml
 #  todo - candidateOpportunities - left out - OK?
+#  todo jc - yes related to jobs so left out
 #  candidateOpportunities:
 #    type: array
 #    description: List of opportunities related to the candidate.
 #    items:
 #      $ref: ./Opportunity.yaml
 #  todo - candidateProperties - left out - OK?
+#  todo jc Yes - for now.
 #  candidateProperties:
 #    type: array
 #    description: List of candidate properties.
 #    items:
 #      $ref: ./CandidateProperty.yaml
 #  todo - candidateReviewStatusItems - left out - OK?
+#  todo jc Yes - internal use only
 #  candidateReviewStatusItems:
 #    type: array
 #    description: List of review status items related to the candidate.
@@ -175,6 +182,7 @@ properties:
     example: true
   country:
     description: Country of residence # todo picks up description override from Country.yaml
+#    todo jc This is where candidate is currently located
     $ref: ./Country.yaml
   covidVaccinated:
     type: string
@@ -236,6 +244,7 @@ properties:
     description: Expiry date of the candidate's driving license.
     example: "2025-12-31"
   englishAssessment: # todo - confirm if this will be included in the anonymous database
+#    todo jc Yes I think so. I don't see why not
     type: string
     description: Brief English assessment of the candidate.
     example: "English assessment"
@@ -263,6 +272,7 @@ properties:
     description: NCLC (Canadian Language Benchmark) score of the candidate's French assessment.
     example: 10
   fullIntakeCompletedBy: # todo - confirm if this will be included in the anonymous database
+#    todo jc No I don't think so. Internal use only and I don't think we want to make staff names public
     description: User who completed the full intake.
     $ref: ./User.yaml
   fullIntakeCompletedDate:
@@ -370,6 +380,8 @@ properties:
     description: Major of the candidate's education in the migration country.
     $ref: ./EducationMajor.yaml
   migrationNationality: # todo - confirm the difference between this and nationality
+#    todo jc Not sure but I think that "migration" here refers to migration of data from the old (2019) database.
+#    todo jc If so, I would be inclined to leave it out
     type: string
     description: Migration nationality of the candidate
     example: "Syrian"
@@ -400,6 +412,7 @@ properties:
     description: Notes related to the candidate's military service.
     example: "Military service notes"
   miniIntakeCompletedBy: # todo - confirm if this will be included in the anonymous database
+#    todo jc Leave out - see comment for intakeCompletedBy
     description: User who completed the mini intake.
     $ref: ./User.yaml
   miniIntakeCompletedDate:
@@ -422,9 +435,14 @@ properties:
     description: Number of dependants related to the candidate.
     example: 2
 #  todo - do we want to include this in the anonymous data - if not, add to identifiable props
+#  todo jc No - that is internal to the partner - not exposed in anon db
 #  partnerRef:
 #    description: Internal reference ID with the partner handling the candidate.
 #    type: string
+
+#  todo jc "partner" is a major naming blunder which should not be replicated into the anon db.
+#  todo jc With respect to a candidate "partner" can either mean their "spouse" or the
+#  todo jc TC partner manging the candidate. I think we should use "spouse" instead of partner where appropriate
   partnerRegistered:
     type: string
     description: Indicates whether the candidate's partner is registered.
@@ -432,6 +450,7 @@ properties:
       $ref: ../common/enums/yes_no_unsure.yaml
     example: "Yes"
 #  partnerCandidateId: todo - we receive the partner Candidate in full - but OK just to track the ID - some complexity if it will need to be the obfuscated id and is not yet mapped
+#  todo jc This is the "spouse"'s ID if they have one. Not sure I understand above comment.
 #    type: string
 #    format: uuid
 #    description: ID of the candidate's partner (if also a candidate in the system)
@@ -440,6 +459,8 @@ properties:
     type: string
     description: Citizenship of the candidate's partner.
     example: "Jordanian" # todo - sent as a string but currently a number value - can we map this?
+#    todo jc This is a bug. If you look at Candidate.getPartnership() you will see that it actually returns a List of country ids.
+#  todo jc But it is stored in the database as a comma delimited string of numbers
   partnerEduLevel:
     description: Education level of the candidate's partner.
     $ref: ./EducationLevel.yaml
@@ -499,6 +520,7 @@ properties:
     description: Reason for the candidate's return home.
     example: "Family reasons"
   returnedHomeReasonNo: # todo - confirm semantics + description
+#    todo jc Yes - I think your description is correct. A better example would be "Because of the war"
     type: string
     description: Reason for the candidate not returning home.
     example: "No reason"
@@ -522,6 +544,12 @@ properties:
   resettleThird:
     type: string
     description: Indicates whether the candidate plans to resettle in a third country. # todo - confirm meaning
+#    todo jc No. This is the response to this question: "Have you ever applied for resettlement or emigration to a 3rd country?"
+#    todo jc These fields need to be better documented in the code. For now the best way to
+#    todo jc find out the meaning is to search the Angular code for the field name and noting the question
+#    todo jc (eg in an intake) that the field is the response to.
+#    todo jc For example this field is set by Angular ResettlementThirdComponent - and the text
+#    todo jc of the question appears in the component's html.
     enum:
       $ref: ../common/enums/yes_no.yaml
     example: "Yes"
@@ -530,16 +558,23 @@ properties:
     description: Status of the candidate's plan to resettle in a third country.
     example: "Resettlement status"
   shareableNotes: # todo - confirm if this will be included in the anonymous database
+#    todo jc - No. These are notes generated by internal staff intended for an employer.
+#  todo jc I think in the anon db we should concentrate on data supplied by the candidate -
+#  todo jc not third parties - with only some exceptions (eg language ability)
     type: string
     description: Notes that can be shared with partners.
     example: "Shareable notes about the candidate."
   # shareableCv - todo - confirm if this will be included in the anonymous database
+#  todo jc Not sure. Maybe one day - but let's not start with it for now.
   # shareableDoc - todo - confirm if this will be included in the anonymous database
+#  todo jc Not for now.
   state:
     type: string
     description: State of residence.
     example: "Amman Governorate"
   status: # todo - confirm if all statuses will be included in anonymous database
+#    todo jc Yes I think we can - but only because we will be filtering the candidates who appear
+#    todo jc in the anon db based on status so that deleted, ineligible etc candidate will not appear
     type: string
     description: Status of the candidate.
     enum:
@@ -553,6 +588,7 @@ properties:
     description: Comment associated with the survey.
     example: "Survey comment"
   taskAssignments: # todo - confirm if this will be included in the anonymous database
+#    todo jc No - I think that is internal only
     type: array
     description: List of task assignments related to the candidate.
     items:
@@ -634,12 +670,14 @@ properties:
   workDesired:
     type: string
     description: Indicates whether the candidate desires work. # todo - confirm meaning
+#    todo jc I think meaning is OK - but I wouldn't display on anon db
     enum:
       $ref: ../common/enums/yes_no_unemployed_other.yaml
     example: "Yes"
   workDesiredNotes:
     type: string
     description: Notes related to the candidate's desire for work. # todo - confirm meaning
+    #    todo jc I think meaning is OK - but I wouldn't display on anon db
     example: "Work desire notes"
   workPermit:
     type: string
@@ -658,22 +696,27 @@ properties:
     description: Notes related to the candidate's desire for a work permit.
     example: "Work permit desire notes"
   yearOfArrival: # todo - this field is duplicated in User?
+#    todo jc I don't see it there. It belongs in candidate because yearOfArrival has no meaning for
+#    todo jc for a user who isn't a refugee
     type: integer
     format: int32
     description: Year of arrival in the country
     example: 2010
   yearOfBirth: # todo - this field is not sent but can be derived from DOB which is an identifiable field
+#    todo jc That is true - maybe redundant. Ask Caroline why we created this.
     type: integer
     format: int32
     description: Year of birth of the candidate
     example: 1985
   createdBy: # todo - confirm if this will be included in the anonymous database
+#    todo jc - No internal only - privacy of staff
     description: User who created the candidate.
     $ref: ./User.yaml
   createdDate:
     description: Date when the candidate was created.
     $ref: ../common/iso_timestamp.yaml
   updatedBy: # todo - confirm if this will be included in the anonymous database
+    #    todo jc - No internal only - privacy of staff
     description: User who last updated the candidate.
     $ref: ./User.yaml
   updatedDate:
