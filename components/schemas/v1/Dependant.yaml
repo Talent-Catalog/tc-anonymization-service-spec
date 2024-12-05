@@ -19,6 +19,7 @@ properties:
     allOf:
       - $ref: ../common/enums/gender.yaml
 #  name: # todo - remove - identifiable detail - do we need an IdentifiableDependant schema?
+#  todo jc Not sure. Why might it be needed?
 #    type: string
 #    description: The name of the dependant.
 #    example: "Jane Doe"
@@ -27,6 +28,7 @@ properties:
     allOf:
       - $ref: ../common/enums/registered.yaml
 #  registeredNumber: # todo - remove - identifiable detail - do we need an IdentifiableDependant schema?
+  #  todo jc Not sure. Why might it be needed?
 #    type: string
 #    description: The registration number of the dependant.
 #    example: "12345678"

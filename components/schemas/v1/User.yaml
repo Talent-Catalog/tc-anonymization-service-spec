@@ -1,4 +1,5 @@
 type: object # todo - review these fields - do we need all of them?
+#todo jc I think that we will have to if we want to expose similar functionality to users of the public anon db api
 description: A user of the TC system.
 properties:
   username:
@@ -19,6 +20,7 @@ properties:
     description: The email address of the user.
     example: "john@doe.com"
   role: # todo - do we want to include this field?
+#    todo jc Maybe not
     description: The role of the user.
     allOf:
       - $ref: ../common/enums/role.yaml
@@ -27,6 +29,8 @@ properties:
     description: Whether the user is read-only.
     example: false
   passwordEnc: # todo - do we want to include this field?
+    #    todo jc No
+
     type: string
     description: The encrypted password of the user.
     example: "password"
@@ -40,14 +44,17 @@ properties:
     allOf:
       - $ref: ../common/iso_timestamp.yaml
   resetToken: # todo - do we want to include this field?
+#    todo jc Yes - for supporting password resets
     type: string
     description: The reset token for the user.
     example: "token"
   resetTokenIssuedDate: # todo - do we want to include this field?
+    #    todo jc Yes - for supporting password resets
     description: The date and time the reset token was issued.
     allOf:
       - $ref: ../common/iso_timestamp.yaml
   passwordUpdatedDate: # todo - do we want to include this field?
+    #    todo jc Yes - for supporting password resets
     description: The date and time the password was last updated.
     allOf:
       - $ref: ../common/iso_timestamp.yaml
@@ -60,6 +67,7 @@ properties:
     description: The multi-factor authentication secret.
     example: "123456"
 #  todo - create a partner schema if needed
+  #    todo jc Maybe not needed
 #  partner:
 #    type: string
 #    description: The partner associated with the user.
@@ -74,11 +82,13 @@ properties:
     description: The purpose of the user.
     example: "admin"
   sharedSearches: # todo - do we want to include this field?
+    #    todo jc Yes - for sharing searches
     type: array
     description: The shared searches of the user.
     items:
       $ref: ./SearchResponse.yaml # todo - rename to Search.yaml?
   sharedLists: # todo - do we want to include this field?
+    #    todo jc Yes - for sharing lists
     type: array
     description: The shared lists of the user.
     items:

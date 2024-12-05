@@ -71,6 +71,7 @@ get:
         type: integer
         default: 10
     - name: type # todo - confirm if we want to keep this?
+#      todo jc Not sure - but useful for code reuse
       in: query
       description: The type of search
       required: false
@@ -79,6 +80,7 @@ get:
         enum:
           - "profession"
     - name: subtype # todo - confirm if we want to keep this?
+      #      todo jc Not sure - but useful for code reuse
       in: query
       description: The subtype of search
       required: false

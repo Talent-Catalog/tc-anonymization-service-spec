@@ -6,6 +6,8 @@ properties:
     $ref: ./Country.yaml
   protection:
     description: The protection status  of the visa. # todo - confirm this description for accuracy.
+    # todo jc This is internal and not for anon db I think
+#    todo jc Caroline is best person to review all these - and she is happy to do it.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   protectionGrounds:

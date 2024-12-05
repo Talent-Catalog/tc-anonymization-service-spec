@@ -6,6 +6,8 @@ properties:
     $ref: ../common/iso_timestamp.yaml
     example: "2024-11-27T17:15:00Z"
 #  activatedBy: # todo - do we want to include this? If so create a User schema
+  #  todo jc I don't think we should expose tasks in the anon db
+
 #    type: string
 #    description: The user who activated the task assignment.
   candidateNote: # todo - check which note this is referring to

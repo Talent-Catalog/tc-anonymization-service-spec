@@ -16,5 +16,6 @@ properties:
       - $ref: ../common/enums/status.yaml
 
 required: # todo check all required values
+#todo jc I think that we also need status for countries that are no longer in existence
   - isoCode
   - name

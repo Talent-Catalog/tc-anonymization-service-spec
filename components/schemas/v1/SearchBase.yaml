@@ -1,6 +1,8 @@
 type: object
 properties:
   simpleQueryString:  # todo use ?q= query parameter instead?
+#    todo jc I am not sure that the full Elasticsearch syntax is url friendly.
+#  todo jc I think it is better sent in the body of the request
     type: string
     description: A simple query string for free-text search.
     example: "Graphic Designer"
@@ -25,6 +27,7 @@ properties:
       - OTHER
     example: "FEMALE"
   occupationIds: # todo use isco codes instead
+#    todo jc Yes
     type: array
     description: List of occupation IDs to filter on.
     items:
@@ -40,6 +43,7 @@ properties:
     description: Maximum years of experience.
     example: 10
   partnerIds: # todo confirm that we want to search on this field?
+#    todo jc No I don't think so for anon db
     type: array
     description: List of partner IDs to filter on.
     items:
@@ -47,6 +51,7 @@ properties:
       format: int64
     example: [1, 2, 3]
   nationalityIds: # todo use ISO codes instead
+#    todo jc Yes
     type: array
     description: List of nationality IDs to filter on.
     items:
@@ -62,6 +67,7 @@ properties:
       - NOT
     example: "OR"
   countryIds: # todo use ISO codes instead
+#    todo jc Yes
     type: array
     description: List of country IDs to filter on.
     items:
@@ -77,6 +83,7 @@ properties:
       - NOT
     example: "OR"
   surveyTypeIds: # todo remove this field?
+#    todo jc Yes - internal only - also an ill defined field
     type: array
     description: List of survey type IDs to filter on.
     items:
@@ -84,11 +91,13 @@ properties:
       format: int64
     example: [1, 2, 3]
   exclusionListId: # todo remove this field?
+#    todo jc Yes - internal only
     type: integer
     format: int64
     description: Exclusion list ID.
     example: 1
   listAllIds: # todo remove this field?
+#    todo jc Yes.
     type: array
     description: List of IDs for "list all" criteria.
     items:
@@ -96,12 +105,14 @@ properties:
       format: int64
     example: [1, 2, 3]
   listAllSearchType: # todo remove this field?
+    #    todo jc Yes.
     type: string
     description: Search type for "list all".
     enum:
       - NOT
     example: "NOT"
   listAnyIds: # todo remove this field?
+    #    todo jc Yes.
     type: array
     description: List of IDs for "list any" criteria.
     items:
@@ -109,6 +120,7 @@ properties:
       format: int64
     example: [1, 2, 3]
   listAnySearchType:
+    #    todo jc Remove.
     type: string
     description: Search type for "list any".
     enum:
@@ -125,6 +137,7 @@ properties:
     description: Minimum spoken English proficiency level.
     example: 4
   otherLanguageId: # todo use ISO codes instead
+#    todo jc Yes
     type: integer
     format: int64
     description: ID of another language for filtering.
@@ -165,6 +178,7 @@ properties:
     description: End date for filtering candidates by last modification date.
     example: 2024-12-31
   timezone: # todo use IANA timezone names instead
+#    todo jc Not sure how/why this is used in a search. Shouldn't we just use users timezone?
     type: string
     description: Timezone for the search.
     example: "UTC"
@@ -179,11 +193,13 @@ properties:
     description: Maximum age of candidates.
     example: 60
   minEducationLevel: # todo use ISCED codes instead
+#    todo jc Yes
     type: integer
     format: int32
     description: Minimum education level.
     example: 3
   educationMajorIds: # todo use ISCED codes instead
+    #    todo jc Yes
     type: array
     description: List of education major IDs.
     items:
@@ -191,17 +207,21 @@ properties:
       format: int64
     example: [1, 2, 3]
   miniIntakeCompleted: # todo remove this field?
+    #    todo jc Yes
     type: boolean
     description: Filter for candidates who have completed the mini intake process.
     example: true
   fullIntakeCompleted: # todo remove this field?
+    #    todo jc Yes
     type: boolean
     description: Filter for candidates who have completed the full intake process.
     example: true
   regoReferrerParam: # todo remove this field?
+    #    todo jc Yes
     type: string
     description: Referrer parameter for registration filtering.
   reviewStatusFilter: # todo remove this field?
+    #    todo jc Yes
     type: array
     description: Filter by candidate review statuses.
     items:
