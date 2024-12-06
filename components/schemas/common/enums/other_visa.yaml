@@ -1,9 +1,16 @@
 type: string
 enum:
-  - NoResponse
-  - TempSkilled
-  - SpecialHum
-  - OtherHum
-  - DirectEnt
-  - PointsIndep
+  - "NoResponse"
+  - "TempSkilled"
+  - "SpecialHum"
+  - "OtherHum"
+  - "DirectEnt"
+  - "PointsIndep"
+x-enum-varnames:
+  - "NoResponse"
+  - "TempSkilled"
+  - "SpecialHum"
+  - "OtherHum"
+  - "DirectEnt"
+  - "PointsIndep"
 example: "TempSkilled"

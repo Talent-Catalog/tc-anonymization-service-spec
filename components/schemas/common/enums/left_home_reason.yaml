@@ -1,7 +1,12 @@
 type: string
 enum:
-  - NoResponse
-  - Safety
-  - Job
-  - Other
+  - "NoResponse"
+  - "Safety"
+  - "Job"
+  - "Other"
+x-enum-varnames:
+  - "NoResponse"
+  - "Safety"
+  - "Job"
+  - "Other"
 example: "Safety"

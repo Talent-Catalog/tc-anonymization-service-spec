@@ -1,0 +1,10 @@
+type: string
+enum:
+  - "and"
+  - "or"
+  - "not"
+x-enum-varnames:
+  - "and"
+  - "or"
+  - "not"
+example: "or"

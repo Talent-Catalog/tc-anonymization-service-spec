@@ -1,7 +1,12 @@
 type: string
 enum:
-  - NoResponse
-  - LegalRes
-  - IllegalRes
-  - Other
+  - "NoResponse"
+  - "LegalRes"
+  - "IllegalRes"
+  - "Other"
+x-enum-varnames:
+  - "NoResponse"
+  - "LegalRes"
+  - "IllegalRes"
+  - "Other"
 example: "LegalRes"

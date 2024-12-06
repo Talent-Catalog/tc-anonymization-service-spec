@@ -10,30 +10,16 @@ properties:
     description: The name of the candidate's language.
     example: "English"
   writtenLevel:
-    type: string
     description: The candidate's written proficiency in this language.
-    enum: # todo confirm the names in this enum - and is there a standard for this?
-#      todo jc I am not sure but I don't think that there is a standard for this
-      - "Native"
-      - "Professional"
-      - "Intermediate"
-      - "Elementary"
-      - "None"
-    example: "Native"
+    $ref: ./LanguageLevel.yaml # todo confirm the names in this enum - and is there a standard for this?
+  #      todo jc I am not sure but I don't think that there is a standard for this
   spokenLevel:
-    type: string
     description: The candidate's spoken proficiency in this language.
-    enum: # todo as above
-      #      todo jc as above
-      - "Native"
-      - "Professional"
-      - "Intermediate"
-      - "Elementary"
-      - "None"
-    example: "Native"
+    $ref: ./LanguageLevel.yaml # todo as above
+    #      todo jc as above
   migrationLanguage: # todo confirm the semantics and relevance of this field
     #    todo jc Not sure but I think that "migration" here refers to migration of data from the old (2019) database.
     #    todo jc If so, I would be inclined to leave it out
     type: string
-    description: The migration language for this language.
+    description: The migration language for this candidate.
     example: "Urdu"

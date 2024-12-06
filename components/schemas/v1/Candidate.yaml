@@ -261,9 +261,9 @@ properties:
     $ref: ./User.yaml
   fullIntakeCompletedDate:
     type: string
-    format: date
+    format: date-time
     description: Date when the full intake was completed.
-    example: "2022-12-31"
+    example: "2022-12-31T14:30:00Z"
   gender:
     description: Candidate's gender.
     allOf:
@@ -307,9 +307,11 @@ properties:
     description: IELTS score of the candidate.
     example: 7.5
   intRecruitReasons:
+    type: array
     description: Reasons for the candidate's international recruitment.
-    allOf:
-      - $ref: ../common/enums/int_recruit_reasons.yaml
+    items:
+      allOf:
+        - $ref: ../common/enums/int_recruit_reasons.yaml
   intRecruitOther:
     type: string
     description: Other reasons for the candidate's international recruitment.
@@ -317,7 +319,7 @@ properties:
   intRecruitRural:
     description: Indicates whether the candidate will work in a rural area.
     allOf:
-      - $ref: ../common/enums/yes_no.yaml
+      - $ref: ../common/enums/yes_no_unsure.yaml
   intRecruitRuralNotes:
     type: string
     description: Notes related to the candidate's rural area work preference.
@@ -385,9 +387,9 @@ properties:
     $ref: ./User.yaml
   miniIntakeCompletedDate:
     type: string
-    format: date
+    format: date-time
     description: Date when the mini intake was completed.
-    example: "2022-12-31"
+    example: "2022-12-31T14:30:00Z"
   monitoringEvaluationConsent:
     description: Indicates whether the candidate has given consent for monitoring and evaluation.
     allOf:
@@ -420,11 +422,14 @@ properties:
 #    description: ID of the candidate's partner (if also a candidate in the system)
 #    example: 123e4567-e89b-12d3-a456-426614174000
   partnerCitizenship:
-    type: string
-    description: Citizenship of the candidate's partner.
-    example: "Jordanian" # todo - sent as a string but currently a number value - can we map this?
-#    todo jc This is a bug. If you look at Candidate.getPartnership() you will see that it actually returns a List of country ids.
-#  todo jc But it is stored in the database as a comma delimited string of numbers
+    type: array
+    description: Citizenship(s) of the candidate's partner.
+    items:
+      type: integer
+      format: int64
+    example: "1" # todo - sent as a list of longs - map to Country?
+    #    todo jc This is a bug. If you look at Candidate.getPartnership() you will see that it actually returns a List of country ids.
+    #  todo jc But it is stored in the database as a comma delimited string of numbers
   partnerEduLevel:
     description: Education level of the candidate's partner.
     $ref: ./EducationLevel.yaml
@@ -488,7 +493,7 @@ properties:
   returnHomeFuture:
     description: Indicates whether the candidate plans to return home in the future.
     allOf:
-      - $ref: ../common/enums/yes_no.yaml
+      - $ref: ../common/enums/yes_no_unsure.yaml
     example: "No"
   returnHomeWhen:
     type: string

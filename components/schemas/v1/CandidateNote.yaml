@@ -10,10 +10,6 @@ properties:
     description: The content of the note.
     example: "The candidate was very knowledgeable and had a great attitude."
   noteType:
-    type: string
     description: The type of note.
-    enum:
-      - admin
-      - candidate
-      - system
-    example: "candidate"
+    allOf:
+      - $ref: ../common/enums/note_type.yaml

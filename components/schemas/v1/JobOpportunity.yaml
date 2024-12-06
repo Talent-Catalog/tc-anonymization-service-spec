@@ -24,10 +24,8 @@ properties:
     description: Whether the job opportunity is evergreen.
     example: true
   exclusionList: # todo - confirm if we will include this in the anonymous database?
-    type: array
     description: A list of candidates excluded from the job opportunity.
-    items:
-      $ref: ./List.yaml
+    $ref: ./List.yaml
   jobSummary:
     type: string
     description: A summary of the job opportunity.
@@ -63,19 +61,15 @@ properties:
 #      $ref: ./User.yaml
   submissionDueDate:
     type: string
-    format: date-time
+    format: date
     description: The date submissions are due for the job opportunity.
-    example: "2021-01-01T00:00:00Z"
+    example: "2021-01-01"
   submissionList: # todo - confirm if we will include this in the anonymous database?
-    type: array
     description: A list of candidates who have submitted to the job opportunity.
-    items:
-      $ref: ./List.yaml
+    $ref: ./List.yaml
   suggestedList:
-    type: array
     description: A list of candidates suggested for the job opportunity.
-    items:
-      $ref: ./List.yaml
+    $ref: ./List.yaml
   suggestedSearches:
     type: array
     description: A list of searches that have suggested candidates for the job opportunity.
