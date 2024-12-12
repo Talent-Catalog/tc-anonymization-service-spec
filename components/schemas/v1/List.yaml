@@ -1,2 +1,7 @@
 type: object
 description: A list of candidates.
+properties: # todo sm - work in progress
+  fileJdName:
+    type: string
+    description: Name of job description file, if one exists
+    example: "filename"

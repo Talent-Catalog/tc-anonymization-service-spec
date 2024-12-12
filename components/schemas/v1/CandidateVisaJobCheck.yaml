@@ -39,7 +39,7 @@ properties:
       - $ref: ../common/enums/yes_no.yaml
   eligible_494:
     description: The candidate is eligible for the 494 visa. # todo - confirm this description for accuracy.
-    enum:
+    allOf:
       - $ref: ../common/enums/yes_no.yaml
   eligible_494_Notes:
     type: string
@@ -56,7 +56,7 @@ properties:
   eligibleOther:
     description: The candidate is eligible for another visa. # todo - confirm this description for accuracy.
     allOf:
-      - $ref: ../common/enums/other_visa.yaml
+      - $ref: ../common/enums/other_visas.yaml
   eligibleOtherNotes:
     type: string
     description: Notes on the candidate's eligibility for another visa.
@@ -68,7 +68,7 @@ properties:
   tbbEligibility: # todo - rename this field?
     description: The candidate is eligible for the TBB visa. # todo - confirm this description for accuracy.
     allOf:
-      - $ref: ../common/enums/tbb_eligibility_assessment.yaml
+      - $ref: ../common/enums/TBB_eligibility_assessment.yaml
   notes:
     type: string
     description: Notes on the candidate's visa check for the job opportunity.

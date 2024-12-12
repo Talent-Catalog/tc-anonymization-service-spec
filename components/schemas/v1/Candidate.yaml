@@ -311,7 +311,7 @@ properties:
     description: Reasons for the candidate's international recruitment.
     items:
       allOf:
-        - $ref: ../common/enums/int_recruit_reasons.yaml
+        - $ref: ../common/enums/int_recruit_reason.yaml
   intRecruitOther:
     type: string
     description: Other reasons for the candidate's international recruitment.
@@ -447,7 +447,7 @@ properties:
   partnerIelts:
     description: Indicates whether the candidate's partner has taken the IELTS exam.
     allOf:
-      - $ref: ../common/enums/ielts.yaml
+      - $ref: ../common/enums/ielts_status.yaml
   partnerIeltsScore:
     type: string
     description: IELTS score of the candidate's partner.
