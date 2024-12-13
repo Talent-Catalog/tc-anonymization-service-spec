@@ -2,6 +2,10 @@ allOf:
   - $ref: './Candidate.yaml'
   - type: object
     properties:
+      id:
+        type: string
+        description: Unique Talent Catalog identifier for the candidate.
+        example: 1234567
       candidateNumber:
         type: string
         description: Unique candidate number.

@@ -1,10 +1,10 @@
 type: object
 description: Represents a Candidate with detailed properties and relationships.
 properties:
-  id:
+  uuid:
     type: string
     format: uuid
-    description: Unique identifier for the candidate
+    description: Universally unique identifier for the candidate
     example: 123e4567-e89b-12d3-a456-426614174000
   additionalInfo: # todo do we include this - could it have any sensitive information?
 #    todo jc - Too random - can be sensitive. Do not include
