@@ -49,4 +49,5 @@ components:
     schemas:
       IdentifiableCandidate:
         $ref: ./components/schemas/v1/IdentifiableCandidate.yaml
-
+      IdentifiableCandidatePage:
+        $ref: ./components/schemas/v1/IdentifiableCandidatePage.yaml
