@@ -1,5 +1,4 @@
 type: object
-description: The country
 properties:
   isoCode:
     type: string
