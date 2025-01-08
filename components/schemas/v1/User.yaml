@@ -28,12 +28,6 @@ properties:
     type: boolean
     description: Whether the user is read-only.
     example: false
-  passwordEnc: # todo - do we want to include this field?
-    #    todo jc No
-
-    type: string
-    description: The encrypted password of the user.
-    example: "password"
   status:
     description: The status of the user.
     allOf:
@@ -66,13 +60,6 @@ properties:
     type: string
     description: The multi-factor authentication secret.
     example: "123456"
-#  todo - create a partner schema if needed
-  #    todo jc Maybe not needed
-#  partner:
-#    type: string
-#    description: The partner associated with the user.
-#    allOf:
-#    - $ref: ./Partner.yaml
   approver:
     description: The user who approved this user.
     allOf:
@@ -81,14 +68,12 @@ properties:
     type: string
     description: The purpose of the user.
     example: "admin"
-  sharedSearches: # todo - do we want to include this field?
-    #    todo jc Yes - for sharing searches
+  sharedSearches:
     type: array
     description: The shared searches of the user.
     items:
-      $ref: ./SearchResponse.yaml # todo - rename to Search.yaml?
-  sharedLists: # todo - do we want to include this field?
-    #    todo jc Yes - for sharing lists
+      $ref: ./SearchResponse.yaml
+  sharedLists:
     type: array
     description: The shared lists of the user.
     items:

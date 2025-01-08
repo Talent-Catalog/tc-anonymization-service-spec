@@ -74,8 +74,7 @@ allOf:
         $ref: ./User.yaml
       unhcrFile:
         type: string
-        description: Candidate's UNHCR file number. # todo - just checking if this is different from the unhcr number?
-# todo jc Yes it is. I can't remember the detail but I remember having to put it in
+        description: Candidate's UNHCR file number.
         example: "12345678"
       unhcrNumber:
         type: string
@@ -83,8 +82,7 @@ allOf:
         example: "12345678"
       unrwaFile:
         type: string
-        description: Candidate's UNRWA file number. # todo - just checking if this is different from the unrwa number?
-        # todo jc Yes it is. I can't remember the detail but I remember having to put it in
+        description: Candidate's UNRWA file number.
         example: "12345678"
       unrwaNumber:
         type: string

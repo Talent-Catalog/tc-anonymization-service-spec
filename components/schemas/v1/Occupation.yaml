@@ -5,10 +5,7 @@ properties:
     type: string
     description: The ISCO-08 code for the occupation.
     example: "1234"
-  name: # todo - we don't get this from the occupation ingest - need to map it or add to the ingest data
-# todo jc Not sure what you mean by the ingest. But there is really no standard naming. Often
-# todo jc a code will have multiple associated names
-# todo It is the code that is important. This is our internal (English language) naming for the code
+  name:
     type: string
     description: The name of the occupation.
     example: "Software Developers, Applications"

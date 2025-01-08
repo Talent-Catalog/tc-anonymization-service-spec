@@ -27,11 +27,6 @@ properties:
     type: integer
     description: Maximum years of experience.
     example: 10
-  partnerIds: # todo confirm that we want to search on this field?
-#    todo jc No I don't think so for anon db
-    type: string
-    description: Comma separated string of partner IDs to filter on.
-    example: "1,2,3"
   nationalityIds: # todo use ISO codes instead
 #    todo jc Yes
     type: string
@@ -51,40 +46,6 @@ properties:
     description: Search type for countries.
     allOf:
       - $ref: ../common/enums/search_type.yaml
-  surveyTypeIds: # todo remove this field?
-#    todo jc Yes - internal only - also an ill defined field
-    type: string
-    description: Comma separated string of survey type IDs to filter on.
-    example: "1,2,3"
-  exclusionListId: # todo remove this field
-#    todo jc Yes - internal only - also an ill defined field
-    type: integer
-    format: int64
-    description: Exclusion list ID.
-    example: 1
-  listAllIds: # todo remove this field?
-#    todo jc Yes.
-    type: string
-    description: Comma separated string of IDs for "list all" criteria.
-    example: "1,2,3"
-  listAllSearchType: # todo remove this field?
-    #    todo jc Yes.
-    description: Search type for "list all".
-    allOf:
-      - $ref: ../common/enums/search_type.yaml
-    example: "not"
-  listAnyIds: # todo remove this field?
-    #    todo jc Yes.
-    type: string
-    description: Comma separated string of IDs for "list any" criteria.
-    example: "1,2,3"
-  listAnySearchType:
-    #    todo jc Remove.
-    type: string
-    description: Search type for "list any".
-    allOf:
-      - $ref: ../common/enums/search_type.yaml
-    example: "not"
   englishMinWrittenLevel:
     type: integer
     format: int32
@@ -147,25 +108,6 @@ properties:
     type: string
     description: Comma separated string of education major IDs.
     example: "1,2,3"
-  miniIntakeCompleted: # todo remove this field?
-    #    todo jc Yes
-    type: boolean
-    description: Filter for candidates who have completed the mini intake process.
-    example: true
-  fullIntakeCompleted: # todo remove this field?
-    #    todo jc Yes
-    type: boolean
-    description: Filter for candidates who have completed the full intake process.
-    example: true
-  regoReferrerParam: # todo remove this field?
-    #    todo jc Yes
-    type: string
-    description: Referrer parameter for registration filtering.
-  reviewable: # todo remove this field?
-    #    todo jc Yes
-    type: boolean
-    description: If the search is reviewable.
-    example: false
   fromDate:
     type: string
     format: date
