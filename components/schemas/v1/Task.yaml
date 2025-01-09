@@ -35,11 +35,13 @@ properties:
     $ref: ../common/iso_timestamp.yaml
 #  createdBy: # todo - do we want to include this field?
 #  todo jc I don't think we should expose tasks in the anon db
+#  todo sm - we can remove tasks - discuss with JC if there is potential utility in including them - but remove createdBy
 #    description: The user who created the task.
 #    $ref: ../common/User.yaml
   updatedDate:
     description: The date and time the task was last updated.
     $ref: ../common/iso_timestamp.yaml
 #  updatedBy: # todo - do we want to include this field?
+# todo sm - as above - remove updatedBy field if tasks are included
 #    description: The user who updated the task.
 #    $ref: ../common/User.yaml

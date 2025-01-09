@@ -3,7 +3,8 @@ description: The candidate's occupation
 properties:
   occupation:
     description: The candidate's occupation.
-    $ref: ./Occupation.yaml
+    allOf:
+      - $ref: ./Occupation.yaml
   yearsExperience:
     type: integer
     description: The number of years of experience the candidate has in this job.
@@ -12,7 +13,7 @@ properties:
     #    todo jc Not sure but I think that "migration" here refers to migration of data from the old (2019) database.
     #    todo jc If so, I would be inclined to leave it out
     # todo sm OK. In prod we have 1,429 instance of a migration_occupation value where the corresponding occupation is "Unknown"
-    # todo sm I think migrationOccupation can be removed from the API and the data migrated to a known occupation
+    # todo sm migrationOccupation will be removed from the API and the corresponding occupation_id correctly mapped as far as possible
     type: string
     description: The migration occupation.
     example: "Software Developer - Front End"

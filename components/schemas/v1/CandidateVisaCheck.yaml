@@ -3,11 +3,14 @@ description: A check of a candidate's visa status.
 properties:
   country:
     description: The country of the visa.
-    $ref: ./Country.yaml
+    allOf:
+      - $ref: ./Country.yaml
   protection:
     description: The protection status of the visa. # todo - confirm this description for accuracy.
     # todo jc This is internal and not for anon db I think
 #    todo jc Caroline is best person to review all these - and she is happy to do it.
+    # todo sm OK - I will ask Caroline to review this and the other field descriptions in this file.
+    # todo sm I wonder if this data is potentially useful for a data scientist or analyst interested in eligibility?
     allOf:
       - $ref: ../common/enums/yes_no.yaml
   protectionGrounds:

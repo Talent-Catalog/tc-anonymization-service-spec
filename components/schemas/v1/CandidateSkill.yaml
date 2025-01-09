@@ -5,10 +5,10 @@ properties:
 #  todo jc We should stick with ISCO codes
   # todo sm I think ISCO focuses on occupations rather than skills. I think sooner or later we will need a skills taxonomy.
   # todo sm ISCO International Standard Classification of Occupations supports broad occupation categories, drilling down into more specific occupational areas, roles and tasks; but not skills as such
-  # todo sm however using ISCO in conjunction with a taxonomy such as ESCO in particular (Eurpoean Skills, Competences, Qualifications and Occupations) could be the way to go
-  # todo sm for example ISCO code 2512 ("Software Developers") in ESCO links to specific skills like "Java programming," "Python," or "define technical requirements."
+  # todo sm using ISCO in conjunction with a taxonomy such as ESCO in particular (Eurpoean Skills, Competences, Qualifications and Occupations) could be the way to go
+  # todo sm for example ISCO code 2512 ("Software Developers") in ESCO links to specific skills like "Java programming," "Python," "define technical requirements" etc.
   # todo sm see: https://esco.ec.europa.eu/en/classification/occupation?uri=http://data.europa.eu/esco/occupation/f2b15a0e-e65a-438a-affb-29b9d50b77d1
-  # todo sm in the future this could be a basis for automated candidate skills interviews (possibly as a CASI service assigned as a candidate task)
+  # todo sm in the future this could be a basis for automated candidate skills interviews (possibly as a CASI service)
   # todo ESCO, currently 13939 skills, updates its dataset regularly, potentially providing a future-proof skills taxonomy
   skill:
     type: string

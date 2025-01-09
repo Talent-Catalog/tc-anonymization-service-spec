@@ -7,6 +7,7 @@ properties:
     example: "2024-11-27T17:15:00Z"
 #  activatedBy: # todo - do we want to include this? If so create a User schema
   #  todo jc I don't think we should expose tasks in the anon db
+  #  todo sm - we can remove tasks - discuss with JC if there is potential utility in including them - but remove activatedBy
 
 #    type: string
 #    description: The user who activated the task assignment.
@@ -19,6 +20,7 @@ properties:
     $ref: ../common/iso_timestamp.yaml
     example: "2024-11-27T17:15:00Z"
 #  deactivatedBy: # todo - do we want to include this? If so create a User schema
+#  todo sm - as above - remove deactivatedBy field if tasks are included
 #    type: string
 #    description: The user who deactivated the task assignment.
   deactivatedDate:

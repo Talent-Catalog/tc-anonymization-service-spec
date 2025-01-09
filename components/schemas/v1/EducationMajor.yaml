@@ -9,7 +9,9 @@ properties:
   iscedCode: # todo - not currently used - International Standard Classification of Education
 #    todo jc Definitely worth looking into. Is this managed by the same body that manages ISCO - sounds
 #    todo jc like it but worth confirming.
-    # todo sm ISCED is maintained by UNESCO, ISCO is maintained by ILO (International Labour Organization)
+#    todo sm ISCED is maintained by UNESCO, ISCO is maintained by ILO (International Labour Organization)
+#    todo sm remove this field for now, as it's not currently used. It may become relevant later and should be added then.
+#    todo sm open a ticket to look into adding ISCED codes to the the database, referencing that this schema should also be updated
     type: string
     description: The ISCED code for the education major.
     example: "0711"

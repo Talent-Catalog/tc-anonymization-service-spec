@@ -1,18 +1,14 @@
 type: object
 description: The candidate's language proficiency.
 properties:
-  # todo sm isoCode, status and name are from the embedded Language object - update this:
-  isoCode:
-    type: string
-    description: The ISO code for the candidate's language.
-    example: "en"
-  name:
-    type: string
-    description: The name of the candidate's language.
-    example: "English"
+  language:
+    description: The language that the candidate is proficient in.
+    allOf:
+      - $ref: ./Language.yaml
   writtenLevel:
     description: The candidate's written proficiency in this language.
-    $ref: ./LanguageLevel.yaml # todo confirm the names in this enum - and is there a standard for this?
+    allOf:
+      - $ref: ./LanguageLevel.yaml # todo confirm the names in this enum - and is there a standard for this?
   #      todo jc I am not sure but I don't think that there is a standard for this
   # todo sm for example CEFR uses a scale A1, A2, B1, B2, C1, C2 which loosely maps to:
   # todo sm Beginner, Elementary, Intermediate, Upper Intermediate, Advanced, Mastery/Native-like; or, using our names:
@@ -26,7 +22,7 @@ properties:
     #    todo jc Not sure but I think that "migration" here refers to migration of data from the old (2019) database.
     #    todo jc If so, I would be inclined to leave it out
     # todo sm Ok - in prod we have 274 instances of values in this field where the corresponding language is "Unknown"
-    # todo sm I think migrationLanguage can be removed from the API and the data migrated to language.name
+    # todo sm I think migrationLanguage can be removed from the API and the corresponding language_id correctly mapped as far as possible
     type: string
     description: The migration language for this candidate.
     example: "Urdu"

@@ -316,6 +316,7 @@ properties:
 #    todo jc Not sure but I think that "migration" here refers to migration of data from the old (2019) database.
 #    todo jc If so, I would be inclined to leave it out
     # todo sm I think then we can remove this field?
+    # todo sm confirmed this is OK to remove - all prod values are null for candidate.migration_nationality
     type: string
     description: Migration nationality of the candidate
     example: "Syrian"
@@ -557,7 +558,7 @@ properties:
   yearOfBirth: # todo - this field is not sent but can be derived from DOB which is an identifiable field
 #    todo jc That is true - maybe redundant. Ask Caroline why we created this.
     # todo sm it isn't currently sent. We don't want to send full DOB in anonymised data, but would
-    # todo sm it be worth at least including a (derived) year of birth?
+    # todo sm it would be worth at least including a (derived) year of birth?
     type: integer
     format: int32
     description: Year of birth of the candidate

@@ -3,6 +3,10 @@ properties:
   simpleQueryString:  # todo use ?q= query parameter instead?
 #    todo jc I am not sure that the full Elasticsearch syntax is url friendly.
 #  todo jc I think it is better sent in the body of the request
+#    todo sm I agree - we mustn't use ?q= instead of simpleQueryString in the body for full search capability
+#    todo sm though I'm not sure we need to support the full Elasticsearch query syntax in the API - that could be for portal users only, at least initially
+#    todo sm but we could use query params for a simple search - e.g. for the likes of BidCentral who want to do some
+#    todo sm basic searches like by occupation, we could support a simple query param like ?iscoCode= on the candidate endpoints
     type: string
     description: A simple query string for free-text search.
     example: "Graphic Designer"
@@ -16,6 +20,7 @@ properties:
       - $ref: ../common/enums/gender.yaml
   occupationIds: # todo use isco codes instead
 #    todo jc Yes
+#    todo sm agreed - use ISCO codes instead of occupation IDs
     type: string
     description: Comma separated string of occupation IDs to filter on. # todo check
     example: "1,2,3"
@@ -29,6 +34,7 @@ properties:
     example: 10
   nationalityIds: # todo use ISO codes instead
 #    todo jc Yes
+#    todo sm agreed - use ISO codes instead of country IDs
     type: string
     description: Comma separated string of nationality IDs to filter on.
     example: "1,2,3"
@@ -38,7 +44,7 @@ properties:
       - $ref: ../common/enums/search_type.yaml
   countryIds: # todo use ISO codes instead
   #    todo jc Yes
-  # todo sm use Country schemas instead
+  #    todo sm agreed - use ISO codes instead of country IDs
     type: string
     description: Comma separated string of country IDs to filter on.
     example: "1,2,3"
@@ -58,7 +64,8 @@ properties:
     example: 4
   otherLanguageId: # todo use ISO codes instead
 #    todo jc Yes
-#    todo sm create a Language schema for here and in CandidateLanguage?
+#    todo sm agreed - use iso language codes instead of language IDs
+#    todo sm language table has 100 null values for iso_code out of 194 languages in total - we should fix this as well, as far as possible
     type: integer
     format: int64
     description: ID of another language for filtering.
@@ -99,12 +106,17 @@ properties:
     example: 60
   minEducationLevel: # todo use ISCED codes instead
 #    todo jc Yes
+#    todo sm agreed - use ISCED codes instead of min education level IDs
+#    todo sm we need to add an isced_code column to the education_level table in the database
     type: integer
     format: int32
     description: Minimum education level.
     example: 3
   educationMajorIds: # todo use ISCED codes instead
     #    todo jc Yes
+    #    todo sm agreed - use ISCED codes instead of education major IDs
+    #    todo sm we need to add an isced_code column to the education_r table in the database
+    #    todo sm the prod education_major table lists 59 majors, we should check if there are additional ISCED majors we should add
     type: string
     description: Comma separated string of education major IDs.
     example: "1,2,3"

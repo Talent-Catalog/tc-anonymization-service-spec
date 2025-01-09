@@ -20,6 +20,10 @@ properties:
       - $ref: ../common/enums/gender.yaml
 #  name: # todo - remove - identifiable detail - do we need an IdentifiableDependant schema?
 #  todo jc Not sure. Why might it be needed?
+#  todo sm fields like name and registeredNumber are identifiable details, so they should be removed
+#  todo sm from the anonymised Dependant schema, whether or not to include them in an IdentifiableDependant schema
+#  todo sm was a note to self to consider later. On reflection, I don't see a need for an IdentifiableDependant schema.
+#  todo sm I will remove the name field from the Dependant schema.
 #    type: string
 #    description: The name of the dependant.
 #    example: "Jane Doe"
@@ -29,6 +33,7 @@ properties:
       - $ref: ../common/enums/registration.yaml
 #  registeredNumber: # todo - remove - identifiable detail - do we need an IdentifiableDependant schema?
   #  todo jc Not sure. Why might it be needed?
+#  todo sm as above - I will remove the registeredNumber field from the Dependant schema.
 #    type: string
 #    description: The registration number of the dependant.
 #    example: "12345678"

@@ -1,13 +1,12 @@
 type: object
 description: A job opportunity.
 properties:
-  contactUser: # todo - OK to include in anonymous database?
 #    todo jc I don't think we will be exposing job opportunities - at least in the first version of the anon db
-    description: The user who is the contact for the job opportunity.
-    $ref: ./User.yaml
+#  todo sm they may be useful for e.g. a data scientist or analyst interested in jobs that candidates have been put forward for?
   country:
     description: The country where the job opportunity is located.
-    $ref: ./Country.yaml
+    allOf:
+      - $ref: ./Country.yaml
   description:
     type: string
     description: A description of the job opportunity.
@@ -18,7 +17,8 @@ properties:
     example: "Acme Corporation"
   employerEntity:
     description: The employer details.
-    $ref: ./Employer.yaml
+    allOf:
+      - $ref: ./Employer.yaml
   evergreen:
     type: boolean
     description: Whether the job opportunity is evergreen.
@@ -38,9 +38,6 @@ properties:
     type: string
     description: The ID of the owner of the job opportunity.
     example: "12345678"
-  publishedBy: # todo - OK to include in anonymous database?
-    description: The user who published the job opportunity.
-    $ref: ./User.yaml
   publishedDate:
     type: string
     format: date-time
@@ -54,11 +51,6 @@ properties:
     allOf:
       - $ref: ../common/enums/job_opportunity_stage.yaml
     example: "visaPreparation"
-#  starringUsers: - todo - confirm if we will include this in the anonymous database?
-#    type: array
-#    description: A list of users who have starred the job opportunity.
-#    items:
-#      $ref: ./User.yaml
   submissionDueDate:
     type: string
     format: date

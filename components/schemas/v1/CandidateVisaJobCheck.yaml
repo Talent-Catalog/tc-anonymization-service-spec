@@ -2,10 +2,13 @@ type: object
 description: A job check related to a candidate's visa status. # todo - confirm this description for accuracy.
 # todo jc This is internal and job related and not for anon db I think
 # todo jc But Caroline is best to review it anyway
+# todo sm OK - if we decide to keep this in the anon DB I will ask Caroline to review this and the other field descriptions in this file.
+# todo sm I wonder if this data is potentially useful for a data scientist or analyst interested in job outcomes?
 properties:
   jobOpp:
     description: The job opportunity associated with the visa check.
-    $ref: ./JobOpportunity.yaml
+    allOf:
+      - $ref: ./JobOpportunity.yaml
   interest:
     description: The candidate's interest in the job opportunity.
     allOf:
@@ -24,7 +27,8 @@ properties:
     example: "The candidate has the required skills and experience."
   occupation:
     description: The occupation for the job opportunity. # todo - confirm this description for accuracy.
-    $ref: ./Occupation.yaml
+    allOf:
+      - $ref: ./Occupation.yaml
   occupationNotes:
     type: string
     description: Notes on the candidate's occupation for the job opportunity.
@@ -66,7 +70,7 @@ properties:
     allOf:
       - $ref: ../common/enums/visa_eligibility.yaml
   tbbEligibility: # todo - rename this field?
-    description: The candidate is eligible for the TBB visa. # todo - confirm this description for accuracy.
+    description: The candidate is eligible for the TBB program. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/TBB_eligibility_assessment.yaml
   notes:
@@ -101,13 +105,9 @@ properties:
     type: string
     description: The sub-category of the occupation for the job opportunity.
     example: "Front End"
-  englishThreshold:
-    description: The candidate meets the English language threshold for the job opportunity. # todo - remove english threshold field, replaced with languagesThresholdMet field - see TC entity javadoc comment.
-    allOf:
-      - $ref: ../common/enums/yes_no.yaml
-  languagesRequired: # todo - should map to languages?
+  languagesRequired:
     type: array
-    description: The languages required for the job opportunity.
+    description: An array of language IDs denoting the languages required for the job opportunity.
     items:
       type: integer
       format: int64
