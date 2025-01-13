@@ -11,7 +11,7 @@ properties:
 #    todo jc like it but worth confirming.
 #    todo sm ISCED is maintained by UNESCO, ISCO is maintained by ILO (International Labour Organization)
 #    todo sm remove this field for now, as it's not currently used. It may become relevant later and should be added then.
-#    todo sm open a ticket to look into adding ISCED codes to the the database, referencing that this schema should also be updated
+#    todo sm+jc: agreed - open a ticket to look into adding ISCED codes to the database, referencing that this schema should also be updated
     type: string
     description: The ISCED code for the education major.
     example: "0711"

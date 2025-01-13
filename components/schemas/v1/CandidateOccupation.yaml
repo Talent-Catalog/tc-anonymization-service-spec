@@ -14,6 +14,7 @@ properties:
     #    todo jc If so, I would be inclined to leave it out
     # todo sm OK. In prod we have 1,429 instance of a migration_occupation value where the corresponding occupation is "Unknown"
     # todo sm migrationOccupation will be removed from the API and the corresponding occupation_id correctly mapped as far as possible
+    #    todo sm+jc: agreed - open a ticket to update the data + then remove the migrationOccupation column+field
     type: string
     description: The migration occupation.
     example: "Software Developer - Front End"

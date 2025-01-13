@@ -4,6 +4,8 @@ description: A job check related to a candidate's visa status. # todo - confirm 
 # todo jc But Caroline is best to review it anyway
 # todo sm OK - if we decide to keep this in the anon DB I will ask Caroline to review this and the other field descriptions in this file.
 # todo sm I wonder if this data is potentially useful for a data scientist or analyst interested in job outcomes?
+#    todo sm+jc: agreed - it could be useful for outcomes
+#    todo sm+jc: agreed - only expose values that are enums - remove all the strings to protect anonymity leaks - then go ahead and ask Caroline to review the remaining field descriptions in the schema
 properties:
   jobOpp:
     description: The job opportunity associated with the visa check.

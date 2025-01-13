@@ -43,6 +43,7 @@ allOf:
 #      todo jc Not for anon db I don't think. Internal only.
 #      todo sm they are on the identifiable candidate schema, so they will be not be included in the anon db
 #      todo sm but we may opt to remove them fro the identifiable candidate schema as well
+#      todo jc+sm - as they are only on the identifiable schema - let's leave them
       regoPartnerParam:
         description: Query parameter (p=) for partner during registration.
         type: string
@@ -105,6 +106,7 @@ allOf:
 #      todo sm in the first pass all candidate data fields have been mapped as either identifiable or anonymised fields
 #      todo sm some of my todos are to mark fields that I'm not sure we need to include at all, such as these links
 #      todo sm I propose to remove these links fields from the IdentifiableCandidate schema
+#      todo sm+jc: agreed to leave these folder links in the Identifiable schema.
       folderlink:
         type: string
         description: Link to the corresponding folder containing the candidate's documents.
