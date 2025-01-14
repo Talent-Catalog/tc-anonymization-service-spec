@@ -6,13 +6,12 @@ properties:
     format: int32
     description: The language proficiency level id.
     example: 351
-  name: # todo - not currently mapped - either send it or map it - make it an enum?
-    # todo jc  This is our non standard level. This table is just to restrict allowed values.
-    #    todo jc It could be treated like an enum.
-#     todo sm I'm not sure but thinking if we should use the CEFR scale for the API language levels - see comments in CandidateLanguage.yaml
-#    todo sm I note that the Duolingo platform uses the CEFR scale for some of its courses, e.g. French, Spanish and English, possible others
-#    todo sm see: https://blog.duolingo.com/goldilocks-and-the-cefr-levels-which-proficiency-level-is-just-right/#:~:text=At%20Duolingo%2C%20we%20use%20the,coverage%2C%20from%20A1%20to%20B2.
-#    todo sm we could add a cefr_level column to the langauge_level table in the database, and expose this value in the API instead of our non standard levels?
+  name:
     type: string
     description: The name of the language proficiency level.
     example: "Full Professional Proficiency"
+  cefr_level:
+    type: string
+    description: The CEFR level of the language proficiency.
+    allOf:
+      - $ref: ../common/enums/cefr_levels.yaml
