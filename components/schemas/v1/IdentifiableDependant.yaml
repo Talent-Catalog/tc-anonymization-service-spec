@@ -1,0 +1,20 @@
+allOf:
+  - $ref: './Dependant.yaml'
+  - type: object
+    properties:
+      name:
+        type: string
+        description: The name of the dependant.
+        example: "Jane Doe"
+      registeredNumber:
+        type: string
+        description: The registration number of the dependant.
+        example: "12345678"
+      registeredNotes:
+        type: string
+        description: Notes about the dependant's registration.
+        example: "Registration in process with local UNHCR office"
+      healthNotes:
+        type: string
+        description: Notes about the dependant's health.
+        example: "Allergies to peanuts"
