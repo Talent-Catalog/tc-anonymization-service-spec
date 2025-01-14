@@ -45,7 +45,8 @@ properties:
     example: "Immediate availability notes"
   birthCountry:
     description: Country of birth
-    $ref: ./Country.yaml
+    allOf:
+      - $ref: ./Country.yaml
   candidateCertifications:
     type: array
     description: List of certifications held by the candidate.
@@ -188,7 +189,8 @@ properties:
       - $ref: ../common/enums/document_status.yaml
   drivingLicenseCountry:
     description: Country where the candidate's driving license was issued.
-    $ref: ./Country.yaml
+    allOf:
+      - $ref: ./Country.yaml
   drivingLicenseExp:
     type: string
     format: date
@@ -304,23 +306,16 @@ properties:
     example: "Marital status notes"
   maxEducationLevel:
     description: The maximum education level of the candidate
-    $ref: ./EducationLevel.yaml
+    allOf:
+      - $ref: ./EducationLevel.yaml
   mediaWillingness:
     type: string
     description: Indicates the candidate's willingness to participate in media activities
     example: "Yes"
   migrationEducationMajor:
     description: Major of the candidate's education in the migration country.
-    $ref: ./EducationMajor.yaml
-  migrationNationality: # todo - confirm the difference between this and nationality
-#    todo jc Not sure but I think that "migration" here refers to migration of data from the old (2019) database.
-#    todo jc If so, I would be inclined to leave it out
-    # todo sm I think then we can remove this field?
-    # todo sm confirmed this is OK to remove - all prod values are null for candidate.migration_nationality
-#    todo sm+jc: agreed - remove from the api + also remove column from candidate DB
-    type: string
-    description: Migration nationality of the candidate
-    example: "Syrian"
+    allOf:
+      - $ref: ./EducationMajor.yaml
   militaryService:
     description: Indicates whether the candidate has served in the military.
     allOf:
@@ -355,7 +350,8 @@ properties:
       - $ref: ../common/enums/yes_no.yaml
   nationality:
     description: Nationality of the candidate.
-    $ref: ./Country.yaml
+    allOf:
+      - $ref: ./Country.yaml
   numberDependants:
     type: integer
     format: int64
@@ -416,7 +412,8 @@ properties:
     example: 2020
   partnerOccupation:
     description: Occupation of the candidate's partner.
-    $ref: ./Occupation.yaml
+    allOf:
+      - $ref: ./Occupation.yaml
   partnerOccupationNotes:
     type: string
     description: Notes related to the occupation of the candidate's partner.
@@ -556,11 +553,7 @@ properties:
     format: int32
     description: Year of arrival in the country
     example: 2010
-  yearOfBirth: # todo - this field is not sent but can be derived from DOB which is an identifiable field
-#    todo jc That is true - maybe redundant. Ask Caroline why we created this.
-    # todo sm it isn't currently sent. We don't want to send full DOB in anonymised data, but would
-    # todo sm it would be worth at least including a (derived) year of birth?
-#    todo sm+jc: agreed - let's include year of birth as a computed field in the birth
+  yearOfBirth:
     type: integer
     format: int32
     description: Year of birth of the candidate
