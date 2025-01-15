@@ -1,18 +1,11 @@
 type: object
-description: An employer.
+description: An anonymised employer.
 properties:
   country:
     description: The country where the employer is located.
-    $ref: ./Country.yaml
-  description:
-    type: string
-    description: A description of the employer.
-    example: "A software development company."
+    allOf:
+      - $ref: ./Country.yaml
   hasHiredInternationally:
     type: boolean
     description: Whether the employer has hired internationally.
     example: true
-  website:
-    type: string
-    description: The website of the employer.
-    example: "https://www.acme.com"

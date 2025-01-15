@@ -2,86 +2,49 @@ type: object
 description: A check of a candidate's visa status.
 properties:
   country:
-    description: The country of the visa.
-    $ref: ./Country.yaml
+    description: The country of the visa. # todo - confirm this description for accuracy.
+    allOf:
+      - $ref: ./Country.yaml
   protection:
-    description: The protection status  of the visa. # todo - confirm this description for accuracy.
-    # todo jc This is internal and not for anon db I think
-#    todo jc Caroline is best person to review all these - and she is happy to do it.
+    description: The protection status of the visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  protectionGrounds:
-    type: string
-    description: The grounds for the protection status of the visa.
-    example: "Asylum"
   englishThreshold:
     description: Meets the English language threshold for the visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  englishThresholdNotes:
-    type: string
-    description: Notes on the English language threshold for the visa.
-    example: "IELTS 6.5"
   healthAssessment:
     description: The health assessment status for the visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  healthAssessmentNotes:
-    type: string
-    description: Notes on the health assessment status for the visa.
-    example: "Passed"
   characterAssessment:
     description: The character assessment status for the visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  characterAssessmentNotes:
-    type: string
-    description: Notes on the character assessment status for the visa.
-    example: "Volunteer work in the community"
   securityRisk:
     description: The security risk status for the visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
     example: "No"
-  securityRiskNotes:
-    type: string
-    description: Notes on the security risk status for the visa.
-    example: "Has lived in the country for 10 years without incident"
   overallRisk:
     description: The overall risk assessment status for the visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/risk_level.yaml
-  overallRiskNotes:
-    type: string
-    description: Notes on the overall risk status for the visa.
-    example: "Upstanding citizen"
   validTravelDocs:
-    description: The validity status of the candidate's travel documents.
+    description: The validity status of the candidate's travel documents. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/document_status.yaml
-  validTravelDocsNotes:
-    type: string
-    description: Notes on the validity status of the candidate's travel documents.
-    example: "Passport expires in 2025"
   pathwayAssessment:
     description: The pathway assessment status for the visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no_unsure.yaml
-  pathwayAssessmentNotes:
-    type: string
-    description: Notes on the pathway assessment status for the visa.
-    example: "Has a job offer"
   destinationFamily:
-    description: The status of the candidate's family in the destination country.
+    description: The status of the candidate's family in the destination country. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/family_relations.yaml
     example: "Sibling"
-  destinationFamilyLocation:
-    type: string
-    description: The location of the candidate's family in the destination country.
-    example: "Sydney"
   candidateVisaJobChecks:
     type: array
-    description: The job checks for the candidate's visa.
+    description: The job checks for the candidate's visa. # todo - confirm this description for accuracy.
     items:
       $ref: ./CandidateVisaJobCheck.yaml

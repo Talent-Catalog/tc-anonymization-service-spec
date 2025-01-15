@@ -1,34 +1,22 @@
 type: object
 description: A job check related to a candidate's visa status. # todo - confirm this description for accuracy.
-# todo jc This is internal and job related and not for anon db I think
-# todo jc But Caroline is best to review it anyway
 properties:
   jobOpp:
-    description: The job opportunity associated with the visa check.
-    $ref: ./JobOpportunity.yaml
+    description: The job opportunity associated with the visa check. # todo - confirm this description for accuracy.
+    allOf:
+      - $ref: ./JobOpportunity.yaml
   interest:
-    description: The candidate's interest in the job opportunity.
+    description: The candidate's interest in the job opportunity. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  interestNotes:
-    type: string
-    description: Notes on the candidate's interest in the job opportunity.
-    example: "The candidate is excited about the opportunity to work with the team."
   qualification:
-    description: The candidate's qualification for the job opportunity.
+    description: The candidate's qualification for the job opportunity. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  qualificationNotes:
-    type: string
-    description: Notes on the candidate's qualification for the job opportunity.
-    example: "The candidate has the required skills and experience."
   occupation:
     description: The occupation for the job opportunity. # todo - confirm this description for accuracy.
-    $ref: ./Occupation.yaml
-  occupationNotes:
-    type: string
-    description: Notes on the candidate's occupation for the job opportunity.
-    example: "The candidate has experience in a similar role."
+    allOf:
+      - $ref: ./Occupation.yaml
   salaryTsmit:
     description: The salary for the job opportunity meets the TSMIT threshold. # todo - confirm this description for accuracy - https://www.homeaffairs.gov.au/reports-and-pubs/files/tsmit_review_report.pdf ?
     allOf:
@@ -41,82 +29,35 @@ properties:
     description: The candidate is eligible for the 494 visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  eligible_494_Notes:
-    type: string
-    description: Notes on the candidate's eligibility for the 494 visa.
-    example: "The candidate has the required skills and experience."
   eligible_186:
     description: The candidate is eligible for the 186 visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  eligible_186_Notes:
-    type: string
-    description: Notes on the candidate's eligibility for the 186 visa.
-    example: "The candidate has the required skills and experience."
   eligibleOther:
     description: The candidate is eligible for another visa. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/other_visas.yaml
-  eligibleOtherNotes:
-    type: string
-    description: Notes on the candidate's eligibility for another visa.
-    example: "The candidate has the required skills and experience."
   putForward:
     description: The candidate has been put forward for the job opportunity. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/visa_eligibility.yaml
-  tbbEligibility: # todo - rename this field?
-    description: The candidate is eligible for the TBB visa. # todo - confirm this description for accuracy.
+  tcEligibility:
+    description: The candidate is eligible for the TBB program. # todo - confirm this description for accuracy - NB: @caroline this field is still named tbbEligibility in the TC entity; there's a separate issue to rename that.
     allOf:
       - $ref: ../common/enums/TBB_eligibility_assessment.yaml
-  notes:
-    type: string
-    description: Notes on the candidate's visa check for the job opportunity.
-    example: "The candidate has the required skills and experience."
-  relevantWorkExp:
-    type: string
-    description: The candidate's relevant work experience for the job opportunity.
-    example: "The candidate has experience in a similar role."
-  ageRequirement:
+  ageRequirement: # todo - sm - does this need to be a string? Can it be an enum? If enum, thn leave it, otherwise remove from API
+#    todo jc+sm:  @caroline - can you confirm if this needs to be a string - can it be an enum?
     type: string
     description: The candidate meets the age requirement for the job opportunity. # todo - confirm this description for accuracy.
     example: "Yes"
-  preferredPathways:
-    type: string
-    description: The candidate's preferred pathways for the job opportunity.
-    example: "The candidate is interested in the 186 visa."
-  ineligiblePathways:
-    type: string
-    description: The candidate's ineligible pathways for the job opportunity.
-    example: "The candidate is not eligible for the 494 visa."
-  eligiblePathways:
-    type: string
-    description: The candidate's eligible pathways for the job opportunity.
-    example: "The candidate is eligible for the 186 visa."
-  occupationCategory:
-    type: string
-    description: The category of the occupation for the job opportunity.
-    example: "Software Developer"
-  occupationSubCategory:
-    type: string
-    description: The sub-category of the occupation for the job opportunity.
-    example: "Front End"
-  englishThreshold:
-    description: The candidate meets the English language threshold for the job opportunity. # todo - remove english threshold field, replaced with languagesThresholdMet field - see TC entity javadoc comment.
-    allOf:
-      - $ref: ../common/enums/yes_no.yaml
-  languagesRequired: # todo - should map to languages?
+  languagesRequired:
     type: array
-    description: The languages required for the job opportunity.
+    description: An array of language IDs denoting the languages required for the job opportunity. # todo - confirm this description for accuracy.
     items:
       type: integer
       format: int64
     example: [1, 2]
   languagesThresholdMet:
-    description: The candidate meets the language threshold for the job opportunity.
+    description: The candidate meets the language threshold for the job opportunity. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/yes_no.yaml
-  languagesThresholdNotes:
-    type: string
-    description: Notes on the language threshold for the job opportunity.
-    example: "The candidate has the required language skills."

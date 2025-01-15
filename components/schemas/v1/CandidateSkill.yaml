@@ -1,8 +1,6 @@
 type: object
 description: A skill associated with a candidate.
 properties:
-  # todo - decide on a standard skills taxonomy e.g. https://www.bls.gov/soc/2018/major_groups.htm
-#  todo jc We should stick with ISCO codes
   skill:
     type: string
     description: The name of the skill.

@@ -18,8 +18,6 @@ info:
 tags:
   - name: Candidates
     description: Operations related to anonymised candidates
-  - name: Searches
-    description: Operations related to searches for anonymised candidates
 
 servers:
   - url: https://tctalent.org/ads
@@ -37,17 +35,11 @@ paths:
   /v1/candidates/bySearchId/{searchId}: # todo - replace with /v1/searches/{searchId}/candidates
     $ref: ./paths/v1/candidates-bySearchId-searchId.yaml
 
-  /v1/searches:
-    $ref: ./paths/v1/searches.yaml
-#  /v1/searches/{searchId}:
-#    $ref: ./paths/v1/searches-searchId.yaml
-
-#  /v1/searches/{searchId}/candidates:
-#    $ref: ./paths/v1/searches-searchId-candidates.yaml
-
 components:
     schemas:
       IdentifiableCandidate:
         $ref: ./components/schemas/v1/IdentifiableCandidate.yaml
       IdentifiableCandidatePage:
         $ref: ./components/schemas/v1/IdentifiableCandidatePage.yaml
+      IdentifiableDependant:
+        $ref: ./components/schemas/v1/IdentifiableDependant.yaml

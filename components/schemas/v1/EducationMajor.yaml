@@ -6,9 +6,7 @@ properties:
     format: int64
     description: The unique identifier for the education major.
     example: 8713
-  iscedCode: # todo - not currently used - International Standard Classification of Education
-#    todo jc Definitely worth looking into. Is this managed by the same body that manages ISCO - sounds
-#    todo jc like it but worth confirming.
+  iscedCode:
     type: string
     description: The ISCED code for the education major.
     example: "0711"

@@ -1,25 +1,19 @@
 type: object
 description: The candidate's language proficiency.
 properties:
-  isoCode:
-    type: string
-    description: The ISO code for the candidate's language.
-    example: "en"
-  name:
-    type: string
-    description: The name of the candidate's language.
-    example: "English"
+  language:
+    description: The language that the candidate is proficient in.
+    allOf:
+      - $ref: ./Language.yaml
   writtenLevel:
     description: The candidate's written proficiency in this language.
-    $ref: ./LanguageLevel.yaml # todo confirm the names in this enum - and is there a standard for this?
-  #      todo jc I am not sure but I don't think that there is a standard for this
+    allOf:
+      - $ref: ./LanguageLevel.yaml
   spokenLevel:
     description: The candidate's spoken proficiency in this language.
-    $ref: ./LanguageLevel.yaml # todo as above
-    #      todo jc as above
-  migrationLanguage: # todo confirm the semantics and relevance of this field
-    #    todo jc Not sure but I think that "migration" here refers to migration of data from the old (2019) database.
-    #    todo jc If so, I would be inclined to leave it out
+    allOf:
+      - $ref: ./LanguageLevel.yaml
+  migrationLanguage:
     type: string
     description: The migration language for this candidate.
     example: "Urdu"

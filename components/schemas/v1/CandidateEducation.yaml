@@ -10,7 +10,8 @@ properties:
     $ref: ./Country.yaml
   educationMajor:
     description: The major of the education.
-    $ref: ./EducationMajor.yaml
+    allOf:
+      - $ref: ./EducationMajor.yaml
   lengthOfCourseYears:
     type: integer
     description: The length of the course in years.

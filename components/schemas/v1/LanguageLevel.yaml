@@ -6,9 +6,12 @@ properties:
     format: int32
     description: The language proficiency level id.
     example: 351
-  name: # todo - not currently mapped - either send it or map it - make it an enum?
-    # todo jc  This is our non standard level. This table is just to restrict allowed values.
-    #    todo jc It could be treated like an enum.
+  name:
     type: string
     description: The name of the language proficiency level.
     example: "Full Professional Proficiency"
+  cefr_level:
+    type: string
+    description: The CEFR level of the language proficiency.
+    allOf:
+      - $ref: ../common/enums/cefr_levels.yaml
