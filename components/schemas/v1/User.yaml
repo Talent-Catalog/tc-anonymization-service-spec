@@ -3,7 +3,7 @@ type: object # todo - review these fields - do we need all of them?
 #todo sm user info is currently referenced only in IdentifiableCandidate.yaml, I don't think we want to expose it in the anon db
 #todo sm begs the question what the purpose of the user schema is - for instance I don't think we'd use them for login purposes through the api
 #todo sm for api user authentication I thought we would use api keys, for example
-# todo jc+sm: agreed to remove this field - avoids any potential for leaks if we don't let the data in
+# todo jc+sm: agreed to remove this schema - avoids any potential for leaks if we don't let the data in
 description: A user of the TC system.
 properties:
   username:
