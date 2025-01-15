@@ -67,10 +67,6 @@ allOf:
         description: UTM term parameter during registration.
         type: string
         example: "term1"
-      user:
-        description: User details associated with the candidate.
-        allOf:
-          - $ref: ./User.yaml
       unhcrFile:
         type: string
         description: Candidate's UNHCR file number.
