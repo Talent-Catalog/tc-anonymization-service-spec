@@ -3,7 +3,7 @@ properties:
   error:
     type: string
     description: Error message.
-    example: "Unauthorised. Please provide a valid API key." # todo jc+sm: agreed - update this to match the actual api security method
+    example: "Unauthorised. Please provide a valid API key."
   statusCode:
     type: integer
     description: The HTTP status code associated with the error.
