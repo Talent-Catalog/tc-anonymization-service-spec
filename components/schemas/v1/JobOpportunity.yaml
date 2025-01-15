@@ -1,9 +1,6 @@
 type: object
 description: A job opportunity.
 properties:
-#    todo jc I don't think we will be exposing job opportunities - at least in the first version of the anon db
-#  todo sm they may be useful for e.g. a data scientist or analyst interested in jobs that candidates have been put forward for?
-#  todo jc+sm: agreed to keep the job opportunity in the API but to remove employer sensitive fields, which have been commented out below
   country:
     description: The country where the job opportunity is located.
     allOf:
@@ -13,43 +10,15 @@ properties:
     description: The employer details.
     allOf:
       - $ref: ./Employer.yaml
-  # todo jc+sm: remove commented out fields:
-#  description:
-#    type: string
-#    description: A description of the job opportunity.
-#    example: "A full-time position for a software engineer."
-#  employer:
-#    type: string
-#    description: The employer offering the job opportunity.
-#    example: "Acme Corporation"
   evergreen:
     type: boolean
     description: Whether the job opportunity is evergreen.
     example: true
-#  exclusionList: # todo - confirm if we will include this in the anonymous database?
-#    description: A list of candidates excluded from the job opportunity.
-#    allOf:
-#      - $ref: ./List.yaml
-#  jobSummary:
-#    type: string
-#    description: A summary of the job opportunity.
-#    example: "A full-time position for a software engineer."
-#  name: # todo - maps to SF job name - do we want to make this public?
-#    type: string
-#    description: The name of the job opportunity.
-#    example: "Software Engineer"
-#  ownerId: # todo - maps to SF job owner - do we want to make this public?
-#    type: string
-#    description: The ID of the owner of the job opportunity.
-#    example: "12345678"
   publishedDate:
     type: string
     format: date-time
     description: The date the job opportunity was published.
     example: "2021-01-01T00:00:00Z"
-#  jobCreator: todo - confirm if we will include this in the anonymous database, if so create Partner schema
-#    description: The partner who created the job opportunity.
-#    $ref: ./Partner.yaml
   stage:
     description: The stage of the job opportunity.
     allOf:
@@ -60,43 +29,13 @@ properties:
     format: date
     description: The date submissions are due for the job opportunity.
     example: "2021-01-01"
-#  submissionList: # todo - confirm if we will include this in the anonymous database?
-#    description: A list of candidates who have submitted to the job opportunity.
-#    allOf:
-#      - $ref: ./List.yaml
-##  suggestedList:
-##    description: A list of candidates suggested for the job opportunity.
-##    allOf:
-##      - $ref: ./List.yaml
-#  suggestedSearches:
-#    type: array
-#    description: A list of searches that have suggested candidates for the job opportunity.
-#    items:
-#      $ref: ./SearchResponse.yaml # todo - rename this schema to Search.yaml?
-#  jobOppIntake: - todo
-#    type: array
-#    description: The job opportunity intake details.
-#    items:
-#      $ref: ./JobOpportunityIntake.yaml - todo
   hiringCommitment: # todo - these are SF values - map to string values?
     type: integer
     format: int64
     description: The hiring commitment for the job opportunity.
     example: 3
-#  employerWebsite: # todo - duplicated in employer entity
-#    type: string
-#    description: The employer's website.
-#    example: "https://www.acmecorp.com"
   employerHiredInternationally: # todo - duplicated in employer entity
 #    todo jc+sm: check if this or the employer flag is being used (or are they both being used? Can we drop one from the API?)
     type: boolean
     description: Whether the employer has hired internationally.
     example: true
-#  opportunityScore:
-#    type: string
-#    description: The score of the job opportunity.
-#    example: "A"
-#  employerDescription: # todo - duplicated in employer entity
-#    type: string
-#    description: A description of the employer.
-#    example: "A software development company."
