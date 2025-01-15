@@ -1,5 +1,5 @@
 type: object
-description: An employer.
+description: An anonymised employer.
 properties:
   country:
     description: The country where the employer is located.

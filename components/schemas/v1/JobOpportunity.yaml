@@ -5,9 +5,8 @@ properties:
     description: The country where the job opportunity is located.
     allOf:
       - $ref: ./Country.yaml
-#        todo jc+sm: open an issue for later to send the city + state on job opportunities as 2 text fields - note there is a location field in the jobOppIntake entity and in the jobOpp (database only)
   employerEntity:
-    description: The employer details.
+    description: The anonymised employer details.
     allOf:
       - $ref: ./Employer.yaml
   evergreen:
@@ -34,8 +33,7 @@ properties:
     format: int64
     description: The hiring commitment for the job opportunity.
     example: 3
-  employerHiredInternationally: # todo - duplicated in employer entity
-#    todo jc+sm: check if this or the employer flag is being used (or are they both being used? Can we drop one from the API?)
+  employerHiredInternationally:
     type: boolean
     description: Whether the employer has hired internationally.
     example: true
