@@ -1,6 +1,0 @@
-post:
-  summary: Run a search and retrieve candidates
-  description: Fetches a paginated array of candidates associated with a specific search ID.
-  tags:
-    - Searches
-  operationId: runSearch
