@@ -28,10 +28,10 @@ properties:
     format: date
     description: The date submissions are due for the job opportunity.
     example: "2021-01-01"
-  hiringCommitment: # todo - these are SF values - map to string values?
+  hiringCommitment:
     type: integer
     format: int64
-    description: The hiring commitment for the job opportunity.
+    description: The number of candidates the employer has committed to hiring for this opportunity.
     example: 3
   employerHiredInternationally:
     type: boolean
