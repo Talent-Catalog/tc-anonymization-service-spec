@@ -1,3 +1,4 @@
+# todo jc+sm: let's remove this from the anon db
 type: object
 description: A task assignment.
 properties:

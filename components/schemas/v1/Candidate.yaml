@@ -357,11 +357,11 @@ properties:
     format: int64
     description: Number of dependants related to the candidate.
     example: 2
-
 #  todo jc "partner" is a major naming blunder which should not be replicated into the anon db.
 #  todo jc With respect to a candidate "partner" can either mean their "spouse" or the
 #  todo jc TC partner manging the candidate. I think we should use "spouse" instead of partner where appropriate
   # todo sm the term "spouse" opens up potentially other issues as the term "partner" is generally more inclusive
+#  todo jc+sm: agreed - let's go with tcPartner and leave the "spouse" as partner - open a separate ticket for this
   partnerRegistered:
     description: Indicates whether the candidate's partner is registered.
     allOf:
@@ -370,6 +370,7 @@ properties:
 #  todo jc This is the "spouse"'s ID if they have one. Not sure I understand above comment.
   # todo sm I mean we probably don't want to include the entire partner Candidate, the ID will suffice.
   # todo sm obfuscated IDs were not available when I first commented, but they are now a candidate field
+#  todo jc+sm: agreed - send the public ID only
 #    type: string
 #    format: uuid
 #    description: ID of the candidate's partner (if also a candidate in the system)

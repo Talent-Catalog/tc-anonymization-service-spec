@@ -7,6 +7,7 @@ properties:
 #    todo sm though I'm not sure we need to support the full Elasticsearch query syntax in the API - that could be for portal users only, at least initially
 #    todo sm but we could use query params for a simple search - e.g. for the likes of BidCentral who want to do some
 #    todo sm basic searches like by occupation, we could support a simple query param like ?iscoCode= on the candidate endpoints
+#    todo jc+sm: agreed to remove the search schemas - only provide minimal search via query params (initial iscoCode only) in v1
     type: string
     description: A simple query string for free-text search.
     example: "Graphic Designer"

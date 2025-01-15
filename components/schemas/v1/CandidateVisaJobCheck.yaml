@@ -1,10 +1,11 @@
 type: object
 description: A job check related to a candidate's visa status. # todo - confirm this description for accuracy.
 properties:
-  jobOpp:
-    description: The job opportunity associated with the visa check. # todo - confirm this description for accuracy.
-    allOf:
-      - $ref: ./JobOpportunity.yaml
+#  todo jc+sm: remove the job opp
+#  jobOpp:
+#    description: The job opportunity associated with the visa check. # todo - confirm this description for accuracy.
+#    allOf:
+#      - $ref: ./JobOpportunity.yaml
   interest:
     description: The candidate's interest in the job opportunity. # todo - confirm this description for accuracy.
     allOf:
@@ -41,34 +42,15 @@ properties:
     description: The candidate has been put forward for the job opportunity. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/visa_eligibility.yaml
-  tbbEligibility: # todo - rename this field?
+  tbbEligibility: # todo - rename this field? jc+sm - agreed: tcEligibility (do it as a mapping + open an issue to change it in the tc service as well)
     description: The candidate is eligible for the TBB program. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/TBB_eligibility_assessment.yaml
   ageRequirement: # todo - sm - does this need to be a string? Can it be an enum? If enum, thn leave it, otherwise remove from API
+#    todo jc+sm:  @caroline - can you confirm if this needs to be a string - can it be an enum?
     type: string
     description: The candidate meets the age requirement for the job opportunity. # todo - confirm this description for accuracy.
     example: "Yes"
-  preferredPathways: # todo - sm - does this need to be a string? Can it be an enum? If enum, thn leave it, otherwise remove from API
-    type: string
-    description: The candidate's preferred pathways for the job opportunity.
-    example: "The candidate is interested in the 186 visa."
-  ineligiblePathways: # todo - sm - does this need to be a string? Can it be an enum? If enum, thn leave it, otherwise remove from API
-    type: string
-    description: The candidate's ineligible pathways for the job opportunity.
-    example: "The candidate is not eligible for the 494 visa."
-  eligiblePathways: # todo - sm - does this need to be a string? Can it be an enum? If enum, thn leave it, otherwise remove from API
-    type: string
-    description: The candidate's eligible pathways for the job opportunity.
-    example: "The candidate is eligible for the 186 visa."
-  occupationCategory:  # todo - sm - does this field contain isco_codes? If so, keep in the API, otherwise remove
-    type: string
-    description: The category of the occupation for the job opportunity. # todo - confirm this description for accuracy.
-    example: "Software Developer"
-  occupationSubCategory: # todo - sm - as above - is this an isco_code? If so, keep in the API, otherwise remove
-    type: string
-    description: The sub-category of the occupation for the job opportunity. # todo - confirm this description for accuracy.
-    example: "Front End"
   languagesRequired:
     type: array
     description: An array of language IDs denoting the languages required for the job opportunity. # todo - confirm this description for accuracy.

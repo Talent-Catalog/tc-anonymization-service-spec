@@ -1,6 +1,7 @@
 type: object
 description: A list of candidates.
 properties: # todo sm - work in progress - placeholder schema for code generation - will be updated
+#  todo jc+sm: agreed to remove lists for now
   fileJdName:
     type: string
     description: Name of job description file, if one exists

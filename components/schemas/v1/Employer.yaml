@@ -1,18 +1,19 @@
 type: object
 description: An employer.
 properties:
+  # todo jc+sm: remove commented out fields:
   country:
     description: The country where the employer is located.
     $ref: ./Country.yaml
-  description:
-    type: string
-    description: A description of the employer.
-    example: "A software development company."
+#  description:
+#    type: string
+#    description: A description of the employer.
+#    example: "A software development company."
   hasHiredInternationally:
     type: boolean
     description: Whether the employer has hired internationally.
     example: true
-  website:
-    type: string
-    description: The website of the employer.
-    example: "https://www.acme.com"
+#  website:
+#    type: string
+#    description: The website of the employer.
+#    example: "https://www.acme.com"
