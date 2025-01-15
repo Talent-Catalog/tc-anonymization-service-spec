@@ -1,11 +1,10 @@
 type: object
 description: A job check related to a candidate's visa status. # todo - confirm this description for accuracy.
 properties:
-#  todo jc+sm: decided to send the job opp but restrict the job opp fields that are included in the API schema
-#  jobOpp:
-#    description: The job opportunity associated with the visa check. # todo - confirm this description for accuracy.
-#    allOf:
-#      - $ref: ./JobOpportunity.yaml
+  jobOpp:
+    description: The job opportunity associated with the visa check. # todo - confirm this description for accuracy.
+    allOf:
+      - $ref: ./JobOpportunity.yaml
   interest:
     description: The candidate's interest in the job opportunity. # todo - confirm this description for accuracy.
     allOf:
@@ -42,8 +41,8 @@ properties:
     description: The candidate has been put forward for the job opportunity. # todo - confirm this description for accuracy.
     allOf:
       - $ref: ../common/enums/visa_eligibility.yaml
-  tbbEligibility: # todo - rename this field? jc+sm - agreed: tcEligibility (do it as a mapping + open an issue to change it in the tc service as well)
-    description: The candidate is eligible for the TBB program. # todo - confirm this description for accuracy.
+  tcEligibility:
+    description: The candidate is eligible for the TBB program. # todo - confirm this description for accuracy - NB: @caroline this field is still named tbbEligibility in the TC entity; there's a separate issue to rename that.
     allOf:
       - $ref: ../common/enums/TBB_eligibility_assessment.yaml
   ageRequirement: # todo - sm - does this need to be a string? Can it be an enum? If enum, thn leave it, otherwise remove from API
