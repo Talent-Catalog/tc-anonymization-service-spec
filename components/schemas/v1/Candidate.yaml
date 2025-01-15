@@ -100,11 +100,6 @@ properties:
     description: List of occupations related to the candidate.
     items:
       $ref: ./CandidateOccupation.yaml
-  candidateSavedLists:
-    type: array
-    description: List of saved lists related to the candidate.
-    items:
-      $ref: ./List.yaml
   candidateSkills:
     type: array
     description: List of skills possessed by the candidate.
