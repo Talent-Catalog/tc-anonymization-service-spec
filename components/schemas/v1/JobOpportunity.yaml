@@ -3,6 +3,7 @@ description: A job opportunity.
 properties:
 #    todo jc I don't think we will be exposing job opportunities - at least in the first version of the anon db
 #  todo sm they may be useful for e.g. a data scientist or analyst interested in jobs that candidates have been put forward for?
+#  todo jc+sm: agreed to keep the job opportunity in the API but to remove employer sensitive fields, which have been commented out below
   country:
     description: The country where the job opportunity is located.
     allOf:
